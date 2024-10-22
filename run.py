@@ -1,9 +1,48 @@
 # import random library
 import random
-# define colors available to choose from, code length and how many attempts
-colors = ["Red", "Blue", "Green", "Yellow", "Black", "Orange"]
-code_length = 4
-max_attempts = 10
+# Constant variables - colors available to choose from, code length and how many attempts
+COLORS = ["Red", "Blue", "Green", "Yellow", "Black", "Orange"]
+CODE_LENGTH = 4
+MAX_ATTEMPTS = 10
+
+#Title page
+def main_page():
+    """
+    Main page with player options
+    """
+    clear_screen()
+    print("Choose '1' to Play")
+    print("Choose '2' for Instructions")
+    print("Choose '3' to Exit")
+
+    while True:
+        try:
+            menu_choice = int(input(" Press choice: \n"))
+            if menu_choice == 1:
+                run_game()
+                break
+            elif menu_choice == 2:
+                instructions()
+                break
+            elif menu_choice == 3:
+                print(f"Exiting game....Game ended")
+                break
+            else:
+                raise ValueError
+
+        except ValueError:
+            print(" Invalid key press. Please choose 1, 2 or 3")
+# Instructions of play
+def instructions():
+    """
+    Instructions for the user of how to play the game
+    """
+    clear_screen()
+                
+    print(f"The Boss Brain Challenge will create a 4 color code for you to decipher.\n")
+    print(f"The choice of colors is Red, Blue, Green, Yellow, Black and Orange") 
+    print(f"Find the code in 8 or less attempts to become a Boss Brain!") 
+
 
 # generate random code
 code = random.choices(colors, k=code_length)
