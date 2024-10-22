@@ -1,9 +1,9 @@
 # import random library
 import random
 # Constant variables - colors available to choose from, code length and how many attempts
-COLORS = ["Red", "Blue", "Green", "Yellow", "Black", "Orange"]
-CODE_LENGTH = 4
-MAX_ATTEMPTS = 10
+colors = ["Red", "Blue", "Green", "Yellow", "Black", "Orange"]
+code_length = 4
+max_attempts = 10
 
 #Title page
 def main_page():
@@ -45,15 +45,28 @@ def instructions():
 
 
 # generate random code
-code = random.choices(colors, k=code_length)
-attempts = 0
-print(code)
-print("Welcome to the Boss Brain challenge")
-print("Decipher the color code to become a Boss Brain!")
-print(f"Choose from the following colors: {', '.join(colors)}")
-print(f"Code Length: {code_length}, Max Attempts: {max_attempts}")
+def generate_random_code():
+    """
+    Genertes a 4-color random code from the 6 x color choices in the COLORS
+    """
+    code = random.choices(colors, k=code_length)
+    
+    return(code)
+
+# main game play
+def play_game():
+    """
+    Play game function
+    """
+    clear_screen()
+    print("Welcome to the Boss Brain challenge")
+    print("Decipher the color code to become a Boss Brain!")
+    print(f"Choose from the following colors: {', '.join(colors)}")
+    print(f"Code Length: {code_length}, Max Attempts: {max_attempts}")
 
 # while loop to itereate over game until max attempts made
+attempts = 0
+
 while attempts < max_attempts:
     answer = input(f"Attempt {attempts + 1}/{max_attempts}. Enter your answer: ").strip().split()
     if len(answer) != code_length or not all(color in colors for color in answer):
