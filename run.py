@@ -10,6 +10,7 @@ code = random.choices(colors, k=code_length)
 attempts = 0
 print(code)
 print("Welcome to the Boss Brain challenge")
+print("Decipher the color code to become a Boss Brain!")
 print(f"Choose from the following colors: {', '.join(colors)}")
 print(f"Code Length: {code_length}, Max Attempts: {max_attempts}")
 
