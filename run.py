@@ -60,10 +60,10 @@ def play_game():
     Play game function
     """
     clear_screen()
-    print("Welcome to the Boss Brain challenge")
-    print("Decipher the color code to become a Boss Brain!")
-    print(f"Choose from the following colors: {', '.join(colors)}")
-    print(f"Code Length: {code_length}, Max Attempts: {max_attempts}")
+    print("Welcome to the Boss Brain challenge.\n")
+    print("Decipher the color code to become a Boss Brain!\n")
+    print(f"Choose from the following colors: {', '.join(colors)}\n")
+    print(f"Code Length: {code_length}, Max Attempts: {max_attempts}\n")
 
 # while loop to itereate over game until max attempts made
     attempts = 0
