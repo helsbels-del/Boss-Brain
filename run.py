@@ -1,6 +1,9 @@
 # import random library
 import random
 import os
+import sys
+import time
+
 
 # Constant variables - colors available to choose from, code length and how many attempts
 colors = ["Red", "Blue", "Green", "Yellow", "Black", "Orange"]
@@ -84,7 +87,8 @@ def play_game():
         print(f"{correct_color} correct colors but in the wrong place!")
 
         if correct_position == code_length:
-            print("Congratulations! You cracked the code. You have a Boss Brain!\n")
+            blink_text("\033[1;32:40m Congratulations! You cracked the code.")
+            print("\033[1;31:40m You have a Boss Brain!!!!")
             print(f"The correct code is: {generate_random_code(code)}")
             exit()
 
@@ -100,6 +104,16 @@ def clear_screen():
         os.system("clear")
     else:
         os.system("cls")
+
+def blink_text(text):
+    while True:
+        sys.stdout.write('\033[5m' + text + '\033[0m')
+        sys.stdout.flush()
+        time.sleep(0.5)
+        sys.stdout.write('\r' + ' ' * len(text) + '\r')
+        sys.stdout.flush()
+        time.sleep(0.5)
+
 main_page()
 
 
