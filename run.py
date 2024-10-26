@@ -1,6 +1,7 @@
 # import random library
 import random
 import os
+
 # Constant variables - colors available to choose from, code length and how many attempts
 colors = ["Red", "Blue", "Green", "Yellow", "Black", "Orange"]
 code_length = 4
@@ -40,9 +41,9 @@ def instructions():
     """
     clear_screen()
                 
-    print(f"The Boss Brain Challenge will create a 4 color code for you to decipher.\n")
-    print(f"The choice of colors is Red, Blue, Green, Yellow, Black and Orange") 
-    print(f"Find the code in 8 or less attempts to become a Boss Brain!") 
+    print("The Boss Brain Challenge will create a 4 color code for you to decipher.\n")
+    print("Your choice of colors is: \033[1;31;47m Red \033[1;34;47m Blue \033[1;32;47m Green \033[1;33;47m Yellow \033[1;37;47m White \033[1;35;47m Pink \n" )
+    print("\033[1;37;40m Find the code in 8 or less attempts to become a Boss Brain!") 
 
 
 # generate random code
@@ -83,7 +84,8 @@ def play_game():
         print(f"{correct_color} correct colors but in the wrong place!")
 
         if correct_position == code_length:
-            print("Congratulations! You cracked the code. You have a Boss Brain!")
+            print("Congratulations! You cracked the code. You have a Boss Brain!\n")
+            print(f"The correct code is: {generate_random_code(code)}")
             exit()
 
         attempts += 1
