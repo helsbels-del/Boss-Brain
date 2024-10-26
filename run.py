@@ -46,7 +46,7 @@ def instructions():
                 
     print("The Boss Brain Challenge will create a 4 color code for you to decipher.\n")
     print("Your choice of colors is: \033[31;1m Red \033[34;1m Blue \033[32;1m Green \033[33;1m Yellow \033[37;1m White \033[1;35:47m Pink \n" )
-    print("Find the code in 8 or less attempts to become a Boss Brain!\n") 
+    print("033[37;1m Find the code in 8 or less attempts to become a Boss Brain!\n") 
     print("Choose 4 colors, leaving a space between each color")
 
 
