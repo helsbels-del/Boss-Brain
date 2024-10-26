@@ -45,8 +45,8 @@ def instructions():
     clear_screen()
                 
     print("The Boss Brain Challenge will create a 4 color code for you to decipher.\n")
-    print("Your choice of colors is: \033[1;31;47m Red \033[1;34;47m Blue \033[1;32;47m Green \033[1;33;47m Yellow \033[1;37;47m White \033[1;35;47m Pink \n" )
-    print("\033[1;37;40m Find the code in 8 or less attempts to become a Boss Brain!") 
+    print("Your choice of colors is: \033[1;31:47m Red \033[1;34:47m Blue \033[1;32:47m Green \033[1;33:47m Yellow \033[1;37:47m White \033[1;35:47m Pink \n" )
+    print("\033[1;37:40m Find the code in 8 or less attempts to become a Boss Brain!") 
 
 
 # generate random code
