@@ -6,7 +6,7 @@ import time
 
 
 # Constant variables - colors available to choose from, code length and how many attempts
-colors = ["Red", "Blue", "Green", "Yellow", "Black", "Orange"]
+colors = ["\033[31;1m Red", "\033[34;1m Blue", "\033[32;1m Green", "\033[33;1m Yellow", "\033[37;1m White", "\033[1;35:47m Pink"]
 code_length = 4
 max_attempts_level1 = 12
 max_attempts_level2 = 10
@@ -126,10 +126,10 @@ def play_game_level1():
     Play game function
     """
     clear_screen()
-    print("Welcome to the Boss Brain challenge.\n")
-    print("Decipher the color code to become a Boss Brain!\n")   
-    print(f"Choose from the following colors: {', '.join(colors)}\n")
-    print(f"Code Length: {code_length}, Max Attempts: {max_attempts_level1}\n")
+    print("\033[37;1m Welcome to the Boss Brain challenge.\n")
+    print(" Decipher the color code to become a Boss Brain!\n")   
+    print(f" Choose from the following colors: {', '.join(colors)}\n")
+    print(f"\033[37;1m Code Length: {code_length}, Max Attempts: {max_attempts_level1}\n")
 
 # while loop to itereate over game until max attempts made
     attempts = 0
@@ -163,10 +163,10 @@ def play_game_level2():
     Play game function
     """
     clear_screen()
-    print("Welcome to the Boss Brain challenge.\n")
-    print("Decipher the color code to become a Boss Brain!\n")   
-    print(f"Choose from the following colors: {', '.join(colors)}\n")
-    print(f"Code Length: {code_length}, Max Attempts: {max_attempts_level2}\n")
+    print("\033[37;1m Welcome to the Boss Brain challenge.\n")
+    print(" Decipher the color code to become a Boss Brain!\n")   
+    print(f" Choose from the following colors: {', '.join(colors)}\n")
+    print(f"\033[37;1m Code Length: {code_length}, Max Attempts: {max_attempts_level2}\n")
 
 # while loop to itereate over game until max attempts made
     attempts = 0
@@ -187,7 +187,7 @@ def play_game_level2():
 
         if correct_position == code_length:
             blink_text("\033[1;32:40m Congratulations! You cracked the code.")
-            print("\033[1;31:40m You have a Boss Brain!!!!")
+            print("\033[1;33:40m You have a Boss Brain!!!!")
             print(f"The correct code is: {code}")
             exit()
 
@@ -200,10 +200,10 @@ def play_game_level3():
     Play game function
     """
     clear_screen()
-    print("Welcome to the Boss Brain challenge.\n")
-    print("Decipher the color code to become a Boss Brain!\n")   
-    print(f"Choose from the following colors: {', '.join(colors)}\n")
-    print(f"Code Length: {code_length}, Max Attempts: {max_attempts_level3}\n")
+    print("\033[37;1m Welcome to the Boss Brain challenge.\n")
+    print(" Decipher the color code to become a Boss Brain!\n")   
+    print(f" Choose from the following colors: {', '.join(colors)}\n")
+    print(f"\033[37;1m Code Length: {code_length}, Max Attempts: {max_attempts_level3}\n")
 
 # while loop to itereate over game until max attempts made
     attempts = 0
