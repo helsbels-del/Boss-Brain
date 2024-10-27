@@ -136,7 +136,7 @@ def play_game_level1():
     code = generate_random_code()
     print(code)
     while attempts < max_attempts_level1:
-        answer = input(f"Attempt {attempts + 1}/{max_attempts_level1}. Enter your answer(first letter of colours): ").strip().split()
+        answer = input(f"Attempt {attempts + 1}/{max_attempts_level1}. Enter your answer(first letter of colours): ").upper().strip().split()
         if len(answer) != code_length or not all(color in colors for color in answer):
             print("Incorrect Answer! Try again!")
             continue
@@ -191,7 +191,7 @@ def play_game_level2():
     code = generate_random_code()
     print(code)
     while attempts < max_attempts_level2:
-        answer = input(f"Attempt {attempts + 1}/{max_attempts_level2}. Enter your answer(first letter of colours): ").strip().split()
+        answer = input(f"Attempt {attempts + 1}/{max_attempts_level2}. Enter your answer(first letter of colours): ").upper().strip().split()
         if len(answer) != code_length or not all(color in colors for color in answer):
             print("Incorrect Answer! Try again!")
             continue
@@ -246,7 +246,7 @@ def play_game_level3():
     code = generate_random_code()
     print(code)
     while attempts < max_attempts_level3:
-        answer = input(f"Attempt {attempts + 1}/{max_attempts_level3}. Enter your answer(first letter of colours): ").strip().split()
+        answer = input(f"Attempt {attempts + 1}/{max_attempts_level3}. Enter your answer(first letter of colours): ").upper().strip().split()
         if len(answer) != code_length or not all(color in colors for color in answer):
             print("Incorrect Answer! Try again!")
             continue
