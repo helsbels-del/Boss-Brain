@@ -128,7 +128,7 @@ def play_game_level1():
     clear_screen()
     print("\033[37;1m Welcome to the Boss Brain challenge.\n")
     print(" Decipher the color code to become a Boss Brain!\n")   
-    print(" Choose from the following colors: \033[31;1m Red \033[34;1m Blue \033[32;1m Green \033[33;1m Yellow \033[37;1m White \033[1;35:47m Pink \n")
+    print(" Choose from the following colors: \033[31;1m Red(R) \033[34;1m Blue(B) \033[32;1m Green(G) \033[33;1m Yellow(Y) \033[37;1m White(W) \033[1;35:47m Pink(P) \n")
     print(f"\033[37;1m Code Length: {code_length}, Max Attempts: {max_attempts_level1}\n")
 
 # while loop to itereate over game until max attempts made
@@ -157,7 +157,7 @@ def play_game_level1():
         attempts += 1
 
     print("You ran out of attempts!\n")
-
+    print(f"\033[33;1m The correct code is: {code}\n")
     print("Choose '1' to play again")
     print("choose '2' to return to main page")
 
@@ -183,7 +183,7 @@ def play_game_level2():
     clear_screen()
     print("\033[37;1m Welcome to the Boss Brain challenge.\n")
     print(" Decipher the color code to become a Boss Brain!\n")   
-    print(" Choose from the following colors: \033[31;1m Red \033[34;1m Blue \033[32;1m Green \033[33;1m Yellow \033[37;1m White \033[1;35:47m Pink \n")
+    print(" Choose from the following colors: \033[31;1m Red(R) \033[34;1m Blue(B) \033[32;1m Green(G) \033[33;1m Yellow(Y) \033[37;1m White(W) \033[1;35:47m Pink(P) \n")
     print(f"\033[37;1m Code Length: {code_length}, Max Attempts: {max_attempts_level2}\n")
 
 # while loop to itereate over game until max attempts made
@@ -212,7 +212,7 @@ def play_game_level2():
         attempts += 1
 
     print("You ran out of attempts!\n")
-
+    print(f"\033[33;1m The correct code is: {code}\n")
     print("Choose '1' to play again")
     print("choose '2' to return to main page")
 
@@ -238,7 +238,7 @@ def play_game_level3():
     clear_screen()
     print("\033[37;1m Welcome to the Boss Brain challenge.\n")
     print(" Decipher the color code to become a Boss Brain!\n")   
-    print(" Choose from the following colors: \033[31;1m Red \033[34;1m Blue \033[32;1m Green \033[33;1m Yellow \033[37;1m White \033[1;35:47m Pink \n")
+    print(" Choose from the following colors: \033[31;1m Red(R) \033[34;1m Blue(B) \033[32;1m Green(G) \033[33;1m Yellow(Y) \033[37;1m White(W) \033[1;35:47m Pink(P) \n")
     print(f"\033[37;1m Code Length: {code_length}, Max Attempts: {max_attempts_level3}\n")
 
 # while loop to itereate over game until max attempts made
@@ -267,6 +267,7 @@ def play_game_level3():
         attempts += 1
 
     print("You ran out of attempts!\n")
+    print(f"\033[33;1m The correct code is: {code}\n")
     print("Choose '1' to play again")
     print("choose '2' to return to main page")
 
