@@ -16,6 +16,12 @@ def main_page():
     Main page with player options
     """
     clear_screen()
+    print("This is the Boss Brain Challenge!\n")
+    print("Can you decipher the secrect code?\n")
+    print("What's your Level?\n")
+    print ("Level 1 will give you 12 attempts")
+    print ("Level 2 will give you 10 attempts")
+    print ("Level 3 will give you 8 attempts\n")
     print("Choose '1' to Play")
     print("Choose '2' for Instructions")
     print("Choose '3' to Exit")
