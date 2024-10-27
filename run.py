@@ -149,7 +149,7 @@ def play_game_level1():
         print(f"{correct_color} correct colors but in the wrong place!\n")
 
         if correct_position == code_length:
-            blink_text("\033[1;32:40m Congratulations! You cracked the code.")
+            blink_text("\033[1;32:40m Congratulations!")
             print("\033[31;1m You have a Boss Brain!\n")
             print(f"\033[33;1m You cracked the secret code: {code}")
             exit()
@@ -204,7 +204,7 @@ def play_game_level2():
         print(f"{correct_color} correct colors but in the wrong place!\n")
 
         if correct_position == code_length:
-            blink_text("\033[1;32:40m Congratulations! You cracked the code.")
+            blink_text("\033[1;32:40m Congratulations!")
             print("\033[31;1m You have a Boss Brain!!\n")
             print(f"\033[33;1m You cracked the secret code: {code}")
             exit()
@@ -259,8 +259,8 @@ def play_game_level3():
         print(f"{correct_color} correct colors but in the wrong place!\n")
 
         if correct_position == code_length:
-            blink_text("\033[1;32:40m Congratulations! You cracked the code.")
-            print("\033[31;1m You have a Boss Brain!!!\n")
+            blink_text("\033[1;32:40m Congratulations!\n")
+            blink_text("\033[31;1m You have a Boss Brain!!!\n")
             print(f"\033[33;1m You cracked the secret code: {code}")
             exit()
 
