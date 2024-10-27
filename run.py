@@ -57,7 +57,7 @@ def instructions():
     print(" The player then has the choice to play again or return to the main page.\n")
     print(" If the player runs out of attemts before guessing the correct secret code, this is the end of the game.")
     print(" The player then has the choice to play again or return to the main page.\n")
-    print(" Your choice of colors is: \033[31;1m Red \033[34;1m Blue \033[32;1m Green \033[33;1m Yellow \033[37;1m White \033[1;35:47m Pink \n" )
+    print(" Your choice of colors are: \033[31;1m Red \033[34;1m Blue \033[32;1m Green \033[33;1m Yellow \033[37;1m White \033[1;35:47m Pink \n" )
     print("\033[37;1m Find the code in 12, 10 or 8 attempts, depending on level, to become a Boss Brain!\n") 
     print(" Choose 4 colors, leaving a space between each color.\n")
     print("Choose '1' to play")
