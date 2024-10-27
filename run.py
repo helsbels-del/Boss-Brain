@@ -138,7 +138,7 @@ def play_game_level1():
     while attempts < max_attempts_level1:
         answer = input(f"Attempt {attempts + 1}/{max_attempts_level1}. Enter your answer(first letter of colours): ").upper().strip().split()
         if len(answer) != code_length or not all(color in colors for color in answer):
-            print("Incorrect Answer! Try again!")
+            print("You've done something wrong! Check your answers and try again!")
             continue
 
         correct_position = sum(a == c for a, c in zip(answer, code))
