@@ -6,7 +6,7 @@ import time
 
 
 # Constant variables - colors available to choose from, code length and how many attempts
-colors = ["Red", "Blue", "Green", "Yellow", "White", "Pink"]
+colors = ["R", "B", "G", "Y", "W", "P"]
 code_length = 4
 max_attempts_level1 = 12
 max_attempts_level2 = 10
