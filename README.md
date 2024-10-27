@@ -24,7 +24,7 @@ The original Mastermind game is suitable for ages 8+. This version of the game w
 
 ## **Technology**
 
-I used Python (version )
+I used Python (version 3.12.2 latest version at time of produce)
 
 I also imported the below libraries
 
