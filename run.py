@@ -22,7 +22,7 @@ def main_page():
     print("Can you decipher the secrect code?\n")    
     print("Choose '1' to Play")
     print("Choose '2' for Instructions")
-    print("Choose '3' to Exit")
+    print("Choose '3' to Exit\n")
 
     while True:
         try:
@@ -48,11 +48,35 @@ def instructions():
     """
     clear_screen()
                 
-    print("\033[37;1m INSTRUCTIONS FOR PLAY")
-    print("\033[37;1m The Boss Brain Challenge will create a 4 color code for you to decipher.\n")
-    print("Your choice of colors is: \033[31;1m Red \033[34;1m Blue \033[32;1m Green \033[33;1m Yellow \033[37;1m White \033[1;35:47m Pink \n" )
-    print("\033[37;1m Find the code in 8 or less attempts to become a Boss Brain!\n") 
-    print("Choose 4 colors, leaving a space between each color")
+    print("\033[37;1m INSTRUCTIONS FOR PLAY\n")
+    print(" The codemaker (computer) creates a secret 4 colour code, choosing from 6 available colours.\n")
+    print(" The codebreaker (player) needs to guess the secret code in a given number of attempts.\n")
+    print(" The number of attempts will depend on which level is choosen.\n")
+    print(" After each attempt, feedback is given as to how many colours are correct and how many are in the correct position.\n")
+    print(" If the player guesses the secret code before running out of attempts, this is the end of the game.")
+    print(" The player then has the choice to play again or return to the main page.\n")
+    print(" If the player runs out of attemts before guessing the correct secret code, this is the end of the game.")
+    print(" The player then has the choice to play again or return to the main page.\n")
+    print(" Your choice of colors is: \033[31;1m Red \033[34;1m Blue \033[32;1m Green \033[33;1m Yellow \033[37;1m White \033[1;35:47m Pink \n" )
+    print("\033[37;1m Find the code in 12, 10 or 8 attempts, depending on level, to become a Boss Brain!\n") 
+    print(" Choose 4 colors, leaving a space between each color.\n")
+    print("Choose '1' to play")
+    print("choose '2' to return to main page")
+
+    while True:
+        try:
+            menu_choice = int(input(" Press choice: \n"))
+            if menu_choice == 1:
+                play_game()
+                break
+            elif menu_choice == 2:
+                main_page()
+                break            
+            else:
+                raise ValueError
+
+        except ValueError:
+            print(" Invalid key press. Please choose 1, or 2")
 
 
 # generate random code
