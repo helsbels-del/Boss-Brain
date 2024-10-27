@@ -28,7 +28,7 @@ def main_page():
         try:
             menu_choice = int(input(" Press choice: \n"))
             if menu_choice == 1:
-                play_game()
+                choose_level()
                 break
             elif menu_choice == 2:
                 instructions()
@@ -88,6 +88,38 @@ def generate_random_code():
     
     return(code)
 
+# choose level
+
+def choose_level():
+    """
+    Choose level function
+    """
+    clear_screen()
+    print("What's your Level?\n")
+    print ("Level 1 will give you 12 attempts")
+    print ("Level 2 will give you 10 attempts")
+    print ("Level 3 will give you 8 attempts\n")
+
+    while True:
+        try:
+            menu_choice = int(input(" Choose level (press '1', '2' or '3'): \n"))
+            if menu_choice == 1:
+                play_game()
+                break
+            elif menu_choice == 2:
+                play_game()
+                break 
+            elif menu_choice == 3:
+                play_game()
+                break                   
+            else:
+                raise ValueError
+
+        except ValueError:
+            print(" Invalid key press. Please choose 1, or 2")
+    print ("Please choose your level: \n")
+
+
 # main game play
 def play_game():
     """
@@ -95,12 +127,7 @@ def play_game():
     """
     clear_screen()
     print("Welcome to the Boss Brain challenge.\n")
-    print("Decipher the color code to become a Boss Brain!\n")
-    print("What's your Level?\n")
-    print ("Level 1 will give you 12 attempts")
-    print ("Level 2 will give you 10 attempts")
-    print ("Level 3 will give you 8 attempts\n")
-    print ("Please choose your level: ")
+    print("Decipher the color code to become a Boss Brain!\n")   
     print(f"Choose from the following colors: {', '.join(colors)}\n")
     print(f"Code Length: {code_length}, Max Attempts: {max_attempts_level2}\n")
 
