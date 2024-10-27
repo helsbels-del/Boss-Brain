@@ -249,6 +249,8 @@ def blink_text(text):
         sys.stdout.write('\r' + ' ' * len(text) + '\r')
         sys.stdout.flush()
         time.sleep(0.5)
+        
+        break
 
 main_page()
 
