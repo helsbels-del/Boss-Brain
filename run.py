@@ -8,7 +8,9 @@ import time
 # Constant variables - colors available to choose from, code length and how many attempts
 colors = ["Red", "Blue", "Green", "Yellow", "Black", "Orange"]
 code_length = 4
-max_attempts = 10
+max_attempts_level1 = 8
+max_attempts_level2 = 10
+max_attempts_level3 = 12
 
 #Title page
 def main_page():
@@ -17,11 +19,7 @@ def main_page():
     """
     clear_screen()
     print("This is the Boss Brain Challenge!\n")
-    print("Can you decipher the secrect code?\n")
-    print("What's your Level?\n")
-    print ("Level 1 will give you 12 attempts")
-    print ("Level 2 will give you 10 attempts")
-    print ("Level 3 will give you 8 attempts\n")
+    print("Can you decipher the secrect code?\n")    
     print("Choose '1' to Play")
     print("Choose '2' for Instructions")
     print("Choose '3' to Exit")
@@ -74,15 +72,20 @@ def play_game():
     clear_screen()
     print("Welcome to the Boss Brain challenge.\n")
     print("Decipher the color code to become a Boss Brain!\n")
+    print("What's your Level?\n")
+    print ("Level 1 will give you 12 attempts")
+    print ("Level 2 will give you 10 attempts")
+    print ("Level 3 will give you 8 attempts\n")
+    print ("Please choose your level: ")
     print(f"Choose from the following colors: {', '.join(colors)}\n")
-    print(f"Code Length: {code_length}, Max Attempts: {max_attempts}\n")
+    print(f"Code Length: {code_length}, Max Attempts: {max_attempts_level2}\n")
 
 # while loop to itereate over game until max attempts made
     attempts = 0
     code = generate_random_code()
     print(code)
-    while attempts < max_attempts:
-        answer = input(f"Attempt {attempts + 1}/{max_attempts}. Enter your answer: ").strip().split()
+    while attempts < max_attempts_level2:
+        answer = input(f"Attempt {attempts + 1}/{max_attempts_level2}. Enter your answer: ").strip().split()
         if len(answer) != code_length or not all(color in colors for color in answer):
             print("Incorrect Answer! Try again!")
             continue
