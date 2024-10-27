@@ -8,9 +8,9 @@ import time
 # Constant variables - colors available to choose from, code length and how many attempts
 colors = ["Red", "Blue", "Green", "Yellow", "Black", "Orange"]
 code_length = 4
-max_attempts_level1 = 8
+max_attempts_level1 = 12
 max_attempts_level2 = 10
-max_attempts_level3 = 12
+max_attempts_level3 = 8
 
 #Title page
 def main_page():
@@ -104,13 +104,13 @@ def choose_level():
         try:
             menu_choice = int(input(" Choose level (press '1', '2' or '3'): \n"))
             if menu_choice == 1:
-                play_game()
+                play_game_level1()
                 break
             elif menu_choice == 2:
-                play_game()
+                play_game_level2()
                 break 
             elif menu_choice == 3:
-                play_game()
+                play_game_level3()
                 break                   
             else:
                 raise ValueError
@@ -121,7 +121,44 @@ def choose_level():
 
 
 # main game play
-def play_game():
+def play_game_level1():
+    """
+    Play game function
+    """
+    clear_screen()
+    print("Welcome to the Boss Brain challenge.\n")
+    print("Decipher the color code to become a Boss Brain!\n")   
+    print(f"Choose from the following colors: {', '.join(colors)}\n")
+    print(f"Code Length: {code_length}, Max Attempts: {max_attempts_level1}\n")
+
+# while loop to itereate over game until max attempts made
+    attempts = 0
+    code = generate_random_code()
+    print(code)
+    while attempts < max_attempts_level1:
+        answer = input(f"Attempt {attempts + 1}/{max_attempts_level1}. Enter your answer: ").strip().split()
+        if len(answer) != code_length or not all(color in colors for color in answer):
+            print("Incorrect Answer! Try again!")
+            continue
+
+        correct_position = sum(a == c for a, c in zip(answer, code))
+        correct_color = sum(min(answer.count(c), code.count(c)) for c in set(code))
+        correct_color -= correct_position
+
+        print(f"{correct_position} colors in the correct place!")
+        print(f"{correct_color} correct colors but in the wrong place!")
+
+        if correct_position == code_length:
+            blink_text("\033[1;32:40m Congratulations! You cracked the code.")
+            print("\033[1;31:40m You have a Boss Brain!!!!")
+            print(f"The correct code is: {generate_random_code(code)}")
+            exit()
+
+        attempts += 1
+
+    print("You ran out of attempts!")
+
+def play_game_level2():
     """
     Play game function
     """
@@ -137,6 +174,43 @@ def play_game():
     print(code)
     while attempts < max_attempts_level2:
         answer = input(f"Attempt {attempts + 1}/{max_attempts_level2}. Enter your answer: ").strip().split()
+        if len(answer) != code_length or not all(color in colors for color in answer):
+            print("Incorrect Answer! Try again!")
+            continue
+
+        correct_position = sum(a == c for a, c in zip(answer, code))
+        correct_color = sum(min(answer.count(c), code.count(c)) for c in set(code))
+        correct_color -= correct_position
+
+        print(f"{correct_position} colors in the correct place!")
+        print(f"{correct_color} correct colors but in the wrong place!")
+
+        if correct_position == code_length:
+            blink_text("\033[1;32:40m Congratulations! You cracked the code.")
+            print("\033[1;31:40m You have a Boss Brain!!!!")
+            print(f"The correct code is: {generate_random_code(code)}")
+            exit()
+
+        attempts += 1
+
+    print("You ran out of attempts!")
+
+def play_game_level3():
+    """
+    Play game function
+    """
+    clear_screen()
+    print("Welcome to the Boss Brain challenge.\n")
+    print("Decipher the color code to become a Boss Brain!\n")   
+    print(f"Choose from the following colors: {', '.join(colors)}\n")
+    print(f"Code Length: {code_length}, Max Attempts: {max_attempts_level3}\n")
+
+# while loop to itereate over game until max attempts made
+    attempts = 0
+    code = generate_random_code()
+    print(code)
+    while attempts < max_attempts_level3:
+        answer = input(f"Attempt {attempts + 1}/{max_attempts_level3}. Enter your answer: ").strip().split()
         if len(answer) != code_length or not all(color in colors for color in answer):
             print("Incorrect Answer! Try again!")
             continue
