@@ -19,7 +19,7 @@ def main_page():
     """
     clear_screen()
     print("This is the Boss Brain Challenge!\n")
-    print("Can you decipher the secrect code?\n")    
+    print("Can you crack the secrect code?\n")    
     print("Choose '1' to Play")
     print("Choose '2' for Instructions")
     print("Choose '3' to Exit\n")
@@ -127,7 +127,7 @@ def play_game_level1():
     """
     clear_screen()
     print("\033[37;1m Welcome to the Boss Brain challenge.\n")
-    print(" Decipher the color code to become a Boss Brain!\n")   
+    print(" Crack the color code to become a Boss Brain!\n")   
     print(" Choose from the following colors: \033[31;1m Red(R) \033[34;1m Blue(B) \033[32;1m Green(G) \033[33;1m Yellow(Y) \033[37;1m White(W) \033[1;35:47m Pink(P) \n")
     print(f"\033[37;1m Code Length: {code_length}, Max Attempts: {max_attempts_level1}\n")
 
@@ -182,7 +182,7 @@ def play_game_level2():
     """
     clear_screen()
     print("\033[37;1m Welcome to the Boss Brain challenge.\n")
-    print(" Decipher the color code to become a Boss Brain!\n")   
+    print(" Crack the color code to become a Boss Brain!\n")   
     print(" Choose from the following colors: \033[31;1m Red(R) \033[34;1m Blue(B) \033[32;1m Green(G) \033[33;1m Yellow(Y) \033[37;1m White(W) \033[1;35:47m Pink(P) \n")
     print(f"\033[37;1m Code Length: {code_length}, Max Attempts: {max_attempts_level2}\n")
 
@@ -237,7 +237,7 @@ def play_game_level3():
     """
     clear_screen()
     print("\033[37;1m Welcome to the Boss Brain challenge.\n")
-    print(" Decipher the color code to become a Boss Brain!\n")   
+    print(" Crack the color code to become a Boss Brain!\n")   
     print(" Choose from the following colors: \033[31;1m Red(R) \033[34;1m Blue(B) \033[32;1m Green(G) \033[33;1m Yellow(Y) \033[37;1m White(W) \033[1;35:47m Pink(P) \n")
     print(f"\033[37;1m Code Length: {code_length}, Max Attempts: {max_attempts_level3}\n")
 
