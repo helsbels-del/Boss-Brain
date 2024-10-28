@@ -62,24 +62,29 @@ def instructions():
     print(" Choose 4 colors, leaving a space between each color.\n")
     print("\n" * 3)
     print("\033[33;1m Choose \033[37;1m '1' \033[33;1m to play")
-    print(" Choose \033[37;1m '2' \033[33;1m to return to main page\n")
-
+    print(" Choose \033[37;1m '2' \033[33;1m to return to main page")
+    print(" Choose \033[37;1m '3' \033[33;1m to Exit\n")
     while True:
-        try:
-            menu_choice = int(input("\033[37;1m Press choice: \n"))
-            if menu_choice == 1:
-                choose_level()
-                break
-            elif menu_choice == 2:
-                main_page()
-                break            
-            else:
-                raise ValueError
+                try:
+                    menu_choice = int(input("\033[37;1m Enter choice: \n"))
+                    if menu_choice == 1:
+                        choose_level()
+                        break
+                    elif menu_choice == 2:
+                        main_page()
+                        break
+                    elif menu_choice == 3:
+                        print(f"Exiting game....Game ended")
+                        break
+                    else:
+                        raise ValueError
 
-        except ValueError:
-            print(" Invalid key press. Please choose 1, or 2")
+                except ValueError:
+                    print(" Invalid key press. Please choose 1, 2 or 3")
+                    break
 
-
+    exit()
+           
 # generate random code
 def generate_random_code():
     """
@@ -128,7 +133,7 @@ def choose_level():
         except ValueError:
             print(" Invalid key press. Please choose 1, or 2")
     exit()
-    
+
     print ("Please choose your level: \n")
     
 
