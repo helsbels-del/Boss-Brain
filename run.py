@@ -217,8 +217,8 @@ def play_game_level2():
         correct_color = sum(min(answer.count(c), code.count(c)) for c in set(code))
         correct_color -= correct_position
 
-        print(f"{correct_position} colors in the correct place!")
-        print(f"{correct_color} correct colors but in the wrong place!\n")
+        print(f"\033[32;1m{correct_position} \033[37;1m colors in the correct place!")
+        print(f"\033[33;1m{correct_color} \033[37;1m correct colors but in the wrong place!\n")
 
         if correct_position == code_length:
             blink_text("\033[1;32:40m Congratulations!\n")
@@ -289,8 +289,8 @@ def play_game_level3():
         correct_color = sum(min(answer.count(c), code.count(c)) for c in set(code))
         correct_color -= correct_position
 
-        print(f"{correct_position} colors in the correct place!")
-        print(f"{correct_color} correct colors but in the wrong place!\n")
+        print(f"\033[32;1m{correct_position} \033[37;1m colors in the correct place!")
+        print(f"\033[33;1m{correct_color} \033[37;1m correct colors but in the wrong place!\n")
 
         if correct_position == code_length:
             blink_text("\033[1;32:40m Congratulations!\n")
