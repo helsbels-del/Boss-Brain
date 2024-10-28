@@ -113,8 +113,7 @@ def choose_level():
     print("  Level 2 will give you 10 attempts")
     print("  Level 3 will give you 8 attempts\n")
     print("\033[0;92m **** Good luck codebreaker, fear is the path to the darkside. ****\n")
-    print("\033[0;96m \x1B[3m(Choose \033[0;37m '4' \033[0;96m \x1B[3mto return to main page)")
-    print(" \x1B[3m(Choose \033[0;37m '5' \033[0;96m \x1B[3mto Exit)\x1B[0m\n")   
+    
 
     while True:
         try:
@@ -128,7 +127,11 @@ def choose_level():
             elif menu_choice == 3:
                 play_game_level3()
                 break
-            elif menu_choice == 4:
+            print("\033[0;33m \x1B[3m(Choose \033[0;37m '4' \033[0;33m \x1B[3mto return to main page)")
+            print(" \x1B[3m(Choose \033[0;37m '5' \033[0;33m \x1B[3mto Exit)\x1B[0m\n") 
+        
+            menu_choice = int(input("\033[37;1m Enter choice: \n"))
+            if menu_choice == 4:
                 main_page()
                 break
             elif menu_choice == 5:
