@@ -61,7 +61,7 @@ add screenshot
 
 ## **Play Game**
 
-Option 1 from the main page or the instructions page takes the player to choose of levels. There are 3 levels to choose from. There are 3 different levels. Each level has a different amount of attempts at guessing the secret code. 
+Option 1 from the main page or the instructions page takes the player to choose of levels. There are 3 levels to choose from. There are 3 different levels. Each level has a different amount of attempts at guessing the secret code. Here the play_game function is basically repeated 3 times and each version has a level number to distinguish it and the max_attempts is a different value in each version. When the player makes their choice of level, they are taken to the correct version. This is because the choose_level function uses a While True loop when the selection is made.
 
 add screenshot
 
