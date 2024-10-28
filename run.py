@@ -100,6 +100,9 @@ def choose_level():
     print ("\033[0;37m  Level 1 will give you 12 attempts")
     print ("  Level 2 will give you 10 attempts")
     print ("  Level 3 will give you 8 attempts\n")
+    print("\n" * 2)
+    print("\033[0;96m Choose \033[0;37m '4' \033[0;96m to return to main page")
+    print(" Choose \033[0;37m '5' \033[0;96m to Exit\n")
 
     while True:
         try:
@@ -112,13 +115,22 @@ def choose_level():
                 break 
             elif menu_choice == 3:
                 play_game_level3()
-                break                   
+                break
+            elif menu_choice == 4:
+                        main_page()
+                        break 
+            elif menu_choice == 5:
+                print(f"Exiting game....Game ended")
+                break 
             else:
                 raise ValueError
 
         except ValueError:
             print(" Invalid key press. Please choose 1, or 2")
+    exit()
+    
     print ("Please choose your level: \n")
+    
 
 
 # main game play
