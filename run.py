@@ -18,15 +18,15 @@ def main_page():
     Main page with player options
     """
     clear_screen()
-    print("This is the Boss Brain Challenge!\n")
-    print("Can you crack the secrect code?\n")    
-    print("Choose '1' to Play")
-    print("Choose '2' for Instructions")
-    print("Choose '3' to Exit\n")
+    print("\033[0;96m This is the Boss Brain Challenge!\n")
+    print("\033[0;33m Can you crack the secrect code?\n")    
+    print("\033[0;96m] Choose \033[37;1m '1' \033[0;96m to Play")
+    print("  Choose \033[37;1m '2' \033[0;96m for Instructions")
+    print("  Choose \033[37;1m '3' \033[0;96m to Exit\n")
 
     while True:
         try:
-            menu_choice = int(input(" Press choice: \n"))
+            menu_choice = int(input("\033[37;1m Enter choice: \n"))
             if menu_choice == 1:
                 choose_level()
                 break
