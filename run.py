@@ -55,14 +55,18 @@ def instructions():
     print("\033[0;37m The codemaker (computer) creates a secret 4 colour code, choosing from 6 available colours.\n")
     print(" The codebreaker (player) needs to crack the secret code in a given number of attempts.\n")
     print(" The number of attempts will depend on which level is choosen.\n")
-    print(" After each attempt, feedback is given as to how many colours are correct and how many are in the correct position.\n")
+    print(" After each attempt, feedback is given as to how many colours are correct and how many colours are in the correct position.\n")
     print(" If the player cracks the secret code before running out of attempts, this is the end of the game.")
     print(" The player then has the choice to play again, return to the main page or exit the game completely.\n")
     print(" If the player runs out of attempts before cracking the correct secret code, this is the end of the game.")
     print(" The player then has the choice to play again, return to the main page or exit the game completely.\n")
-    print(" Your choice of colors are: \033[31;1m Red \033[34;1m Blue \033[32;1m Green \033[33;1m Yellow \033[37;1m White \033[1;35:47m Pink \n" )
-    print("\033[0;37m Find the code in 12, 10 or 8 attempts, depending on which level is choosen, to become a Boss Brain!\n") 
-    print(" Choose 4 colors by entering the first letter of your choosen colours. You can use lower or upper case letters, leaving a space between each letter.\n")
+    print(" If the player enters an incorrect letter or anything other than a letter, or if they don't leave a space between each letter,")
+    print(" a message will appear to tell the player that they have done something wrong and to check their answer.")
+    print(" This does not count as an attempt and the player will have the same remaining number of attempts as before they made the incorrect guess.\n")
+    print(" The players choice of colors is: \033[31;1m Red \033[34;1m Blue \033[32;1m Green \033[33;1m Yellow \033[37;1m White \033[1;35:47m Pink \n" )    
+    print("\033[0;37m Choose 4 colors by entering the first letter of your choosen colours. You can use lower or upper case letters, leaving a space between each letter.\n")
+    print("\033[0;37m Find the code in 12, 10 or 8 attempts, depending on which level is choosen, to become a Boss Brain!\n")
+    print("\033[0;92m **** Good luck codebreaker, the force will be with you always. ****\n") 
     print("\n" * 3)
     print("\033[33;1m Choose \033[37;1m '1' \033[33;1m to play")
     print(" Choose \033[37;1m '2' \033[33;1m to return to main page")
@@ -105,13 +109,14 @@ def choose_level():
     """
     clear_screen()
     print("\033[0;96m What's your Level?\n")
-    print ("\033[0;37m  Level 1 will give you 12 attempts")
-    print ("  Level 2 will give you 10 attempts")
-    print ("  Level 3 will give you 8 attempts\n")   
+    print("\033[0;37m  Level 1 will give you 12 attempts")
+    print("  Level 2 will give you 10 attempts")
+    print("  Level 3 will give you 8 attempts\n")
+    print("\033[0;92m **** Good luck codebreaker, fear is the path to the darkside. ****\n")   
 
     while True:
         try:
-            menu_choice = int(input("\033[0;92m Choose level (Enter '1', '2' or '3'): \n"))
+            menu_choice = int(input("\033[33;1m Choose level (Enter '1', '2' or '3'): \n"))
             if menu_choice == 1:
                 play_game_level1()
                 break
