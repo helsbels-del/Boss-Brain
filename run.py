@@ -286,14 +286,13 @@ def play_game_level3():
         except ValueError:
             print(" Invalid key press. Please choose 1, or 2")
 # clear screen function
+
 def clear_screen():
     """
     Clears the terminal screen/window
     """
-    if os.name == "posix":
-        os.system("clear")
-    else:
-        os.system("cls")
+    print("\n" * 50)
+    print("\033c")
 
 def blink_text(text):
     while True:
