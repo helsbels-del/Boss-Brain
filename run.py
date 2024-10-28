@@ -19,10 +19,13 @@ def main_page():
     """
     clear_screen()
     print("\033[0;96m This is the Boss Brain Challenge!\n")
-    print("\033[0;33m Can you crack the secrect code?\n")    
-    print("\033[0;96m  Choose \033[37;1m '1' \033[0;96m to Play")
-    print("  Choose \033[37;1m '2' \033[0;96m for Instructions")
-    print("  Choose \033[37;1m '3' \033[0;96m to Exit\n")
+    print("\033[47;0m Can you crack the secrect code?\n")
+    print("\x1B[3m With a code length of 4 and 6 available colours...")
+    print("...there are only 1,296 different combinations!\x1B[0m\n")
+    print("\033[0;92m **** Good luck codebreaker and may the force be with you! ****\n")    
+    print("\033[0;33m  Choose \033[37;1m '1' \033[0;33m to Play")
+    print("  Choose \033[37;1m '2' \033[0;33m for Instructions")
+    print("  Choose \033[37;1m '3' \033[0;33m to Exit\n")
 
     while True:
         try:
@@ -104,10 +107,7 @@ def choose_level():
     print("\033[0;96m What's your Level?\n")
     print ("\033[0;37m  Level 1 will give you 12 attempts")
     print ("  Level 2 will give you 10 attempts")
-    print ("  Level 3 will give you 8 attempts\n")
-    print("\n" * 2)
-    print("\033[0;96m \x1B[3m(Choose \033[0;37m '4' \033[0;96m \x1B[3mto return to main page)")
-    print(" \x1B[3m(Choose \033[0;37m '5' \033[0;96m \x1B[3mto Exit)\x1B[0m\n")
+    print ("  Level 3 will give you 8 attempts\n")   
 
     while True:
         try:
@@ -121,17 +121,29 @@ def choose_level():
             elif menu_choice == 3:
                 play_game_level3()
                 break
-            elif menu_choice == 4:
-                        main_page()
-                        break 
-            elif menu_choice == 5:
-                print(f"Exiting game....Game ended")
-                break 
             else:
                 raise ValueError
 
         except ValueError:
             print(" Invalid key press. Please choose 1, or 2")
+    exit()
+    
+    print("\033[0;96m \x1B[3m(Choose \033[0;37m '4' \033[0;96m \x1B[3mto return to main page)")
+    print(" \x1B[3m(Choose \033[0;37m '5' \033[0;96m \x1B[3mto Exit)\x1B[0m\n")
+    while True:
+            try:
+                    menu_choice = int(input("\033[0;33m Enter Choice: \n"))
+                    if menu_choice == 4:
+                        main_page()
+                        break
+                    elif menu_choice == 5:
+                        print(f"Exiting game....Game ended")
+                        break 
+                    else:
+                        raise ValueError
+
+            except ValueError:
+                print(" Invalid key press. Please choose 1, or 2")
     exit()
 
     print ("Please choose your level: \n")
