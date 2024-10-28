@@ -61,11 +61,13 @@ add screenshot
 
 ## **Play Game**
 
-Option 1 from the main page or the instructions page takes the player to choose of levels. There are 3 levels to choose from. There are 3 different levels. Each level has a different amount of attempts at guessing the secret code. Here the play_game function is basically repeated 3 times and each version has a level number to distinguish it and the max_attempts is a different value in each version. When the player makes their choice of level, they are taken to the correct version. This is because the choose_level function uses a While True loop when the selection is made.
+Option 1 from the main page or the instructions page takes the player to choose of levels. There are 3 levels to choose from. There are 3 different levels. Each level has a different amount of attempts at guessing the secret code. Here the play_game function is basically repeated 3 times and each version has a level number to distinguish it and the max_attempts is a different value in each version.
 
 add screenshot
 
 ### **Level options**
+
+When the player makes their choice of level, they are taken to the correct version. This is because the choose_level function uses a While True loop when the selection is made.
 
 Add screeshot
 
@@ -76,13 +78,13 @@ To generate the secret code, I have imported the random library. I have created 
 
 add screenshot
 
-
-
-
-
 ## **Input Error Handling**
 
 ## **How guess is compared to code**
+
+### **Clear Screen Function**
+
+The clear_screen function is used at the start of each section so that the screen is cleared before the choosed section is run.
 
 ## **Credits**
 
