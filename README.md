@@ -32,6 +32,10 @@ Random
 
 OS
 
+Sys
+
+Time
+
 ## **Current Features**
 
 ### **Main Page**
