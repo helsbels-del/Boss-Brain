@@ -20,7 +20,7 @@ def main_page():
     clear_screen()
     print("\033[0;96m This is the Boss Brain Challenge!\n")
     print("\033[0;33m Can you crack the secrect code?\n")    
-    print("\033[0;96m] Choose \033[37;1m '1' \033[0;96m to Play")
+    print("\033[0;96m Choose \033[37;1m '1' \033[0;96m to Play")
     print("  Choose \033[37;1m '2' \033[0;96m for Instructions")
     print("  Choose \033[37;1m '3' \033[0;96m to Exit\n")
 
@@ -48,8 +48,8 @@ def instructions():
     """
     clear_screen()
                 
-    print("\033[37;1m INSTRUCTIONS FOR PLAY\n")
-    print(" The codemaker (computer) creates a secret 4 colour code, choosing from 6 available colours.\n")
+    print("\033[0;96m INSTRUCTIONS FOR PLAY\n")
+    print("\033[0;37m The codemaker (computer) creates a secret 4 colour code, choosing from 6 available colours.\n")
     print(" The codebreaker (player) needs to guess the secret code in a given number of attempts.\n")
     print(" The number of attempts will depend on which level is choosen.\n")
     print(" After each attempt, feedback is given as to how many colours are correct and how many are in the correct position.\n")
@@ -58,14 +58,14 @@ def instructions():
     print(" If the player runs out of attemts before guessing the correct secret code, this is the end of the game.")
     print(" The player then has the choice to play again or return to the main page.\n")
     print(" Your choice of colors are: \033[31;1m Red \033[34;1m Blue \033[32;1m Green \033[33;1m Yellow \033[37;1m White \033[1;35:47m Pink \n" )
-    print("\033[37;1m Find the code in 12, 10 or 8 attempts, depending on which level is choosen, to become a Boss Brain!\n") 
+    print("\033[0;37m Find the code in 12, 10 or 8 attempts, depending on which level is choosen, to become a Boss Brain!\n") 
     print(" Choose 4 colors, leaving a space between each color.\n")
-    print("Choose '1' to play")
-    print("choose '2' to return to main page")
+    print("\033[33;1m Choose \033[37;1m '1' \033[33;1m to play")
+    print(" Choose \033[37;1m '2' \033[33;1m to return to main page\n")
 
     while True:
         try:
-            menu_choice = int(input(" Press choice: \n"))
+            menu_choice = int(input("\033[37;1m Press choice: \n"))
             if menu_choice == 1:
                 choose_level()
                 break
