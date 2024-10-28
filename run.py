@@ -106,8 +106,8 @@ def choose_level():
     print ("  Level 2 will give you 10 attempts")
     print ("  Level 3 will give you 8 attempts\n")
     print("\n" * 2)
-    print("\033[0;96m Choose \033[0;37m '4' \033[0;96m to return to main page")
-    print(" Choose \033[0;37m '5' \033[0;96m to Exit\n")
+    print("\033[0;96m \x1B[3m(Choose \033[0;37m '4' \033[0;96m \x1B[3mto return to main page)")
+    print(" \x1B[3m(Choose \033[0;37m '5' \033[0;96m \x1B[3mto Exit)\x1B[0m\n")
 
     while True:
         try:
