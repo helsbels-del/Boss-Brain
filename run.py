@@ -20,7 +20,7 @@ def main_page():
     clear_screen()
     print("\033[0;96m This is the Boss Brain Challenge!\n")
     print("\033[0;33m Can you crack the secrect code?\n")    
-    print("\033[0;96m Choose \033[37;1m '1' \033[0;96m to Play")
+    print("\033[0;96m  Choose \033[37;1m '1' \033[0;96m to Play")
     print("  Choose \033[37;1m '2' \033[0;96m for Instructions")
     print("  Choose \033[37;1m '3' \033[0;96m to Exit\n")
 
