@@ -107,4 +107,5 @@ Initially the player had to write the name of each of the colours out. I was was
 
 One of the messages that comes up at the end of the game is 'You have a Boss Brain!'. This message is slightly different in each of the levels. In level 1 there is 1 exclamation mark to end the message. In level 2, there are 2 exclamation marks and in level 3 there are 3 exclamation marks. This marks a greater level of achievement for the hogher levels.
 
+For the clear_screen function, the code I initially used only works on windows using the imported os library. I then changed this to a method where effectively, a number of blank lines are inserted to give the illusion of a new page at the stat of each section. This works well across all platforms.
 
