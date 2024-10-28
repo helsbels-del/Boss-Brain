@@ -136,7 +136,7 @@ def play_game_level1():
     code = generate_random_code()
     print(code)
     while attempts < max_attempts_level1:
-        answer = input(f"Attempt {attempts + 1}/{max_attempts_level1}. Enter your answer(first letter of colours): ").upper().strip().split()
+        answer = input(f"Attempt {attempts + 1}/{max_attempts_level1}. Enter your answer(first letter of colours): \n").upper().strip().split()
         if len(answer) != code_length or not all(color in colors for color in answer):
             print("You've done something wrong! Check your answers and try again!")
             continue
@@ -145,8 +145,8 @@ def play_game_level1():
         correct_color = sum(min(answer.count(c), code.count(c)) for c in set(code))
         correct_color -= correct_position
 
-        print(f"{correct_position} colors in the correct place!")
-        print(f"{correct_color} correct colors but in the wrong place!\n")
+        print(f"\033[32;1m{correct_position} \033[37;1m colors in the correct place!")
+        print(f"\033[33;1m{correct_color} \033[37;1m correct colors but in the wrong place!\n")
 
         if correct_position == code_length:
             blink_text("\033[1;32:40m Congratulations!\n")
