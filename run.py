@@ -118,6 +118,8 @@ def choose_level():
     while True:
         try:
             menu_choice = int(input("\033[33;1m Choose level (Enter '1', '2' or '3'): \n"))
+            print("(Or \033[0;33m \x1B[3m(Choose \033[0;37m '4' \033[0;33m \x1B[3mto return to main page)")
+            print("(Or \x1B[3m(Choose \033[0;37m '5' \033[0;33m \x1B[3mto Exit)\x1B[0m\n)")
             if menu_choice == 1:
                 play_game_level1()
                 break
@@ -126,13 +128,8 @@ def choose_level():
                 break 
             elif menu_choice == 3:
                 play_game_level3()
-                break
-            
-            print("\033[0;33m \x1B[3m(Choose \033[0;37m '4' \033[0;33m \x1B[3mto return to main page)")
-            print(" \x1B[3m(Choose \033[0;37m '5' \033[0;33m \x1B[3mto Exit)\x1B[0m\n") 
-        
-            menu_choice = int(input("\033[37;1m Enter choice: \n"))
-            if menu_choice == 4:
+                break                      
+            elif menu_choice == 4:
                 main_page()
                 break
             elif menu_choice == 5:
