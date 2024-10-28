@@ -60,6 +60,7 @@ def instructions():
     print(" Your choice of colors are: \033[31;1m Red \033[34;1m Blue \033[32;1m Green \033[33;1m Yellow \033[37;1m White \033[1;35:47m Pink \n" )
     print("\033[0;37m Find the code in 12, 10 or 8 attempts, depending on which level is choosen, to become a Boss Brain!\n") 
     print(" Choose 4 colors, leaving a space between each color.\n")
+    print("\n" * 3)
     print("\033[33;1m Choose \033[37;1m '1' \033[33;1m to play")
     print(" Choose \033[37;1m '2' \033[33;1m to return to main page\n")
 
@@ -130,7 +131,7 @@ def play_game_level1():
     print(" Crack the color code to become a Boss Brain!\n")   
     print(" Choose from the following colors: \033[31;1m Red(R) \033[34;1m Blue(B) \033[32;1m Green(G) \033[33;1m Yellow(Y) \033[37;1m White(W) \033[1;35:47m Pink(P) \n")
     print(f"\033[37;1m Code Length: {code_length}, Max Attempts: {max_attempts_level1}\n")
-
+    
 # while loop to itereate over game until max attempts made
     attempts = 0
     code = generate_random_code()
@@ -151,25 +152,29 @@ def play_game_level1():
         if correct_position == code_length:
             blink_text("\033[1;32:40m Congratulations!\n")
             blink_text("\033[31;1m You have a Boss Brain!!!\n")
-            blink_text(f"\033[33;1m You cracked the secret code: {code}\n")
-            
-            print("Choose '1' to play again")
-            print("choose '2' to return to main page")
-
+            blink_text(f"\033[33;1m You cracked the secret code: {code}\n")  
+            print("\n" * 3)          
+            print("\033[0;96m  Choose \033[37;1m '1' \033[0;96m to play again")
+            print("  Choose \033[37;1m '2' \033[0;96m to return to main page")
+            print("  Choose \033[37;1m '3' \033[0;96m to Exit\n")
             while True:
                 try:
-                    menu_choice = int(input(" Press choice: \n"))
+                    menu_choice = int(input("\033[37;1m Enter choice: \n"))
                     if menu_choice == 1:
                         choose_level()
                         break
                     elif menu_choice == 2:
                         main_page()
-                        break            
+                        break
+                    elif menu_choice == 3:
+                        print(f"Exiting game....Game ended")
+                        break
                     else:
                         raise ValueError
 
                 except ValueError:
-                    print(" Invalid key press. Please choose 1, or 2")
+                    print(" Invalid key press. Please choose 1, 2 or 3")
+                    break
 
             exit()
 
@@ -226,24 +231,29 @@ def play_game_level2():
             blink_text("\033[1;32:40m Congratulations!\n")
             blink_text("\033[31;1m You have a Boss Brain!!!\n")
             blink_text(f"\033[33;1m You cracked the secret code: {code}\n")
-            
-            print("Choose '1' to play")
-            print("choose '2' to return to main page")
+            print("\n" * 3)
+            print("\033[0;96m  Choose \033[37;1m '1' \033[0;96m to play again")
+            print("  Choose \033[37;1m '2' \033[0;96m to return to main page")
+            print("  Choose \033[37;1m '3' \033[0;96m to Exit\n")
 
             while True:
                 try:
-                    menu_choice = int(input(" Press choice: \n"))
+                    menu_choice = int(input("\033[37;1m Enter choice: \n"))
                     if menu_choice == 1:
                         choose_level()
                         break
                     elif menu_choice == 2:
                         main_page()
-                        break            
+                        break
+                    elif menu_choice == 3:
+                        print(f"Exiting game....Game ended")
+                        break
                     else:
                         raise ValueError
 
                 except ValueError:
-                    print(" Invalid key press. Please choose 1, or 2")
+                    print(" Invalid key press. Please choose 1, 2 or 3")
+                    break
 
             exit()
 
@@ -300,31 +310,37 @@ def play_game_level3():
             blink_text("\033[1;32:40m Congratulations!\n")
             blink_text("\033[31;1m You have a Boss Brain!!!\n")
             blink_text(f"\033[33;1m You cracked the secret code: {code}\n")
-            
-            print("Choose '1' to play")
-            print("choose '2' to return to main page")
+            print("\n" * 3)
+            print("\033[0;96m  Choose \033[37;1m '1' \033[0;96m to play again")
+            print("  Choose \033[37;1m '2' \033[0;96m to return to main page")
+            print("  Choose \033[37;1m '3' \033[0;96m to Exit\n")
 
             while True:
                 try:
-                    menu_choice = int(input(" Press choice: \n"))
+                    menu_choice = int(input("\033[37;1m Enter choice: \n"))
                     if menu_choice == 1:
                         choose_level()
                         break
                     elif menu_choice == 2:
                         main_page()
-                        break            
+                        break
+                    elif menu_choice == 3:
+                        print(f"Exiting game....Game ended")
+                        break
                     else:
                         raise ValueError
 
                 except ValueError:
-                    print(" Invalid key press. Please choose 1, or 2")
+                    print(" Invalid key press. Please choose 1, 2 or 3")
+                    break
 
-            exit()    
+            exit()
 
         attempts += 1
 
     print("You ran out of attempts!\n")
     print(f"\033[33;1m The correct code is: {code}\n")
+    print("\n" * 3)
     print("Choose '1' to play again")
     print("choose '2' to return to main page")
 
