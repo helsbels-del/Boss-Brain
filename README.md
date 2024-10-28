@@ -92,6 +92,11 @@ I used this website for the blink_text function code.
 
 https://handhikayp.medium.com/generate-a-blinking-text-with-very-simple-python-4c10750978f5#:~:text=The%20blink_text%20function%20continuously%20prints,state%2C%20creating%20the%20blink%20effect
 
+I used this website for the idea to turn some of my test into italics.
+This was used on the levels choice page as there are already 3 options to choose which level to play. I have realised through testing the game continuously that there is a need to have the option to return to the main page or to exit the game on every section. This has been invaluable while I have been doing the testing. I may remove on the instrctions page and levels page later on as I think maybe not necessary once the testing has been finished. This means the player would always have to return to the main page before being able to exit the game completely. I think that is reasonable?
+
+
+
 ## **Bugs Fixed**
 
 When I first added the blink_text function to get the Congratulations! message to flash, it was flashing continuously though this seemed to stop the rest of the code from runnint. It was stuck in an infinate while loop. I then put a break in the while loop. This made the Congratulations! message flash up, however then it dissappeared and then the next line was printed. If I put the print text function ton the 3 messages that come up after the game has been won, they flash up one by one. I like this affect though this wasn't what I wanted initially. I was hoping for the congratulations message to be flashing continously with the to messages below printed. 
@@ -100,6 +105,8 @@ When I first added the blink_text function to get the Congratulations! message t
 When I was trying to add the secret code at the end of the game to confirm the code if you win or let you know the code if you loose, I couldn't get this to work but then realised I was using {generat_random_code_} instead of {code}.
 
 I wanted the names of the colours written on the game play screens to be coloured. As they were being picked up from the color constant list, I couldn't see how to change the colour of the text. I tried by adding the ANSI codes to the color list items, however this did not work. I then decided to use the same coding that I had used to change the color of the text for the colours on the instructions part. This has worked well.
+
+During the tesing stages I realised that after the player guesses the code correctly, within the given amount of attempts, after then choosing option 2 to return to the main page, if you then choose option 3 to eixt the game you get the exit message but then also the next line prints out "Attempt 2/12....". I had removed the exit function when I had added the options to retunr to the main page. Once the exit function was added back into the code this all worked smoothly again
 
 ## **Improvements as going along**
 
