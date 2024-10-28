@@ -95,14 +95,14 @@ def choose_level():
     Choose level function
     """
     clear_screen()
-    print("What's your Level?\n")
-    print ("Level 1 will give you 12 attempts")
-    print ("Level 2 will give you 10 attempts")
-    print ("Level 3 will give you 8 attempts\n")
+    print("\033[0;96m What's your Level?\n")
+    print ("\033[0;37m  Level 1 will give you 12 attempts")
+    print ("  Level 2 will give you 10 attempts")
+    print ("  Level 3 will give you 8 attempts\n")
 
     while True:
         try:
-            menu_choice = int(input(" Choose level (press '1', '2' or '3'): \n"))
+            menu_choice = int(input("\033[0;33m Choose level (Enter '1', '2' or '3'): \n"))
             if menu_choice == 1:
                 play_game_level1()
                 break
