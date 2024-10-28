@@ -127,6 +127,7 @@ def choose_level():
             elif menu_choice == 3:
                 play_game_level3()
                 break
+            
             print("\033[0;33m \x1B[3m(Choose \033[0;37m '4' \033[0;33m \x1B[3mto return to main page)")
             print(" \x1B[3m(Choose \033[0;37m '5' \033[0;33m \x1B[3mto Exit)\x1B[0m\n") 
         
