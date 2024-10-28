@@ -111,7 +111,7 @@ def choose_level():
 
     while True:
         try:
-            menu_choice = int(input("\033[0;33m Choose level (Enter '1', '2' or '3'): \n"))
+            menu_choice = int(input("\033[0;92m Choose level (Enter '1', '2' or '3'): \n"))
             if menu_choice == 1:
                 play_game_level1()
                 break
