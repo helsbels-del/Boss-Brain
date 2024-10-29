@@ -114,13 +114,13 @@ def choose_level():
     print("  Level 2 will give you 10 attempts")
     print("  Level 3 will give you 8 attempts\n")
     print("\033[0;92m **** Good luck CodeBreaker, Fear is the path to the darkside ****\n")
-    
+    print("\033[0;33m \x1B[3m(Choose \033[0;37m '4' \033[0;33m \x1B[3mto return to main page)")
+    print(" \x1B[3m(Choose \033[0;37m '5' \033[0;33m \x1B[3mto Exit)\x1B[0m\n")
 
     while True:
         try:
-            menu_choice = int(input("\033[33;1m Choose level (Enter '1', '2' or '3'): \n"))
-            print("(Or \033[0;33m \x1B[3m(Choose \033[0;37m '4' \033[0;33m \x1B[3mto return to main page)")
-            print("(Or \x1B[3m(Choose \033[0;37m '5' \033[0;33m \x1B[3mto Exit)\x1B[0m\n)")
+            menu_choice = int(input("\033[37;1m Choose level (Enter '1', '2' or '3'): \n"))
+            
             if menu_choice == 1:
                 play_game_level1()
                 break
@@ -155,16 +155,16 @@ def play_game_level1():
     """
     clear_screen()
     print(" \033[4;96m WELCOME TO THE BOSS BRAIN CHALLENGE - Level 1 \033[0;96m\n")
-    print(" \033[37;0m Crack the color code to become a Boss Brain!\n")   
+    print(" \033[0;37m Crack the color code to become a Boss Brain!\n")   
     print("  Choose from the following colors: \033[31;1m Red(R) \033[34;1m Blue(B) \033[32;1m Green(G) \033[33;1m Yellow(Y) \033[37;1m White(W) \033[1;35:47m Pink(P) \n")
-    print(f" \033[37;0m Code Length: \033[33;1m{code_length}, \033[37;0m Max Attempts: \033[33;1m {max_attempts_level1}\n")
+    print(f" \033[0;37m Code Length: \033[33;1m{code_length}, \033[0;37m Max Attempts: \033[33;1m {max_attempts_level1}\n")
     
 # while loop to itereate over game until max attempts made
     attempts = 0
     code = generate_random_code()
     print(code)
     while attempts < max_attempts_level1:
-        answer = input(f"\033[37;0m Attempt {attempts + 1}/{max_attempts_level1}. Enter your guess(first letter of colours): \n").upper().strip().split()
+        answer = input(f"\033[0;37m Attempt {attempts + 1}/{max_attempts_level1}. Enter your guess(first letter of colours): \n").upper().strip().split()
         if len(answer) != code_length or not all(color in colors for color in answer):
             print("\033[31;1m You've done something wrong! \033[32;1m Check your guesses and try again!")
             continue
