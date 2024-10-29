@@ -26,6 +26,7 @@ def main_page():
     print("\033[0;33m  Choose \033[37;1m '1' \033[0;33m to Play")
     print("  Choose \033[37;1m '2' \033[0;33m for Instructions")
     print("  Choose \033[37;1m '3' \033[0;33m to Exit\n")
+    print(" Choose \033[37;1m '4' \033[0;33m for the Bonus Challenge\n")
 
     while True:
         try:
@@ -39,11 +40,14 @@ def main_page():
             elif menu_choice == 3:
                 print(f"Exiting game....Game ended")
                 break
+            elif meun_choice == 4:
+                play_bonus_game()
+                break
             else:
                 raise ValueError
 
         except ValueError:
-            print(" Invalid key press. Please choose 1, 2 or 3")
+            print(" Invalid key press. Please choose 1, 2, 3 or 4")
 # Instructions of play
 def instructions():
     """
@@ -84,11 +88,14 @@ def instructions():
                     elif menu_choice == 3:
                         print(f"Exiting game....Game ended")
                         break
+                    elif meun_choice == 4:
+                        play_bonus_game()
+                        break
                     else:
                         raise ValueError
 
                 except ValueError:
-                    print(" Invalid key press. Please choose 1, 2 or 3")
+                    print(" Invalid key press. Please choose 1, 2, 3 or 4")
                     break
 
     exit()
@@ -119,7 +126,7 @@ def choose_level():
 
     while True:
         try:
-            menu_choice = int(input("\033[37;1m Choose level (Enter '1', '2' or '3'): \n"))
+            menu_choice = int(input("\033[37;1m Choose level (Enter '1', '2', '3' or '4'): \n"))
             
             if menu_choice == 1:
                 play_game_level1()
@@ -136,6 +143,9 @@ def choose_level():
             elif menu_choice == 5:
                 print(f"Exiting game....Game ended")
                 break 
+            elif meun_choice == 6:
+                play_bonus_game()
+                break
             else:
                 raise ValueError
 
@@ -196,11 +206,14 @@ def play_game_level1():
                     elif menu_choice == 3:
                         print(f"Exiting game....Game ended")
                         break
+                    elif meun_choice == 4:
+                        play_bonus_game()
+                        break
                     else:
                         raise ValueError
 
                 except ValueError:
-                    print(" Invalid key press. Please choose 1, 2 or 3")
+                    print(" Invalid key press. Please choose 1, 2, 3 or 4")
                     break
 
             exit()
@@ -275,11 +288,14 @@ def play_game_level2():
                     elif menu_choice == 3:
                         print(f"Exiting game....Game ended")
                         break
+                    elif meun_choice == 4:
+                        play_bonus_game()
+                        break
                     else:
                         raise ValueError
 
                 except ValueError:
-                    print(" Invalid key press. Please choose 1, 2 or 3")
+                    print(" Invalid key press. Please choose 1, 2, 3 or 4")
                     break
 
             exit()
@@ -354,11 +370,14 @@ def play_game_level3():
                     elif menu_choice == 3:
                         print(f"Exiting game....Game ended")
                         break
+                    elif meun_choice == 4:
+                        play_bonus_game()
+                        break
                     else:
                         raise ValueError
 
                 except ValueError:
-                    print(" Invalid key press. Please choose 1, 2 or 3")
+                    print(" Invalid key press. Please choose 1, 2, 3 or 4")
                     break
 
             exit()
@@ -401,10 +420,11 @@ class CodeName:
 
 # Generate code word
 
-numbers = '0123456789'
-letters ='ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+def generate_code_word(self):
+    numbers = '0123456789'
+    letters ='ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
-return ''.join(random.choices(letters + numbers, k=8))
+    return ''.join(random.choices(letters + numbers, k=8))
 
 # Giving hints
 
@@ -417,6 +437,7 @@ def give_hint(self, hint):
 # Play Code Word Bonus Game
 
 def play_bonus_game(self):
+    clear_screen()
     print("ARE YOU BOSS BRAIN ENOUGH FOR THE BONUS CHALLENGE?")
     print("Can you guess the code word in 8 attempts?")
     print("This time I can give you some hints if you require?")
@@ -438,9 +459,26 @@ def play_bonus_game(self):
                 self.give_hint(hint)
     print(f"OH NO, You've run out of guesses. The code word was: {self.code_word}")
 
-if __name__ == "__main__":
-    game = CodeName()
-    game.play_bonus_game()
+print("Choose '1' to play again")
+print("choose '2' to return to main page")
+
+while True:
+    try:
+        menu_choice = int(input(" Press choice: \n"))
+        if menu_choice == 1:
+            choose_level()
+            break
+        elif menu_choice == 2:
+            main_page()
+            break            
+        else:
+            raise ValueError
+
+    except ValueError:
+        print(" Invalid key press. Please choose 1, or 2")
+
+
+
 
 
 
