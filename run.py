@@ -385,6 +385,65 @@ def play_game_level3():
 
         except ValueError:
             print(" Invalid key press. Please choose 1, or 2")
+
+
+# Bonus game 
+
+class CodeName:
+    def _init_(self):
+        self.code_word = self.generate_code_word()
+        self.attempts = 10
+        self.hints = {
+            'length': f"The code word is {len(self.code_word)} characters in length.",
+            'numbers': f"Does the code have numbers? {'Yes' if any(char.isdigit() for char in self.code_word) else 'No'}",
+            'letters': f"Does the code have letters? {'Yes' if any(char.isalpha() for char in self.code_word) else 'No'}",
+        }
+
+# Generate code word
+
+numbers = '0123456789'
+letters ='ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
+return ''.join(random.choices(letters + numbers, k=8))
+
+# Giving hints
+
+def give_hint(self, hint):
+    if hint in self.hints:
+        print(self.hints[hint])
+    else:
+        print("Incorrect hint.")
+   
+# Play Code Word Bonus Game
+
+def play_bonus_game(self):
+    print("ARE YOU BOSS BRAIN ENOUGH FOR THE BONUS CHALLENGE?")
+    print("Can you guess the code word in 8 attempts?")
+    print("This time I can give you some hints if you require?")
+
+
+    while self.attempts > 0:
+        attempt = input("Enter your guess: ").strip.upper
+        if guess == self.code_word:
+            print("Amazing! You guessed the code word correctly!")
+            return
+
+        self.attempts -= 1
+        print(f"UH OH, WRONG GUESS! You have {self.attempts} guesses left.")
+
+        if self.attempts > 0:
+            get_hint = input("Can I offer you a hint? (yes/no): ").strip().lower()
+            if get_hint == 'yes':
+                hint = input("Would you like a hint about the lentgth, if it contains numbers or if it containd letters?: ").strip().lower()
+                self.give_hint(hint)
+    print(f"OH NO, You've run out of guesses. The code word was: {self.code_word}")
+
+if __name__ == "__main__":
+    game = CodeName()
+    game.play_bonus_game()
+
+
+
 # clear screen function
 
 def clear_screen():
