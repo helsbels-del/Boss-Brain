@@ -40,7 +40,7 @@ def main_page():
             elif menu_choice == 3:
                 print(f"Exiting game....Game ended")
                 break
-            elif meun_choice == 4:
+            elif menu_choice == 4:
                 play_bonus_game()
                 break
             else:
@@ -88,7 +88,7 @@ def instructions():
                     elif menu_choice == 3:
                         print(f"Exiting game....Game ended")
                         break
-                    elif meun_choice == 4:
+                    elif menu_choice == 4:
                         play_bonus_game()
                         break
                     else:
@@ -143,7 +143,7 @@ def choose_level():
             elif menu_choice == 5:
                 print(f"Exiting game....Game ended")
                 break 
-            elif meun_choice == 6:
+            elif menu_choice == 6:
                 play_bonus_game()
                 break
             else:
@@ -206,7 +206,7 @@ def play_game_level1():
                     elif menu_choice == 3:
                         print(f"Exiting game....Game ended")
                         break
-                    elif meun_choice == 4:
+                    elif menu_choice == 4:
                         play_bonus_game()
                         break
                     else:
@@ -288,7 +288,7 @@ def play_game_level2():
                     elif menu_choice == 3:
                         print(f"Exiting game....Game ended")
                         break
-                    elif meun_choice == 4:
+                    elif menu_choice == 4:
                         play_bonus_game()
                         break
                     else:
@@ -370,7 +370,7 @@ def play_game_level3():
                     elif menu_choice == 3:
                         print(f"Exiting game....Game ended")
                         break
-                    elif meun_choice == 4:
+                    elif menu_choice == 4:
                         play_bonus_game()
                         break
                     else:
@@ -437,45 +437,70 @@ def give_hint(self, hint):
 # Play Code Word Bonus Game
 
 def play_bonus_game(self):
+    """
+    Play game function
+    """
     clear_screen()
     print("ARE YOU BOSS BRAIN ENOUGH FOR THE BONUS CHALLENGE?")
     print("Can you guess the code word in 8 attempts?")
     print("This time I can give you some hints if you require?")
+# while look to iterate over game until max attempts made
 
-
-    while self.attempts > 0:
-        attempt = input("Enter your guess: ").strip.upper
+    
+    code_word = generate_code_word()
+    print(code)
+    while self.attempts < 10:
+        answer = input("Enter your guess: ").strip.upper
         if guess == self.code_word:
             print("Amazing! You guessed the code word correctly!")
-            return
+            print(f"The code word was: {self.code_word}")
 
-        self.attempts -= 1
-        print(f"UH OH, WRONG GUESS! You have {self.attempts} guesses left.")
+    print("Choose '1' to play again")
+    print("choose '2' to return to main page")
 
-        if self.attempts > 0:
+    while True:
+        try:
+            menu_choice = int(input(" Press choice: \n"))
+            if menu_choice == 1:
+                choose_level()
+                break
+            elif menu_choice == 2:
+                main_page()
+                break            
+            else:
+                raise ValueError
+
+        except ValueError:
+            print(" Invalid key press. Please choose 1, or 2")       
+
+        self.attempts += 1
+
+    print(f"UH OH, WRONG GUESS! You have {self.attempts} guesses left.")
+
+    if self.attempts < 10:
             get_hint = input("Can I offer you a hint? (yes/no): ").strip().lower()
             if get_hint == 'yes':
-                hint = input("Would you like a hint about the lentgth, if it contains numbers or if it containd letters?: ").strip().lower()
+                hint = input("Would you like a hint about the length, numbers or letters?: ").strip().lower()
                 self.give_hint(hint)
     print(f"OH NO, You've run out of guesses. The code word was: {self.code_word}")
 
-print("Choose '1' to play again")
-print("choose '2' to return to main page")
+    print("Choose '1' to play again")
+    print("choose '2' to return to main page")
 
-while True:
-    try:
-        menu_choice = int(input(" Press choice: \n"))
-        if menu_choice == 1:
-            choose_level()
-            break
-        elif menu_choice == 2:
-            main_page()
-            break            
-        else:
-            raise ValueError
+    while True:
+        try:
+            menu_choice = int(input(" Press choice: \n"))
+            if menu_choice == 1:
+                choose_level()
+                break
+            elif menu_choice == 2:
+                main_page()
+                break            
+            else:
+                raise ValueError
 
-    except ValueError:
-        print(" Invalid key press. Please choose 1, or 2")
+        except ValueError:
+            print(" Invalid key press. Please choose 1, or 2")
 
 
 
