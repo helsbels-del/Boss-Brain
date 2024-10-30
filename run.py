@@ -418,32 +418,36 @@ class CodeName:
             'letters': f"Does the code have letters? {'Yes' if any(char.isalpha() for char in self.code_word) else 'No'}",
         }
 # variables
+words = ["Obfuscation", "Coding", "Challenge", "Master"]
 numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
-code_word_length = 5
 attempts = 10
+
 
 # Generate code word
 
 def generate_code_word():
     """ 
-    Generates a 5 character code word from the letters and numbers available
+    Generates a random word from a given list
     """
-    code_word = random.choices(numbers + letters, k=code_word_length)
+    code_word = random.choices(words)
 
     return(code_word)
 
-# Giving hints
+# Check letters guessed in words
 
-def give_hint(self, hint):
-    if hint in self.hints:
-        print(self.hints[hint])
-    else:
-        print("Incorrect hint.")
+def letters_in_word(code_word, attempts):
+    letters_in_word = ""
+    for letter in code_word:
+        if letter in attempts:
+            letters_in_word += letter
+        else:
+            letters_in_word += " * "
+    return letters_in_word
    
 # Play Code Word Bonus Game
 
-def play_bonus_game(self):
+def play_bonus_game(code_word):
     """
     Play game function
     """
@@ -455,9 +459,23 @@ def play_bonus_game(self):
     
     code_word = generate_code_word()
     print(code_word)
-    attempts = 0
-    while attempts < 10:
-        answer = input("Enter your guess: ").strip
+    lettersguessed = []
+    attempts = int(len(code_word) * 1.5)
+    print("The code word has " + str(len(code_word)) + " letters. ")
+
+    while True:
+        if attempts != 0:
+            print("\nYou have " + str(attempts) + " attempts remaining.")
+            print("Current word guess: " + letters_in_word(code_word, lettersguessed))
+            print("Letters guessed so far: " + str(lettersguessed))
+            attempt = input("Enter guess: ").lower()[0]
+
+            if attempt not in lettersguessed:
+                lettersguessed.append(attempt)
+            
+
+    #while attempts < 10:
+        answer = input("Enter your guess: ").strip.lower
         if answer == code_word:
             print("Amazing! You guessed the code word correctly!")
             print(f"The code word was: {code_word}")
