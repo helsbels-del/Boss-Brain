@@ -407,22 +407,7 @@ def play_game_level3():
 
 
 # Bonus game 
-"""
-class CodeName:
-    def _init_(self, code_word, attempts, hints):
-        self.code_word = self.generate_code_word()
-        self.attempts <= 10
-        self.hints = {
-            'length': f"The code word is {len(self.code_word)} characters in length.",
-            'numbers': f"Does the code have numbers? {'Yes' if any(char.isdigit() for char in self.code_word) else 'No'}",
-            'letters': f"Does the code have letters? {'Yes' if any(char.isalpha() for char in self.code_word) else 'No'}",
-        }
-# variables
-words = ["Obfuscation", "Coding", "Challenge", "Master"]
-numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
-letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
-attempts = 10
-"""
+
 
 # Generate code word
 code_words = ["Obfuscation", "Coding", "Challenge", "Master"]
@@ -474,8 +459,36 @@ def play_bonus_game(code_word):
                 lettersguessed.append(attempt)
 
             if letters_in_word(code_word, lettersguessed) == code_word:
-                print("Amazing! You cracked the code word!")
-                break
+                print("Amazing! You cracked the code word! " + code_word)
+                
+                print("\n" * 3)
+                print("\033[0;96m  Choose \033[37;1m '1' \033[0;96m to play again")
+                print("  Choose \033[37;1m '2' \033[0;96m to return to main page")
+                print("  Choose \033[37;1m '3' \033[0;96m to Exit\n")
+
+                while True:
+                    try:
+                        menu_choice = int(input("\033[37;1m Enter choice: \n"))
+                        if menu_choice == 1:
+                            choose_level()
+                            break
+                        elif menu_choice == 2:
+                            main_page()
+                            break
+                        elif menu_choice == 3:
+                            print(f"Exiting game....Game ended")
+                            break
+                        elif menu_choice == 4:
+                            play_bonus_game()
+                            break
+                        else:
+                            raise ValueError
+
+                    except ValueError:
+                        print(" Invalid key press. Please choose 1, 2, 3 or 4")
+                        break
+
+                exit()
             else:
                 attempts -= 1
                 if attempt in code_word:
@@ -484,7 +497,26 @@ def play_bonus_game(code_word):
                     print(attempt + " is not in the code word.")
         else:
             print("\nUh oh, you ran out of attempts. The code word is " + code_word)
-            break         
+            print("Choose '1' to play again")
+            print("choose '2' to return to main page")
+
+            while True:
+                try:
+                    menu_choice = int(input(" Press choice: \n"))
+                    if menu_choice == 1:
+                        choose_level()
+                        break
+                    elif menu_choice == 2:
+                        main_page()
+                        break            
+                    else:
+                        raise ValueError
+
+                except ValueError:
+                    print(" Invalid key press. Please choose 1, or 2")
+ 
+
+            
 
 # clear screen function
 
