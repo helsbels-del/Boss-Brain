@@ -327,7 +327,7 @@ def play_game_level3():
     Play game function
     """
     clear_screen()
-    print(" \033[4;96m WELCOME TO THE BOSS BRAIN CHALLENGE1 - Level 3 \033[0;96m\n")
+    print(" \033[4;96m WELCOME TO THE BOSS BRAIN CHALLENGE - Level 3 \033[0;96m\n")
     print(" \033[0;37m Crack the color code to become a Boss Brain!\n")   
     print("  Choose from the following colors: \033[31;1m Red(R) \033[34;1m Blue(B) \033[32;1m Green(G) \033[33;1m Yellow(Y) \033[37;1m White(W) \033[1;35:47m Pink(P) \n")
     print(f" \033[0;37m Code Length: \033[33;1m{code_length}, \033[0;37m Max Attempts: \033[33;1m {max_attempts_level3}\n")
