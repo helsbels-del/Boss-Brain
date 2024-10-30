@@ -446,7 +446,7 @@ def play_bonus_game(self):
     print("ARE YOU BOSS BRAIN ENOUGH FOR THE BONUS CHALLENGE?")
     print("Can you guess the code word in 8 attempts?")
     print("This time I can give you some hints if you require?")
-# while look to iterate over game until max attempts made
+# while loop to iterate over game until max attempts made
 
     
     code_word = generate_code_word(self)
