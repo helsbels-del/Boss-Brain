@@ -409,9 +409,9 @@ def play_game_level3():
 # Bonus game 
 
 class CodeName:
-    def _init_(self, numbers, letters, code_word):
+    def _init_(self, code_word, attempts, hints):
         self.code_word = self.generate_code_word()
-        self.attempts = 10
+        self.attempts <= 10
         self.hints = {
             'length': f"The code word is {len(self.code_word)} characters in length.",
             'numbers': f"Does the code have numbers? {'Yes' if any(char.isdigit() for char in self.code_word) else 'No'}",
@@ -457,8 +457,8 @@ def play_bonus_game(self):
     print(code_word)
     attempts = 0
     while attempts < 10:
-        answer = input("Enter your guess: ").strip.upper
-        if guess == code_word:
+        answer = input("Enter your guess: ").strip
+        if answer == code_word:
             print("Amazing! You guessed the code word correctly!")
             print(f"The code word was: {code_word}")
 
