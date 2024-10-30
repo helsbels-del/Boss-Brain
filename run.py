@@ -407,7 +407,7 @@ def play_game_level3():
 
 
 # Bonus game 
-
+"""
 class CodeName:
     def _init_(self, code_word, attempts, hints):
         self.code_word = self.generate_code_word()
@@ -422,15 +422,15 @@ words = ["Obfuscation", "Coding", "Challenge", "Master"]
 numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 attempts = 10
-
+"""
 
 # Generate code word
-
+code_words = ["Obfuscation", "Coding", "Challenge", "Master"]
 def generate_code_word():
     """ 
     Generates a random word from a given list
     """
-    code_word = random.choices(words)
+    code_word = random.choice(code_words).lower()
 
     return(code_word)
 
@@ -472,65 +472,19 @@ def play_bonus_game(code_word):
 
             if attempt not in lettersguessed:
                 lettersguessed.append(attempt)
-            
 
-    #while attempts < 10:
-        answer = input("Enter your guess: ").strip.lower
-        if answer == code_word:
-            print("Amazing! You guessed the code word correctly!")
-            print(f"The code word was: {code_word}")
-
-    print("Choose '1' to play again")
-    print("choose '2' to return to main page")
-
-    while True:
-        try:
-            menu_choice = int(input(" Press choice: \n"))
-            if menu_choice == 1:
-                choose_level()
+            if letters_in_word(code_word, lettersguessed) == code_word:
+                print("Amazing! You cracked the code word!")
                 break
-            elif menu_choice == 2:
-                main_page()
-                break            
             else:
-                raise ValueError
-
-        except ValueError:
-            print(" Invalid key press. Please choose 1, or 2")       
-
-        attempts += 1
-
-    print(f"UH OH, WRONG GUESS! You have {attempts} guesses left.")
-
-    if attempts < 10:
-            get_hint = input("Can I offer you a hint? (yes/no): ").strip().lower()
-            if get_hint == 'yes':
-                hint = input("Would you like a hint about the length, numbers or letters?: ").strip().lower()
-                self.give_hint(hint)
-    print(f"OH NO, You've run out of guesses. The code word was: {self.code_word}")
-
-    print("Choose '1' to play again")
-    print("choose '2' to return to main page")
-
-    while True:
-        try:
-            menu_choice = int(input(" Press choice: \n"))
-            if menu_choice == 1:
-                choose_level()
-                break
-            elif menu_choice == 2:
-                main_page()
-                break            
-            else:
-                raise ValueError
-
-        except ValueError:
-            print(" Invalid key press. Please choose 1, or 2")
-
-
-
-
-
+                attempts -= 1
+                if attempt in code_word:
+                    print("Letter Correct!")
+                else:
+                    print(attempt + " is not in the code word.")
+        else:
+            print("\nUh oh, you ran out of attempts. The code word is " + code_word)
+            break         
 
 # clear screen function
 
@@ -553,5 +507,7 @@ def blink_text(text):
         break
 
 main_page()
+
+
 
 
