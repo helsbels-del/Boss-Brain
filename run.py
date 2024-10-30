@@ -439,7 +439,7 @@ def play_bonus_game(code_word):
     clear_screen()
     print("ARE YOU BOSS BRAIN ENOUGH FOR THE BONUS CHALLENGE?")
     print("Can you guess the code word in 8 attempts?")
-    print("This time I can give you some hints if you require?")
+    print("This time I can give you a hint!")
 # while loop to iterate over game until max attempts made
     
     code_word = generate_code_word()
@@ -453,7 +453,7 @@ def play_bonus_game(code_word):
             print("\nYou have " + str(attempts) + " attempts remaining.")
             print("Current word guess: " + letters_in_word(code_word, lettersguessed))
             print("Letters guessed so far: " + str(lettersguessed))
-            attempt = input("Enter guess: ").lower()[0]
+            attempt = input("Enter your letter of choice: ").lower()[0]
 
             if attempt not in lettersguessed:
                 lettersguessed.append(attempt)
