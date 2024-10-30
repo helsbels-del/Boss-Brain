@@ -174,7 +174,7 @@ def play_game_level1():
     code = generate_random_code()
     print(code)
     while attempts < max_attempts_level1:
-        answer = input(f"\033[0;37m Attempt {attempts + 1}/{max_attempts_level1}. Enter your guess(first letter): \n").upper().strip().split()
+        answer = input(f"\033[0;37m Attempt {attempts + 1}/{max_attempts_level1}. Enter your guess(first letter only and leave a space between each guess): \n").upper().strip().split()
         if len(answer) != code_length or not all(color in colors for color in answer):
             print("\033[31;1m You've done something wrong! \033[32;1m Check your guesses and try again!")
             continue
@@ -255,7 +255,7 @@ def play_game_level2():
     code = generate_random_code()
     print(code)
     while attempts < max_attempts_level2:
-        answer = input(f"\033[0;37m Attempt {attempts + 1}/{max_attempts_level1}. Enter your guess(first letter of colours): \n").upper().strip().split()
+        answer = input(f"\033[0;37m Attempt {attempts + 1}/{max_attempts_level2}. Enter your guess(first letter only and leave a space between each guess): \n").upper().strip().split()
         if len(answer) != code_length or not all(color in colors for color in answer):
             print("\033[31;1m You've done something wrong! \033[32;1m Check your guesses and try again!")
             continue
@@ -337,7 +337,7 @@ def play_game_level3():
     code = generate_random_code()
     print(code)
     while attempts < max_attempts_level3:
-        answer = input(f"\033[0;37m Attempt {attempts + 1}/{max_attempts_level1}. Enter your guess(first letter of colours): \n").upper().strip().split()
+        answer = input(f"\033[0;37m Attempt {attempts + 1}/{max_attempts_level3}. Enter your guess(first letter only and leave a space between each guess): \n").upper().strip().split()
         if len(answer) != code_length or not all(color in colors for color in answer):
             print("\033[31;1m You've done something wrong! \033[32;1m Check your guesses and try again!")
             continue
