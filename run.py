@@ -121,13 +121,13 @@ def choose_level():
     print("  Level 2 will give you 10 attempts")
     print("  Level 3 will give you 8 attempts\n")
     print("\033[0;92m **** Good luck CodeBreaker, Fear is the path to the darkside ****\n")
-    print("\033[0;33m \x1B[3m(Choose \033[0;37m '4' \033[0;33m \x1B[3mto return to main page)")
-    print(" \x1B[3m(Choose \033[0;37m '5' \033[0;33m \x1B[3mto Exit)\x1B[0m\n")
+    print("\033[0;33m (Choose \033[0;37m '4' \033[0;33m to return to main page)")
+    print(" (Choose \033[0;37m '5' \033[0;33m to Exit)\x1B[0m\n")
 
     while True:
         try:
-            menu_choice = int(input("\033[37;1m Choose level (Enter '1', '2', '3' or '4'): \n"))
-            
+            menu_choice = int(input("\033[37;1m Choose level (Enter '1', '2', or '3'): \n"))
+
             if menu_choice == 1:
                 play_game_level1()
                 break
@@ -438,9 +438,9 @@ def play_bonus_game(code_word):
     """
     clear_screen()
     print(" \033[4;96m THIS IS THE BOSS BRAIN BONUS CHALLENGE! \033[0;96m\n")
-    print(" \033[0;37m Are you Boss Brain enough for the challenge?\n")
-    print(" \x1B[3m Can you guess the code word in 8 attempts?")
-    print("  This time I can give you a hint!\x1B[0m")
+    print(" \033[0;37m Are you Boss Brain enough for the bonus challenge?\n")
+    print(" \x1B[3m Can you guess the code word before running out of attempts?")
+    print("  This time I can give you a hint!\x1B[0m\n")
 # while loop to iterate over game until max attempts made
     
     code_word = generate_code_word()
