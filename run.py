@@ -409,9 +409,7 @@ def play_game_level3():
 # Bonus game 
 
 class CodeName:
-    def _init_(self, numbers, letters, code_word, attempts, hints):
-        self.numbers = numbers
-        self.letters = letters
+    def _init_(self, numbers, letters, code_word):
         self.code_word = self.generate_code_word()
         self.attempts = 10
         self.hints = {
@@ -419,14 +417,21 @@ class CodeName:
             'numbers': f"Does the code have numbers? {'Yes' if any(char.isdigit() for char in self.code_word) else 'No'}",
             'letters': f"Does the code have letters? {'Yes' if any(char.isalpha() for char in self.code_word) else 'No'}",
         }
-    
+# variables
+numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+code_word_length = 5
+attempts = 10
+
 # Generate code word
 
-def generate_code_word(self):
-    numbers = ['1', '2', '3', '4', '5','6', '7', '8', '9']
-    letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+def generate_code_word():
+    """ 
+    Generates a 5 character code word from the letters and numbers available
+    """
+    code_word = random.choices(numbers + letters, k=code_word_length)
 
-    return ''.join(random.choices(letters + numbers, k=8))
+    return(code_word)
 
 # Giving hints
 
@@ -447,15 +452,15 @@ def play_bonus_game(self):
     print("Can you guess the code word in 8 attempts?")
     print("This time I can give you some hints if you require?")
 # while loop to iterate over game until max attempts made
-
     
-    code_word = generate_code_word(self)
+    code_word = generate_code_word()
     print(code_word)
-    while self.attempts < 10:
+    attempts = 0
+    while attempts < 10:
         answer = input("Enter your guess: ").strip.upper
-        if guess == self.code_word:
+        if guess == code_word:
             print("Amazing! You guessed the code word correctly!")
-            print(f"The code word was: {self.code_word}")
+            print(f"The code word was: {code_word}")
 
     print("Choose '1' to play again")
     print("choose '2' to return to main page")
@@ -475,11 +480,11 @@ def play_bonus_game(self):
         except ValueError:
             print(" Invalid key press. Please choose 1, or 2")       
 
-        self.attempts += 1
+        attempts += 1
 
-    print(f"UH OH, WRONG GUESS! You have {self.attempts} guesses left.")
+    print(f"UH OH, WRONG GUESS! You have {attempts} guesses left.")
 
-    if self.attempts < 10:
+    if attempts < 10:
             get_hint = input("Can I offer you a hint? (yes/no): ").strip().lower()
             if get_hint == 'yes':
                 hint = input("Would you like a hint about the length, numbers or letters?: ").strip().lower()
