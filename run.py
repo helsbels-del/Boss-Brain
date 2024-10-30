@@ -409,7 +409,9 @@ def play_game_level3():
 # Bonus game 
 
 class CodeName:
-    def _init_(self):
+    def _init_(self, numbers, letters, code_word, attempts, hints):
+        self.numbers = numbers
+        self.letters = letters
         self.code_word = self.generate_code_word()
         self.attempts = 10
         self.hints = {
@@ -447,7 +449,7 @@ def play_bonus_game(self):
 # while look to iterate over game until max attempts made
 
     
-    code_word = generate_code_word('self')
+    code_word = generate_code_word(self)
     print(code_word)
     while self.attempts < 10:
         answer = input("Enter your guess: ").strip.upper
