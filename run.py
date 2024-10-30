@@ -41,7 +41,7 @@ def main_page():
                 print(f"Exiting game....Game ended")
                 break
             elif menu_choice == 4:
-                play_bonus_game()
+                play_bonus_game('self')
                 break
             else:
                 raise ValueError
@@ -417,12 +417,12 @@ class CodeName:
             'numbers': f"Does the code have numbers? {'Yes' if any(char.isdigit() for char in self.code_word) else 'No'}",
             'letters': f"Does the code have letters? {'Yes' if any(char.isalpha() for char in self.code_word) else 'No'}",
         }
-
+    
 # Generate code word
 
 def generate_code_word(self):
-    numbers = '0123456789'
-    letters ='ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    numbers = ['1', '2', '3', '4', '5','6', '7', '8', '9']
+    letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 
     return ''.join(random.choices(letters + numbers, k=8))
 
@@ -447,8 +447,8 @@ def play_bonus_game(self):
 # while look to iterate over game until max attempts made
 
     
-    code_word = generate_code_word()
-    print(code)
+    code_word = generate_code_word('self')
+    print(code_word)
     while self.attempts < 10:
         answer = input("Enter your guess: ").strip.upper
         if guess == self.code_word:
