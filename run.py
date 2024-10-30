@@ -25,8 +25,8 @@ def main_page():
     print("\033[0;92m **** Good luck CodeBreaker, May the force be with you! ****\n")    
     print("\033[0;33m  Choose \033[37;1m '1' \033[0;33m to Play")
     print("  Choose \033[37;1m '2' \033[0;33m for Instructions")
-    print("  Choose \033[37;1m '3' \033[0;33m to Exit\n")
-    print(" Choose \033[37;1m '4' \033[0;33m for the Bonus Challenge\n")
+    print("  Choose \033[37;1m '3' \033[0;33m for the BOSS BRAIN BONUS CHALLENGE\n")
+    print(" Choose \033[37;1m '4' \033[0;33m to Exit\n")
 
     while True:
         try:
@@ -38,10 +38,10 @@ def main_page():
                 instructions()
                 break
             elif menu_choice == 3:
-                print(f"Exiting game....Game ended")
+                play_bonus_game('self')
                 break
             elif menu_choice == 4:
-                play_bonus_game('self')
+                print(f"Exiting game....Game ended")
                 break
             else:
                 raise ValueError
