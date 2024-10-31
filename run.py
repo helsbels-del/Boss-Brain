@@ -422,12 +422,12 @@ def generate_code_word():
 # Check letters guessed in words
 
 def letters_in_word(code_word, attempts):
-    letters_in_word = ""
+    letters_in_word = "   "
     for letter in code_word:
         if letter in attempts:
             letters_in_word += letter
         else:
-            letters_in_word += " * "
+            letters_in_word += "*"
     return letters_in_word
    
 # Play Code Word Bonus Game
@@ -452,7 +452,7 @@ def play_bonus_game(code_word):
     while True:
         if attempts != 0:
             print("\n\033[0;33mYou have " + str(attempts) + " attempts remaining.")
-            print("\033[0;37mCurrent word guess: " + letters_in_word(code_word, lettersguessed))
+            print("\033[0;37mCurrent word guess:   " + letters_in_word(code_word, lettersguessed))
             print("\033[0;33mLetters guessed so far: " + str(lettersguessed))
             attempt = input("\033[0;37mEnter your letter of choice: ").lower()[0]
 
