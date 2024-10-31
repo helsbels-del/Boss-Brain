@@ -114,6 +114,8 @@ I wanted the names of the colours written on the game play screens to be coloure
 
 During the tesing stages I realised that after the player guesses the code correctly, within the given amount of attempts, after then choosing option 2 to return to the main page, if you then choose option 3 to eixt the game you get the exit message but then also the next line prints out "Attempt 2/12....". I had removed the exit function when I had added the options to retunr to the main page. Once the exit function was added back into the code this all worked smoothly again
 
+When testing the instructions page, on entering an invalid option, the message 'Invalid key press...' comes up, however the program is then ended. I realised I had an end() at the bottom of this section that should not have been there. Als the indentation was incorrect in this section and there was a break that shouldn't have been there. Now it is working.
+
 ## **Improvements as going along**
 
 Initially the player had to write the name of each of the colours out. I was was testing out my coding I was finding this very time consuming and heavy on the finger usage. I decided to use the first letters of each of the colours instead which made it much simpler and enjoyable. I also added the .upper so that the player can inut lowercase or uppercase letters and either will be excepted.
