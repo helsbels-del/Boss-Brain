@@ -75,7 +75,7 @@ def instructions():
     print("\n" * 3)
     print("\033[33;1m Choose \033[37;1m '1' \033[33;1m to play")
     print(" Choose \033[37;1m '2' \033[33;1m to return to main page")
-    print(" Choose \033[37;1m '3' \033[33;1m to Exit\n")
+    
 
     while True:
         try:
@@ -85,18 +85,12 @@ def instructions():
                 break
             elif menu_choice == 2:
                 main_page()
-                break
-            elif menu_choice == 3:
-                print(f"Exiting game....Game ended")
-                break
-            elif menu_choice == 4:
-                play_bonus_game()
-                break
+                break            
             else:
                 raise ValueError
 
         except ValueError:
-                print(" Invalid key press. Please choose 1, 2, 3 or 4") 
+                print(" Invalid key press. Please choose 1, or 2") 
 
                     
            
@@ -122,8 +116,7 @@ def choose_level():
     print("  Level 3 will give you 8 attempts\n")
     print("\033[0;92m **** Good luck CodeBreaker, Fear is the path to the darkside ****\n")
     print("\033[0;33m (Choose \033[0;37m '4' \033[0;33m to return to main page)")
-    print(" (Choose \033[0;37m '5' \033[0;33m to Exit)\x1B[0m\n")
-
+    
     while True:
         try:
             menu_choice = int(input("\033[37;1m Choose level (Enter '1', '2', or '3'): \n"))
@@ -182,7 +175,7 @@ def play_game_level1():
             print("\n" * 3)          
             print("\033[0;96m  Choose \033[37;1m '1' \033[0;96m to play again")
             print("  Choose \033[37;1m '2' \033[0;96m to return to main page")
-            print("  Choose \033[37;1m '3' \033[0;96m to Exit\n")
+            
             while True:
                 try:
                     menu_choice = int(input("\033[37;1m Enter choice: \n"))
@@ -192,17 +185,11 @@ def play_game_level1():
                     elif menu_choice == 2:
                         main_page()
                         break
-                    elif menu_choice == 3:
-                        print(f"Exiting game....Game ended")
-                        break
-                    elif menu_choice == 4:
-                        play_bonus_game()
-                        break
                     else:
                         raise ValueError
 
                 except ValueError:
-                    print(" Invalid key press. Please choose 1, 2, 3 or 4")
+                    print(" Invalid key press. Please choose 1, or 2")
                     
 
             exit()
@@ -263,8 +250,7 @@ def play_game_level2():
             print("\n" * 3)
             print("\033[0;96m  Choose \033[37;1m '1' \033[0;96m to play again")
             print("  Choose \033[37;1m '2' \033[0;96m to return to main page")
-            print("  Choose \033[37;1m '3' \033[0;96m to Exit\n")
-
+            
             while True:
                 try:
                     menu_choice = int(input("\033[37;1m Enter choice: \n"))
@@ -274,17 +260,11 @@ def play_game_level2():
                     elif menu_choice == 2:
                         main_page()
                         break
-                    elif menu_choice == 3:
-                        print(f"Exiting game....Game ended")
-                        break
-                    elif menu_choice == 4:
-                        play_bonus_game()
-                        break
                     else:
                         raise ValueError
 
                 except ValueError:
-                    print(" Invalid key press. Please choose 1, 2, 3 or 4")
+                    print(" Invalid key press. Please choose 1, or 2")
                     
 
             exit()
@@ -345,7 +325,7 @@ def play_game_level3():
             print("\n" * 3)
             print("\033[0;96m  Choose \033[37;1m '1' \033[0;96m to play again")
             print("  Choose \033[37;1m '2' \033[0;96m to return to main page")
-            print("  Choose \033[37;1m '3' \033[0;96m to Exit\n")
+            
 
             while True:
                 try:
@@ -366,7 +346,7 @@ def play_game_level3():
                         raise ValueError
 
                 except ValueError:
-                    print(" Invalid key press. Please choose 1, 2, 3 or 4")
+                    print(" Invalid key press. Please choose 1, or 2")
                     
 
             exit()
@@ -443,7 +423,7 @@ def play_bonus_game(code_word):
             print("\n\033[0;33mYou have " + str(attempts) + " attempts remaining.")
             print("\033[0;37mCurrent word guess: " + letters_in_word(code_word, lettersguessed))
             print("\033[0;33mLetters guessed so far: " + str(lettersguessed))
-            attempt = input("\033[0;37mEnter your letter of choice: ").lower()[0]
+            attempt = (input("\033[0;37mEnter your letter of choice: ")).lower()[0]
 
             if attempt not in lettersguessed:
                 lettersguessed.append(attempt)
@@ -452,30 +432,24 @@ def play_bonus_game(code_word):
                 print("\033[31;1mAmazing! You cracked the code word! " + code_word)
                 
                 print("\n" * 3)
-                print("\033[0;96m  Choose \033[37;1m '1' \033[0;96m to play again")
+                print("\033[0;96m  Choose \033[37;1m '1' \033[0;96m to play bonus challenge again")
                 print("  Choose \033[37;1m '2' \033[0;96m to return to main page")
-                print("  Choose \033[37;1m '3' \033[0;96m to Exit\n")
+               
 
                 while True:
                     try:
                         menu_choice = int(input("\033[37;1m Enter choice: \n"))
                         if menu_choice == 1:
-                            choose_level()
+                            play_bonus_game()
                             break
                         elif menu_choice == 2:
                             main_page()
-                            break
-                        elif menu_choice == 3:
-                            print(f"Exiting game....Game ended")
-                            break
-                        elif menu_choice == 4:
-                            play_bonus_game()
                             break
                         else:
                             raise ValueError
 
                     except ValueError:
-                        print(" Invalid key press. Please choose 1, 2, 3 or 4")
+                        print(" Invalid key press. Please choose 1, or 2")
                     
 
                 exit()
