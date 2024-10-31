@@ -41,22 +41,27 @@ Time
 
 ### **Main Page**
 
-The first page that the player sees when the program is started tells the player that this is the Boss Brain Challenge and lists a choice of 3 options.
+The first page that the player sees when the program is started tells the player that this is the Boss Brain Challenge and lists a choice of 4 options.
 
 add screen shot
 
 The player can choose to play the game, go to the instructions or exit the game.
 If the player chooses option 1 to play the game, they are then asked which level they would like to play. 
 
-## **Instructions Page**
+### **Instructions Page**
 
 After selecting option 2 from the main page, the player can read the Instruction For Play. At the bottom of the page the player has options to either 'Play' or 'Return to main Page'. 
 
 add screenshot
 
+### **Bonus Challenge**
+
+Option 3 takes the player to the bonus challenge where the players gets to guess a code word.
+In the code here I have made a list of 4 code words that the computer chooses randomly for the player to guess. More words could be added here as once the player has guessed all 4 words it would become a bit boring.
+
 ## **Exit Game**
 
-On selecting option 3 from the main page, the below message is shown and the program is ended.
+On selecting option 4 from the main page, the below message is shown and the program is ended.
 
 add screenshot
 
@@ -117,3 +122,4 @@ One of the messages that comes up at the end of the game is 'You have a Boss Bra
 
 For the clear_screen function, the code I initially used only works on windows using the imported os library. I then changed this to a method where effectively, a number of blank lines are inserted to give the illusion of a new page at the stat of each section. This works well across all platforms.
 
+I decided to add a bonus level where the player gets to guess a code word.
