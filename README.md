@@ -3,7 +3,8 @@
 ## **Introduction**
 
 I have created a terminal-based code breaker game called Boss Brain Challenge, based on the original MasterMind board game that I loved playing in my younger years with my family and friends.
-It has the same rules as the Mastermind game. The PC takes the place of the codemaker and teh player is the codebreaker. The codemaker generates a secret code of 4 colours, there are 6 colours to choose from. Then the codebreaker has to guess the secret code in a number of attempts. The number of attempts depends on the level selected. Level 1 is 12 attempts, level 2 is 10 attempts and level 3 is 8 attempts.
+It has the same rules as the Mastermind game. The PC takes the place of the codemaker and the player is the codebreaker. The codemaker generates a secret code of 4 colours, there are 6 colours to choose from. Then the codebreaker has to guess the secret code in a number of attempts. The number of attempts depends on the level selected. Level 1 is 12 attempts, level 2 is 10 attempts and level 3 is 8 attempts.
+I also added a bonus challenge where the player has to guess a code word. Here the amount of attempts you get is based on how many letters are in the word. I have set this at 1.5 x the length of the word. For emaple, if the word is 6 letters long then the player will get 9 attempts. I currently have 4 code words in a list and the computer will randomly pick a word each time the game is played.
 
 ## **Target Audience**
 
