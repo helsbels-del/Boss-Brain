@@ -203,7 +203,7 @@ def play_game_level1():
 
                 except ValueError:
                     print(" Invalid key press. Please choose 1, 2, 3 or 4")
-                    break
+                    
 
             exit()
 
@@ -285,7 +285,7 @@ def play_game_level2():
 
                 except ValueError:
                     print(" Invalid key press. Please choose 1, 2, 3 or 4")
-                    break
+                    
 
             exit()
 
@@ -367,7 +367,7 @@ def play_game_level3():
 
                 except ValueError:
                     print(" Invalid key press. Please choose 1, 2, 3 or 4")
-                    break
+                    
 
             exit()
 
