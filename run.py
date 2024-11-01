@@ -151,7 +151,7 @@ def play_game(max_attempts, level):
 # while loop to itereate over game until max attempts made
     attempts = 0
     code = generate_random_code()
-    #print(code)
+    print(code)
     while attempts < max_attempts:
         answer = input(f"\033[0;37m Attempt {attempts + 1}/{max_attempts}. Enter your guess(first letter only and leave a space between each guess): \n").upper().strip().split()
         if len(answer) != code_length or not all(color in colors for color in answer):
