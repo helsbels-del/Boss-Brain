@@ -6,11 +6,11 @@ I have created a terminal-based code breaker game called Boss Brain Challenge, b
 It has the same rules as the Mastermind game. The PC takes the place of the codemaker and the player is the codebreaker. The codemaker generates a secret code of 4 colours, there are 6 colours to choose from. Then the codebreaker has to guess the secret code in a number of attempts. The number of attempts depends on the level selected. Level 1 is 12 attempts, level 2 is 10 attempts and level 3 is 8 attempts.
 I also added a bonus challenge where the player has to guess a code word. Here the amount of attempts you get is based on how many letters are in the word. I have set this at 1.5 x the length of the word. For emaple, if the word is 6 letters long then the player will get 9 attempts. I currently have 4 code words in a list and the computer will randomly pick a word each time the game is played.
 
-## **Target Audience**
+### **Target Audience**
 
 The original Mastermind game is suitable for ages 8+. This version of the game would be suitable for 8+ also though the younger ages may require adult supervision. It is a great family game, as a board game, though this is more a one person game playing against the PC, though you could play alternate games against the PC as a family and keep score as you would in the original board games, where the winner is the person who guesses the secret code in the least attempts.
 
-## **User Requirements**
+### **User Requirements**
 
 - The player wants to engage in a challenging game to solve a secret code to become a Boss Brain.
 - The player wants the choice to read the instructions prior to playing the game.
@@ -21,11 +21,13 @@ The original Mastermind game is suitable for ages 8+. This version of the game w
 - If the player does not guess the correct code in the given amount of attempts, then they want to know what the secret code is.
 - The player will want to exit the game after it has finished.
 
-## **Flow Chart**
+### **Flow Chart**
+
+I created a flowchart to help visualise my concept. I found this very helpful during the testing stages of my project as I had missed out some of the error raises. I used draw.io's flow chart maker (http://app.diagrams.net/).
 
 ![Flow Chart](docs/images/BossBrain_Flowchart_Final.png)
 
-## **Technology**
+### **Technology**
 
 I used Python (version 3.12.2 latest version at time of produce)
 
@@ -61,13 +63,13 @@ add screenshot
 Option 3 takes the player to the bonus challenge where the players gets to guess a code word.
 In the code here I have made a list of 4 code words that the computer chooses randomly for the player to guess. More words could be added here as once the player has guessed all 4 words it would become a bit boring.
 
-## **Exit Game**
+### **Exit Game**
 
 On selecting option 4 from the main page, the below message is shown and the program is ended.
 
 add screenshot
 
-## **Play Game**
+### **Play Game**
 
 Option 1 from the main page or the instructions page takes the player to choose of levels. There are 3 levels to choose from. There are 3 different levels. Each level has a different amount of attempts at guessing the secret code. Here the play_game function is basically repeated 3 times and each version has a level number to distinguish it and the max_attempts is a different value in each version.
 
@@ -80,21 +82,21 @@ When the player makes their choice of level, they are taken to the correct versi
 Add screeshot
 
 
-## **The secret Code generation**
+### **The secret Code generation**
 
 To generate the secret code, I have imported the random library. I have created constants for the generation of this code. The COLORS list and also the CODE_LENGTH.
 
 add screenshot
 
-## **Input Error Handling**
+### **Input Error Handling**
 
-## **How guess is compared to code**
+### **How guess is compared to code**
 
 ### **Clear Screen Function**
 
 The clear_screen function is used at the start of each section so that the screen is cleared before the choosed section is run.
 
-## **Credits**
+### **Credits**
 
 I used this website for the blink_text function code.
 
@@ -105,7 +107,7 @@ This was used on the levels choice page as there are already 3 options to choose
 
 
 
-## **Bugs Fixed**
+### **Bugs Fixed**
 
 When I first added the blink_text function to get the Congratulations! message to flash, it was flashing continuously though this seemed to stop the rest of the code from runnint. It was stuck in an infinate while loop. I then put a break in the while loop. This made the Congratulations! message flash up, however then it dissappeared and then the next line was printed. If I put the print text function ton the 3 messages that come up after the game has been won, they flash up one by one. I like this affect though this wasn't what I wanted initially. I was hoping for the congratulations message to be flashing continously with the to messages below printed. 
 
@@ -120,7 +122,7 @@ When testing the instructions page, on entering an invalid option, the message '
 
 On the Bonus challenge game I was trying to figure out how to make make sure the player can only enter letter characters. I eventually manged this by adding the isalphafunction to the attempt.
 
-## **Improvements as going along**
+### **Improvements as going along**
 
 Initially the player had to write the name of each of the colours out. I was was testing out my coding I was finding this very time consuming and heavy on the finger usage. I decided to use the first letters of each of the colours instead which made it much simpler and enjoyable. I also added the .upper so that the player can inut lowercase or uppercase letters and either will be excepted.
 
