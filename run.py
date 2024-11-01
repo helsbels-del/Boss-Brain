@@ -423,7 +423,10 @@ def play_bonus_game(code_word):
             print("\n\033[0;33mYou have " + str(attempts) + " attempts remaining.")
             print("\033[0;37mCurrent word guess: " + letters_in_word(code_word, lettersguessed))
             print("\033[0;33mLetters guessed so far: " + str(lettersguessed))
-            attempt = (input("\033[0;37mEnter your letter of choice: ")).lower()[0]
+            attempt = (input("\033[0;37mEnter your letter of choice: ")).lower().isalpha()
+            if attempt != isalpha():
+                print("You've entered an incorrect character! Check your guess and try again!")
+                continue
 
             if attempt not in lettersguessed:
                 lettersguessed.append(attempt)
@@ -440,7 +443,7 @@ def play_bonus_game(code_word):
                     try:
                         menu_choice = int(input("\033[37;1m Enter choice: \n"))
                         if menu_choice == 1:
-                            play_bonus_game()
+                            play_bonus_game(code_word)
                             break
                         elif menu_choice == 2:
                             main_page()
@@ -464,20 +467,20 @@ def play_bonus_game(code_word):
             print("Choose '1' to play again")
             print("choose '2' to return to main page")
 
-            while True:
-                try:
-                    menu_choice = int(input(" Press choice: \n"))
-                    if menu_choice == 1:
-                        choose_level()
-                        break
-                    elif menu_choice == 2:
-                        main_page()
-                        break            
-                    else:
-                        raise ValueError
+    while True:
+        try:
+            menu_choice = int(input(" Press choice: \n"))
+            if menu_choice == 1:
+                choose_level()
+                break
+            elif menu_choice == 2:
+                main_page()
+                break            
+            else:
+                raise ValueError
 
-                except ValueError:
-                    print(" Invalid key press. Please choose 1, or 2")
+        except ValueError:
+            print(" Invalid key press. Please choose 1, or 2")
  
 
             
