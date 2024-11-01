@@ -116,6 +116,8 @@ During the tesing stages I realised that after the player guesses the code corre
 
 When testing the instructions page, on entering an invalid option, the message 'Invalid key press...' comes up, however the program is then ended. I realised I had an end() at the bottom of this section that should not have been there. Als the indentation was incorrect in this section and there was a break that shouldn't have been there. Now it is working.
 
+On the Bonus challenge game I was trying to figure out how to make make sure the player can only enter letter characters. I eventually manged this by adding the isalphafunction to the attempt.
+
 ## **Improvements as going along**
 
 Initially the player had to write the name of each of the colours out. I was was testing out my coding I was finding this very time consuming and heavy on the finger usage. I decided to use the first letters of each of the colours instead which made it much simpler and enjoyable. I also added the .upper so that the player can inut lowercase or uppercase letters and either will be excepted.
