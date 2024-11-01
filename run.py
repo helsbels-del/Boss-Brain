@@ -8,9 +8,6 @@ import time
 # Constant variables - colors available to choose from, code length and how many attempts
 colors = ["R", "B", "G", "Y", "W", "P"]
 code_length = 4
-max_attempts_level1 = 12
-max_attempts_level2 = 10
-max_attempts_level3 = 8
 
 #Title page
 def main_page():
@@ -122,13 +119,13 @@ def choose_level():
             menu_choice = int(input("\033[37;1m Choose level (Enter '1', '2', or '3'): \n"))
 
             if menu_choice == 1:
-                play_game_level1()
+                play_game(12, 1)
                 break
             elif menu_choice == 2:
-                play_game_level2()
+                play_game(10, 2)
                 break 
             elif menu_choice == 3:
-                play_game_level3()
+                play_game(8, 3)
                 break                      
             elif menu_choice == 4:
                 main_page()
@@ -141,22 +138,22 @@ def choose_level():
 
 
 # main game play
-def play_game_level1():
+def play_game(max_attempts, level):
     """
     Play game function
     """
     clear_screen()
-    print(" \033[4;96m WELCOME TO THE BOSS BRAIN CHALLENGE - Level 1 \033[0;96m\n")
+    print(f" \033[4;96m WELCOME TO THE BOSS BRAIN CHALLENGE - Level {level} \033[0;96m\n")
     print(" \033[0;37m Crack the color code to become a Boss Brain!\n")   
     print("  Choose from the following colors: \033[31;1m Red(R) \033[34;1m Blue(B) \033[32;1m Green(G) \033[33;1m Yellow(Y) \033[37;1m White(W) \033[1;35:47m Pink(P) \n")
-    print(f" \033[0;37m Code Length: \033[33;1m{code_length}, \033[0;37m Max Attempts: \033[33;1m {max_attempts_level1}\n")
+    print(f" \033[0;37m Code Length: \033[33;1m{code_length}, \033[0;37m Max Attempts: \033[33;1m {max_attempts}\n")
     
 # while loop to itereate over game until max attempts made
     attempts = 0
     code = generate_random_code()
-    print(code)
-    while attempts < max_attempts_level1:
-        answer = input(f"\033[0;37m Attempt {attempts + 1}/{max_attempts_level1}. Enter your guess(first letter only and leave a space between each guess): \n").upper().strip().split()
+    #print(code)
+    while attempts < max_attempts:
+        answer = input(f"\033[0;37m Attempt {attempts + 1}/{max_attempts}. Enter your guess(first letter only and leave a space between each guess): \n").upper().strip().split()
         if len(answer) != code_length or not all(color in colors for color in answer):
             print("\033[31;1m You've done something wrong! \033[32;1m Check your guesses and try again!")
             continue
@@ -216,165 +213,6 @@ def play_game_level1():
         except ValueError:
             print(" Invalid key press. Please choose 1, or 2")
 
-def play_game_level2():
-    """
-    Play game function
-    """
-    clear_screen()
-    print(" \033[4;96m WELCOME TO THE BOSS BRAIN CHALLENGE - Level 2 \033[0;96m\n")
-    print(" \033[0;37m Crack the color code to become a Boss Brain!\n")   
-    print("  Choose from the following colors: \033[31;1m Red(R) \033[34;1m Blue(B) \033[32;1m Green(G) \033[33;1m Yellow(Y) \033[37;1m White(W) \033[1;35:47m Pink(P) \n")
-    print(f" \033[0;37m Code Length: \033[33;1m{code_length}, \033[37;0m Max Attempts: \033[33;1m {max_attempts_level2}\n")
-
-# while loop to itereate over game until max attempts made
-    attempts = 0
-    code = generate_random_code()
-    print(code)
-    while attempts < max_attempts_level2:
-        answer = input(f"\033[0;37m Attempt {attempts + 1}/{max_attempts_level2}. Enter your guess(first letter only and leave a space between each guess): \n").upper().strip().split()
-        if len(answer) != code_length or not all(color in colors for color in answer):
-            print("\033[31;1m You've done something wrong! \033[32;1m Check your guesses and try again!")
-            continue
-
-        correct_position = sum(a == c for a, c in zip(answer, code))
-        correct_color = sum(min(answer.count(c), code.count(c)) for c in set(code))
-        correct_color -= correct_position
-
-        print(f"\033[32;1m{correct_position} \033[37;1m colors in the correct place!")
-        print(f"\033[32;1m{correct_color} \033[37;1m correct colors but in the wrong place!\n")
-
-        if correct_position == code_length:
-            blink_text("\033[1;32:40m Congratulations!\n")
-            blink_text("\033[31;1m You have a Boss Brain!!!\n")
-            blink_text(f"\033[33;1m You cracked the secret code: {code}\n")
-            print("\n" * 3)
-            print("\033[0;96m  Choose \033[37;1m '1' \033[0;96m to play again")
-            print("  Choose \033[37;1m '2' \033[0;96m to return to main page")
-            
-            while True:
-                try:
-                    menu_choice = int(input("\033[37;1m Enter choice: \n"))
-                    if menu_choice == 1:
-                        choose_level()
-                        break
-                    elif menu_choice == 2:
-                        main_page()
-                        break
-                    else:
-                        raise ValueError
-
-                except ValueError:
-                    print(" Invalid key press. Please choose 1, or 2")
-                    
-
-            exit()
-
-        attempts += 1
-
-    print("You ran out of attempts!\n")
-    print(f"\033[33;1m The correct code is: {code}\n")
-    print("Choose '1' to play again")
-    print("choose '2' to return to main page")
-
-    while True:
-        try:
-            menu_choice = int(input(" Press choice: \n"))
-            if menu_choice == 1:
-                choose_level()
-                break
-            elif menu_choice == 2:
-                main_page()
-                break            
-            else:
-                raise ValueError
-
-        except ValueError:
-            print(" Invalid key press. Please choose 1, or 2")
-
-def play_game_level3():
-    """
-    Play game function
-    """
-    clear_screen()
-    print(" \033[4;96m WELCOME TO THE BOSS BRAIN CHALLENGE - Level 3 \033[0;96m\n")
-    print(" \033[0;37m Crack the color code to become a Boss Brain!\n")   
-    print("  Choose from the following colors: \033[31;1m Red(R) \033[34;1m Blue(B) \033[32;1m Green(G) \033[33;1m Yellow(Y) \033[37;1m White(W) \033[1;35:47m Pink(P) \n")
-    print(f" \033[0;37m Code Length: \033[33;1m{code_length}, \033[0;37m Max Attempts: \033[33;1m {max_attempts_level3}\n")
-
-# while loop to itereate over game until max attempts made
-    attempts = 0
-    code = generate_random_code()
-    print(code)
-    while attempts < max_attempts_level3:
-        answer = input(f"\033[0;37m Attempt {attempts + 1}/{max_attempts_level3}. Enter your guess(first letter only and leave a space between each guess): \n").upper().strip().split()
-        if len(answer) != code_length or not all(color in colors for color in answer):
-            print("\033[31;1m You've done something wrong! \033[32;1m Check your guesses and try again!")
-            continue
-
-        correct_position = sum(a == c for a, c in zip(answer, code))
-        correct_color = sum(min(answer.count(c), code.count(c)) for c in set(code))
-        correct_color -= correct_position
-
-        print(f"\033[32;1m{correct_position} \033[0;37m colors in the correct place!")
-        print(f"\033[32;1m{correct_color} \033[0;37m correct colors but in the wrong place!\n")
-
-        if correct_position == code_length:
-            blink_text("\033[1;32:40m Congratulations!\n")
-            blink_text("\033[31;1m You have a Boss Brain!!!\n")
-            blink_text(f"\033[33;1m You cracked the secret code: {code}\n")
-            print("\n" * 3)
-            print("\033[0;96m  Choose \033[37;1m '1' \033[0;96m to play again")
-            print("  Choose \033[37;1m '2' \033[0;96m to return to main page")
-            
-
-            while True:
-                try:
-                    menu_choice = int(input("\033[37;1m Enter choice: \n"))
-                    if menu_choice == 1:
-                        choose_level()
-                        break
-                    elif menu_choice == 2:
-                        main_page()
-                        break
-                    elif menu_choice == 3:
-                        print(f"Exiting game....Game ended")
-                        break
-                    elif menu_choice == 4:
-                        play_bonus_game()
-                        break
-                    else:
-                        raise ValueError
-
-                except ValueError:
-                    print(" Invalid key press. Please choose 1, or 2")
-                    
-
-            exit()
-
-        attempts += 1
-
-    print("You ran out of attempts!\n")
-    print(f"\033[33;1m The correct code is: {code}\n")
-    print("\n" * 3)
-    print("Choose '1' to play again")
-    print("choose '2' to return to main page")
-
-    while True:
-        try:
-            menu_choice = int(input(" Press choice: \n"))
-            if menu_choice == 1:
-                choose_level()
-                break
-            elif menu_choice == 2:
-                main_page()
-                break            
-            else:
-                raise ValueError
-
-        except ValueError:
-            print(" Invalid key press. Please choose 1, or 2")
-
-
 # Bonus game 
 
 
@@ -424,9 +262,9 @@ def play_bonus_game(code_word):
             print("\033[0;37mCurrent word guess: " + letters_in_word(code_word, lettersguessed))
             print("\033[0;33mLetters guessed so far: " + str(lettersguessed))
             attempt = (input("\033[0;37mEnter your letter of choice: ")).lower()
-            #if attempt != attempt.isalpha():
-                #print("You entered an incorrect character! Check your guess and try again.")
-                #continue
+            if not attempt.isalpha():
+                print("You entered an incorrect character! Check your guess and try again.")
+                continue
             
 
             if attempt not in lettersguessed:
