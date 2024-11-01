@@ -19,9 +19,11 @@ The original Mastermind game is suitable for ages 8+. This version of the game w
 - The player needs to know how many attempts they have left as they are playing.
 - The player wants to know if they have been successful in guessing the correct code in the given amount of attempts.
 - If the player does not guess the correct code in the given amount of attempts, then they want to know what the secret code is.
-- The player will wont to exit the game after it has finished.
+- The player will want to exit the game after it has finished.
 
 ## **Flow Chart**
+
+![Flow Chart](docs/images/BossBrain_Flowchart_Final.png)
 
 ## **Technology**
 
