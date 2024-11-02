@@ -23,7 +23,7 @@ def main_page():
     print("\033[0;33m  Choose \033[37;1m '1' \033[0;33m to Play")
     print("  Choose \033[37;1m '2' \033[0;33m for Instructions")
     print("  Choose \033[37;1m '3' \033[0;33m for the Bonus Challenge\n")
-    print(" Choose \033[37;1m '4' \033[0;33m to Exit\n")
+    print(" Choose \033[37;1m '0' \033[0;33m to Exit\n")
 
     while True:
         try:
@@ -37,14 +37,14 @@ def main_page():
             elif menu_choice == 3:
                 play_bonus_game('self')
                 break
-            elif menu_choice == 4:
+            elif menu_choice == 0:
                 print(f"Exiting game....Game ended")
                 break
             else:
                 raise ValueError
 
         except ValueError:
-            print(" Invalid key press. Please choose 1, 2, 3 or 4")
+            print(" Invalid key press. Please choose 1, 2, 3 or 0")
 # Instructions of play
 def instructions():
     """
