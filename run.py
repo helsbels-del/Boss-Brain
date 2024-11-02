@@ -19,7 +19,7 @@ def main_page():
     print("\033[0;37m Can you crack the secrect code?\n")
     print("\x1B[3m With a code length of 4 and 6 available colours...")
     print(" ...there are only 1,296 different combinations!\x1B[0m\n")
-    print("\033[0;92m **** Good luck CodeBreaker, May the force be with you! ****\n")    
+    print("\033[0;92m **** Good luck CodeBreaker. Tough situations build strong people! ****\n")    
     print("\033[0;33m  Choose \033[37;1m '1' \033[0;33m to Play")
     print("  Choose \033[37;1m '2' \033[0;33m for Instructions")
     print("  Choose \033[37;1m '3' \033[0;33m for the Bonus Challenge\n")
@@ -68,7 +68,7 @@ def instructions():
     print("\033[0;37m Choose 4 colors by entering the first letter of your choosen colours. You can use lower or upper case letters, leaving a space between each letter.\n")
     print(" The secret code can contain multiples of the same colour.\n")
     print("\033[0;37m Find the code in 12, 10 or 8 attempts, depending on which level is choosen, to become a Boss Brain!\n")
-    print("\033[0;92m **** Good luck CodeBreaker, The force will be with you always ****\n") 
+    print("\033[0;92m **** Good luck CodeBreaker. Always believe the impossible is possible! ****\n") 
     print("\n" * 3)
     print("\033[33;1m Choose \033[37;1m '1' \033[33;1m to play")
     print(" Choose \033[37;1m '2' \033[33;1m to return to main page")
@@ -111,7 +111,7 @@ def choose_level():
     print("\033[0;37m  Level 1 will give you 12 attempts")
     print("  Level 2 will give you 10 attempts")
     print("  Level 3 will give you 8 attempts\n")
-    print("\033[0;92m **** Good luck CodeBreaker, Fear is the path to the darkside ****\n")
+    print("\033[0;92m **** Good luck CodeBreaker. Just because it's hard, it doesn't make it impossible! ****\n")
     print("\033[0;33m (Choose \033[0;37m '4' \033[0;33m to return to main page)")
     
     while True:
