@@ -253,7 +253,7 @@ def play_bonus_game(code_word):
     code_word = generate_code_word()
     print(code_word)
     lettersguessed = []
-    attempts = int(len(code_word) * 1.5)
+    attempts = int(len(code_word) * 2)
     print("  \033[32;1m**** The code word has " + str(len(code_word)) + " letters.**** ")
 
     while True:
