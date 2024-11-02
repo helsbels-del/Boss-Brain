@@ -170,9 +170,9 @@ def play_game(max_attempts, level):
 # while loop to itereate over game until max attempts made
     attempts = 0
     code = generate_random_code()
-    print(', '.join(code))
+    #print(', '.join(code))
     while attempts < max_attempts:
-        answer = input(f"\033[0;37m Attempt {attempts + 1}/{max_attempts}. Enter your guess(first letter only and leave a space between each guess): \n").upper().strip().split()
+        answer = input(f"\033[0;32m Attempt {attempts + 1}/{max_attempts}. Enter your guess(first letter only and leave a space between each guess):\033[0;37m \n").upper().strip().split()
         if len(answer) != code_length or not all(color in colors for color in answer):
             print("\033[31;1m You've done something wrong! \033[32;1m Check your guesses and try again!")
             continue
@@ -181,8 +181,8 @@ def play_game(max_attempts, level):
         correct_color = sum(min(answer.count(c), code.count(c)) for c in set(code))
         correct_color -= correct_position
 
-        print(f"\033[32;1m{correct_position} \033[37;1m colors in the correct place!")
-        print(f"\033[32;1m{correct_color} \033[37;1m correct colors but in the wrong place!\n")
+        print(f"\033[33;1m{correct_position} \033[37;1m colors in the correct place!")
+        print(f"\033[33;1m{correct_color} \033[37;1m correct colors but in the wrong place!\n")
 
         if correct_position == code_length:
             blink_text("\033[1;32:40m Congratulations!\n")
@@ -270,7 +270,7 @@ def play_bonus_game(code_word):
 # while loop to iterate over game until max attempts made
     
     code_word = generate_code_word()
-    print(code_word)
+    #print(code_word)
     lettersguessed = []
     attempts = int(len(code_word) * 2)
     print("  \033[32;1m**** The code word has " + str(len(code_word)) + " letters.**** ")
