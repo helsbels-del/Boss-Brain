@@ -217,7 +217,7 @@ def play_game(max_attempts, level):
 
 
 # Generate code word
-code_words = ["Obfuscation", "Coding", "Challenge", "Master"]
+code_words = ["Obfuscation", "Coding", "Challenge", "Master", "Eagle", "Phoenix", "Banana", "Galaxy", "Pirate", "Alpha"]
 def generate_code_word():
     """ 
     Generates a random word from a given list
