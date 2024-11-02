@@ -83,14 +83,14 @@ Option 1 from the main page or the instructions page takes the player to a choic
 
 When the player makes their choice of level, they are taken to the game and told how many attempts they have.
 
-Add screeshot
+![Level one page](docs/images/level_one_page.png)
+![Level two page](docs/images/level_two_page.png)
+![Level three page](docs/images/level_three_page.png)
 
 
 ### **The secret Code generation**
 
 To generate the secret code, I have imported the random library. I have created constants for the generation of this code. The COLORS list and also the CODE_LENGTH.
-
-add screenshot
 
 ### **Input Error Handling**
 
