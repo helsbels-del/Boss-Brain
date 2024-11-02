@@ -174,7 +174,7 @@ def play_game(max_attempts, level):
     while attempts < max_attempts:
         answer = input(f"\033[0;32m Attempt {attempts + 1}/{max_attempts}. Enter your guess(first letter only and leave a space between each guess):\033[0;37m \n").upper().strip().split()
         if len(answer) != code_length or not all(color in colors for color in answer):
-            print("\033[31;1m You've done something wrong! \033[32;1m Check your guesses and try again!")
+            print("\033[31;1m You've done something wrong! \033[33;1m Check your guesses and try again!")
             continue
 
         correct_position = sum(a == c for a, c in zip(answer, code))
