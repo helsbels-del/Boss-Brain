@@ -47,37 +47,41 @@ Time
 
 The first page that the player sees when the program is started tells the player that this is the Boss Brain Challenge and lists a choice of 4 options.
 
-add screen shot
+![Main Page](docs/images/main_page.png)
 
-The player can choose to play the game, go to the instructions or exit the game.
+The player can choose to play the game, go to the instructions, play the bonus challenge or exit the game.
 If the player chooses option 1 to play the game, they are then asked which level they would like to play. 
 
 ### **Instructions Page**
 
-After selecting option 2 from the main page, the player can read the Instruction For Play. At the bottom of the page the player has options to either 'Play' or 'Return to main Page'. 
+After selecting option 2 from the main page, the player can read the Instruction For Play for the main agame and the bonus game. At the bottom of the page the player has options to either 'Play' or 'Return to main Page'. 
 
-add screenshot
+![Instructions main game](docs/images/instructions_main_game.png)
+
+![Instructions bonus game](docs/images/instructions_bonus_game.png)
 
 ### **Bonus Challenge**
 
 Option 3 takes the player to the bonus challenge where the players gets to guess a code word.
-In the code here I have made a list of 4 code words that the computer chooses randomly for the player to guess. More words could be added here as once the player has guessed all 4 words it would become a bit boring.
+In the code here I have made a list of 10 code words that the computer chooses randomly for the player to guess. More words could be added here as once the player has guessed all 10 words it would become a bit boring.
+
+![Bonus Game Page](docs/images/bonus_page.png)
 
 ### **Exit Game**
 
 On selecting option 4 from the main page, the below message is shown and the program is ended.
 
-add screenshot
+![Exit game](docs/images/exit_game.png)
 
 ### **Play Game**
 
-Option 1 from the main page or the instructions page takes the player to choose of levels. There are 3 levels to choose from. There are 3 different levels. Each level has a different amount of attempts at guessing the secret code. Here the play_game function is basically repeated 3 times and each version has a level number to distinguish it and the max_attempts is a different value in each version.
+Option 1 from the main page or the instructions page takes the player to a choice of levels. There are 3 levels to choose from. Each level has a different amount of attempts at guessing the secret code. Here the play_game function chooses the amount of attempts depending on which level is choosen by the player.
 
-add screenshot
+![Choose Level Page](docs/images/choose_level-page.png)
 
 ### **Level options**
 
-When the player makes their choice of level, they are taken to the correct version. This is because the choose_level function uses a While True loop when the selection is made.
+When the player makes their choice of level, they are taken to the game and told how many attempts they have.
 
 Add screeshot
 
