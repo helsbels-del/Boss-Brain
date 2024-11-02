@@ -260,12 +260,15 @@ def play_bonus_game(code_word):
         if attempts != 0:
             print("\n\033[0;33mYou have " + str(attempts) + " attempts remaining.")
             print("\033[0;37mCurrent word guess: " + letters_in_word(code_word, lettersguessed))
-            print("\033[0;33mLetters guessed so far: " + str(lettersguessed))
+            print("\033[0;33mLetters guessed so far: " + str(', '.join(lettersguessed)))
             attempt = (input("\033[0;37mEnter your letter of choice: ")).lower()
             if not attempt.isalpha():
                 print("You entered an incorrect character! Check your guess and try again.")
                 continue
-            
+
+            if attempt in lettersguessed:
+                print("You have aready entered this letter. Try again.")
+                continue            
 
             if attempt not in lettersguessed:
                 lettersguessed.append(attempt)
