@@ -188,7 +188,7 @@ def play_game(max_attempts, level):
     clear_screen()
     print(f" \033[4;96m WELCOME TO THE BOSS BRAIN CHALLENGE - Level {level} \033[0;96m\n")
     print(" \033[0;37m Crack the color code to become a Boss Brain!\n")
-    print(" Choice of colours: \033[31;1m Red(R) \033[34;1m Blue(B) \033[32;1m Green(G) \033[33;1m Yellow(Y) \033[37;1m White(W) \033[35;1m Pink(P) \n")
+    print("  Choice of colours: \033[31;1m Red(R) \033[34;1m Blue(B) \033[32;1m Green(G) \033[33;1m Yellow(Y) \033[37;1m White(W) \033[35;1m Pink(P) \n")
     print(f" \033[0;37m Code Length: \033[33;1m{code_length} \033[0;37m Max Attempts: \033[33;1m {max_attempts}\n")
 # while loop to itereate over game until max attempts made
     attempts = 0
