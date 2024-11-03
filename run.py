@@ -108,7 +108,7 @@ def instructions():
     print(" this can be lower or upper case.\n")
     print(" The computer then gives feedback,")
     print(" to tell the player if the letter is in the code word or not in the code word.\n")
-    print("The player repeats entering a letter until they guess the code word,")
+    print(" The player repeats entering a letter until they guess the code word,")
     print(" or they run out of attempts, which ever happens first.")
     print("\n" * 2)
     print("\033[1;92m **** Good luck CodeBreaker ****")
