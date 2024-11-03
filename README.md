@@ -124,7 +124,9 @@ During the tesing stages I realised that after the player guesses the code corre
 
 When testing the instructions page, on entering an invalid option, the message 'Invalid key press...' comes up, however the program is then ended. I realised I had an end() at the bottom of this section that should not have been there. Als the indentation was incorrect in this section and there was a break that shouldn't have been there. Now it is working.
 
-On the Bonus challenge game I was trying to figure out how to make make sure the player can only enter letter characters. I eventually manged this by adding the isalphafunction to the attempt.
+On the Bonus challenge game I was trying to figure out how to make make sure the player can only enter letter characters. I eventually managed this by adding the isalphafunction to the attempt.
+
+When testing the bonus challenge, after running out of attempts, the message came up but kept scrolling and got stuck in a loop. I corrected the indentation in the code for this loop and this is now working.
 
 ### **Improvements as going along**
 
