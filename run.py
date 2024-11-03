@@ -101,7 +101,7 @@ def instructions():
                 choose_level()
                 break
             elif menu_choice == 2:
-                play_bonus_game()
+                play_bonus_game('self')
                 break      
             elif menu_choice == 3:
                 main_page()
@@ -269,28 +269,30 @@ def play_bonus_game(code_word):
     clear_screen()
     print(" \033[4;96m THIS IS THE BOSS BRAIN BONUS CHALLENGE! \033[0;96m\n")
     print(" \033[0;37m Are you Boss Brain enough for the bonus challenge?\n")
-    print(" \x1B[3m Can you guess the code word before running out of attempts?")
-    print("  This time I can give you a hint!\x1B[0m\n")
+    print("  Can you guess the code word before running out of attempts?")
+    print("  This time I can give you a hint!\n")
 # while loop to iterate over game until max attempts made
     
     code_word = generate_code_word()
     #print(code_word)
     lettersguessed = []
     attempts = int(len(code_word) * 2)
-    print("  \033[32;1m**** The code word has " + str(len(code_word)) + " letters.**** ")
+    print("  \033[31;1m**** The code word has " + str(len(code_word)) + " letters.**** ")
 
     while True:
         if attempts != 0:
-            print("\n\033[0;33mYou have " + str(attempts) + " attempts remaining.")
-            print("\033[0;37mCurrent word guess: " + letters_in_word(code_word, lettersguessed))
-            print("\033[0;33mLetters guessed so far: " + str(', '.join(lettersguessed)))
+            print("\n\033[0;37mYou have " + str(attempts) + " attempts remaining.\n")
+            print("\033[0;33mCurrent word guess: " + letters_in_word(code_word, lettersguessed))
+            print("\n")
+            print("\033[0;32mLetters guessed so far: " + str(', '.join(lettersguessed)))
+            print("\n")
             attempt = (input("\033[0;37mEnter your letter of choice: ")).lower()
             if not attempt.isalpha():
-                print("You entered an incorrect character! Check your guess and try again.")
+                print("You entered an incorrect character! Check your guess and try again.\n")
                 continue
 
             if attempt in lettersguessed:
-                print("You have aready entered this letter. Try again.")
+                print("You have aready entered this letter. Try again.\n")
                 continue            
 
             if attempt not in lettersguessed:
@@ -329,9 +331,9 @@ def play_bonus_game(code_word):
                 else:
                     print(attempt + " is not in the code word.")
         else:
-            print("\nUh oh, you ran out of attempts. The code word is " + code_word)
-            print("Choose '1' to play again")
-            print("choose '2' to return to main page")
+            print("\033[31;1mUh oh, you ran out of attempts.\033[32;1m The code word is " + code_word)
+            print("\n\033[96;1mChoose\033[37;1m '1'\033[0;96m to play again")
+            print("choose \033[37;1m'2'\033[0;96m to return to main page")
 
             while True:
                 try:
