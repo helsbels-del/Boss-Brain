@@ -15,7 +15,7 @@ def main_page():
     Main page with player options
     """
     clear_screen()
-    print("\033[4;96m THIS IS THE BOSS BRAIN CHALLENGE! \033[0m\n")
+    print("\033[1;96m THIS IS THE BOSS BRAIN CHALLENGE!\n")
     print("\033[37;1m Can you crack the secrect code?\n")
     print("\x1B[3m With a code length of 4 and 6 available colours...")
     print(" ...there are only 1,296 different combinations!\x1B[0m\n")
@@ -52,7 +52,7 @@ def instructions():
     Instructions for the user of how to play the game
     """
     clear_screen()
-    print("\033[1;96m INSTRUCTIONS FOR PLAY \033\n")
+    print("\033[1;96mINSTRUCTIONS FOR PLAY \033\n")
     print(" Main Game\n")
     print(" \033[37;1mThe CodeMaker (computer) creates a secret 4 colour code,")
     print(" choosing from 6 available colours.\n")
@@ -151,7 +151,7 @@ def choose_level():
     Choose level function
     """
     clear_screen()
-    print("  \033[4;96m CHOOSE YOUR LEVEL \033[0;96m\n")
+    print("  \033[1;96m CHOOSE YOUR LEVEL \033\n")
     print("\033[37;1m  Level 1 will give you 12 attempts")
     print("  Level 2 will give you 10 attempts")
     print("  Level 3 will give you 8 attempts\n")
@@ -186,7 +186,7 @@ def play_game(max_attempts, level):
     Play game function
     """
     clear_screen()
-    print(f" \033[4;96m WELCOME TO THE BOSS BRAIN CHALLENGE - Level {level} \033[0;96m\n")
+    print(f" \033[1;96m WELCOME TO THE BOSS BRAIN CHALLENGE - Level {level}\n")
     print(" \033[37;1m  Crack the color code to become a Boss Brain!\n")
     print("   Choice of colours: \033[31;1m Red(R) \033[34;1m Blue(B) \033[32;1m Green(G) \033[33;1m Yellow(Y) \033[37;1m White(W) \033[35;1m Pink(P) \n")
     print(f" \033[37;1m  Code Length: \033[33;1m{code_length} \033[37;1m  Max Attempts: \033[33;1m {max_attempts}\n")
@@ -282,7 +282,7 @@ def play_bonus_game(code_word):
     Play game function
     """
     clear_screen()
-    print(" \033[4;96m THIS IS THE BOSS BRAIN BONUS CHALLENGE! \033[0;96m\n")
+    print(" \033[1;96m THIS IS THE BOSS BRAIN BONUS CHALLENGE!\n")
     print(" \033[37;1m Are you Boss Brain enough for the bonus challenge?\n")
     print("  Can you guess the code word before running out of attempts?")
     print("  This time I can give you a hint!\n")
