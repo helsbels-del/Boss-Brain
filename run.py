@@ -315,7 +315,7 @@ def play_bonus_game(code_word):
 
             if letters_in_word(code_word, lettersguessed) == code_word:
                 print("\n" * 3)
-                print("\033[31;1mAmazing! You cracked the code word!\033[0m \033[0;33m " + code_word)
+                print("\033[31;1mAmazing! You cracked the code word!\033[0m \033[1;33m " + code_word)
                 print("\n" * 3)
                 print("\033[0;96m  Choose \033[37;1m '1' \033[0;96m to play bonus challenge again")
                 print("  Choose \033[37;1m '2' \033[0;96m to return to main page")
@@ -343,8 +343,8 @@ def play_bonus_game(code_word):
                     print(attempt + "\033[0m \033[0;37m is not in the code word.")
         else:
             print("\033[31;1mUh oh, you ran out of attempts.\033[33;1m The code word is " + code_word)
-            print("\n\033[96;1mChoose\033[37;1m '1'\033[0;96m to play again")
-            print("choose \033[37;1m'2'\033[0;96m to return to main page")
+            print("\033[0;96m  Choose \033[37;1m '1' \033[0;96m to play bonus challenge again")
+            print("  Choose \033[37;1m '2' \033[0;96m to return to main page")
 
             while True:
                 try:
