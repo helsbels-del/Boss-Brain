@@ -15,7 +15,7 @@ def main_page():
     Main page with player options
     """
     clear_screen()
-    print("\033[4;96m THIS IS THE BOSS BRAIN CHALLENGE! \033[0;96\n")
+    print("\033[4;96m THIS IS THE BOSS BRAIN CHALLENGE! \033[0m\n")
     print("\033[37;1m Can you crack the secrect code?\n")
     print("\x1B[3m With a code length of 4 and 6 available colours...")
     print(" ...there are only 1,296 different combinations!\x1B[0m\n")
