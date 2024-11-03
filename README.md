@@ -110,6 +110,7 @@ https://handhikayp.medium.com/generate-a-blinking-text-with-very-simple-python-4
 This was used on the levels choice page as there are already 3 options to choose which level to play. I have realised through testing the game continuously that there is a need to have the option to return to the main page or to exit the game on every section. This has been invaluable while I have been doing the testing. I may remove on the instrctions page and levels page later on as I think maybe not necessary once the testing has been finished. This means the player would always have to return to the main page before being able to exit the game completely. I think that is reasonable?
 I have changed this so that the player has to return to the man page to exit now.
 
+
 Below are some sites that I visited to look at other python programs for a mastermind or letter codign game to get some ideas and inspiration. I also used pinterest site to get ideas for some encouraging quotes to add to some of the sections to help encourage the player in hte challenges.
 
 https://www.youtube.com/watch?v=fTWaQ0zbxf0
@@ -144,3 +145,5 @@ One of the messages that comes up at the end of the game is 'You have a Boss Bra
 For the clear_screen function, the code I initially used only works on windows using the imported os library. I then changed this to a method where effectively, a number of blank lines are inserted to give the illusion of a new page at the stat of each section. This works well across all platforms.
 
 I decided to add a bonus level where the player gets to guess a code word.
+
+
