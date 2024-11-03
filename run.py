@@ -53,11 +53,15 @@ def instructions():
     clear_screen()
     print("\033[4;96m INSTRUCTIONS FOR PLAY \033[0;96m\n")
     print(" Main Game\n")
-    print("\033[0;37m The CodeMaker (computer) creates a secret 4 colour code, choosing from 6 available colours.\n")
-    print(" The CodeBreaker (player) needs to crack the secret code in a given number of attempts.\n")
+    print("\033[0;37m The CodeMaker (computer) creates a secret 4 colour code,")
+    print( "choosing from 6 available colours.\n")
+    print(" The CodeBreaker (player) needs to crack the secret code,")
+    print(" in a given number of attempts.\n")
     print(" The number of attempts will depend on which level is choosen.\n")
-    print(" After each attempt, feedback is given as to how many colours are correct and how many colours are in the correct position.\n")
-    print(" If the player cracks the secret code before running out of attempts, this is the end of the game.")
+    print(" After each attempt, feedback is given as to how many colours are correct,")
+    print(" and how many colours are in the correct position.\n")
+    print(" If the player cracks the secret code before running out of attempts,")
+    print (" this is the end of the game.")
     print(" The player then has the choice to play again or return to the main page.\n")
     print(" If the player runs out of attempts before cracking the correct secret code, this is the end of the game.")
     print(" The player then has the choice to play again, or return to the main page.\n")
@@ -166,7 +170,7 @@ def play_game(max_attempts, level):
 # while loop to itereate over game until max attempts made
     attempts = 0
     code = generate_random_code()
-    print(', '.join(code))
+    #print(', '.join(code))
     while attempts < max_attempts:
         answer = input(f"\033[0;32m Attempt {attempts + 1}/{max_attempts}. Enter your guess(first letter only and leave a space between each guess):\033[0;37m \n").upper().strip().split()
         if len(answer) != code_length or not all(color in colors for color in answer):
@@ -262,7 +266,7 @@ def play_bonus_game(code_word):
 # while loop to iterate over game until max attempts made
 
     code_word = generate_code_word()
-    print(code_word)
+    #print(code_word)
     lettersguessed = []
     attempts = int(len(code_word) * 2)
     print("  \033[31;1m**** The code word has " + str(len(code_word)) + " letters.**** ")
