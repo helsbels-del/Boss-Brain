@@ -333,7 +333,7 @@ def play_bonus_game(code_word):
                 try:
                     menu_choice = int(input(" Press choice: \n"))
                     if menu_choice == 1:
-                        choose_level()
+                        play_bonus_game(code_word)
                         break
                     elif menu_choice == 2:
                         main_page()
