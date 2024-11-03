@@ -208,9 +208,9 @@ def play_game(max_attempts, level):
         print(f"\033[33;1m{correct_color} \033[37;1m correct color(s) but in the wrong place!\n")
 
         if correct_position == code_length:
-            blink_text("\033[1;32:40m Congratulations!\n")
-            blink_text("\033[31;1m You have a Boss Brain!!!\n")
-            blink_text(f"\033[33;1m You cracked the secret code: {', '.join(code)}\n")
+            blink_text("\033[31;1m Congratulations!\n")
+            blink_text("\033[37;1m You have a Boss Brain!!!\n")
+            blink_text(f"\033[33;1m You cracked the secret code:\033[37;1m {', '.join(code)}\n")
             print("\n" * 3)
             print("\033[0;96m  Choose \033[37;1m '1' \033[0;96m to play again")
             print("  Choose \033[37;1m '2' \033[0;96m to return to main page")
@@ -234,9 +234,9 @@ def play_game(max_attempts, level):
         attempts += 1
 
     print("\033[31;1m You ran out of attempts!\n")
-    print(f"\033[33;1m The correct code is: {', '.join(code)}\n")
-    print("Choose '1' to play again")
-    print("choose '2' to return to main page")
+    print(f"\033[33;1m The correct code is:\033[37;1m  {', '.join(code)}\n")
+    print("\033[33;1m Choose\033[37;1m  '1' to play again")
+    print("\033[33;1m Choose\033[37;1m  '2' to return to main page")
 
     while True:
         try:
@@ -303,11 +303,11 @@ def play_bonus_game(code_word):
             print("\n")
             attempt = (input("\033[37;1m Enter your letter of choice:\033[1;32m ")).lower()
             if not attempt.isalpha():
-                print("You entered an incorrect character! Check your guess and try again.\n")
+                print(" You entered an incorrect character! Check your guess and try again.\n")
                 continue
 
             if attempt in lettersguessed:
-                print("You have aready entered this letter. Try again.\n")
+                print(" You have aready entered this letter. Try again.\n")
                 continue
 
             if attempt not in lettersguessed:
