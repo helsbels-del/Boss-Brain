@@ -90,7 +90,8 @@ def instructions():
     print("\033[0;92m **** Good luck CodeBreaker. Always believe the impossible is possible! ****\n") 
     print("\n" * 3)
     print("\033[33;1m Choose \033[37;1m '1' \033[33;1m to play")
-    print(" Choose \033[37;1m '2' \033[33;1m to return to main page")
+    print("\033[33;1m Choose \033[37;1m '2' \033[33;1m to play bonus challenge")
+    print(" Choose \033[37;1m '3' \033[33;1m to return to main page")
     
 
     while True:
@@ -100,6 +101,9 @@ def instructions():
                 choose_level()
                 break
             elif menu_choice == 2:
+                play_bonus_game()
+                break      
+            elif menu_choice == 3:
                 main_page()
                 break            
             else:
