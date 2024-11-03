@@ -329,20 +329,20 @@ def play_bonus_game(code_word):
             print("Choose '1' to play again")
             print("choose '2' to return to main page")
 
-    while True:
-        try:
-            menu_choice = int(input(" Press choice: \n"))
-            if menu_choice == 1:
-                choose_level()
-                break
-            elif menu_choice == 2:
-                main_page()
-                break            
-            else:
-                raise ValueError
+            while True:
+                try:
+                    menu_choice = int(input(" Press choice: \n"))
+                    if menu_choice == 1:
+                        choose_level()
+                        break
+                    elif menu_choice == 2:
+                        main_page()
+                        break            
+                    else:
+                        raise ValueError
 
-        except ValueError:
-            print(" Invalid key press. Please choose 1, or 2")
+                except ValueError:
+                    print(" Invalid key press. Please choose 1, or 2")
  
 
             
