@@ -112,7 +112,6 @@ def instructions():
     print(" or they run out of attempts, which ever happens first.")
     print("\n" * 2)
     print("\033[0;92m **** Good luck CodeBreaker ****")
-    print(" Always believe the impossible is possible! \n")
     print(" Just because it's hard, it doesn't make it impossible! \n")
     print("\n" * 3)
     print("\033[33;1m Choose \033[37;1m '1' \033[33;1m to play")
