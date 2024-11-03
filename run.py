@@ -52,7 +52,7 @@ def instructions():
     Instructions for the user of how to play the game
     """
     clear_screen()
-    print("\033[1;96m INSTRUCTIONS FOR PLAY \033[0;96m\n")
+    print("\033[1;96m INSTRUCTIONS FOR PLAY \033\n")
     print(" Main Game\n")
     print(" \033[37;1mThe CodeMaker (computer) creates a secret 4 colour code,")
     print(" choosing from 6 available colours.\n")
