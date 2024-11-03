@@ -16,7 +16,7 @@ def main_page():
     """
     clear_screen()
     print("\033[4;96m THIS IS THE BOSS BRAIN CHALLENGE! \033[0;96\n")
-    print("\033[0;37m Can you crack the secrect code?\n")
+    print("\033[37;1m Can you crack the secrect code?\n")
     print("\x1B[3m With a code length of 4 and 6 available colours...")
     print(" ...there are only 1,296 different combinations!\x1B[0m\n")
     print("\033[0;92m **** Good luck CodeBreaker ****")
@@ -54,7 +54,7 @@ def instructions():
     clear_screen()
     print("\033[1;96m INSTRUCTIONS FOR PLAY \033[0;96m\n")
     print(" Main Game\n")
-    print("\033[0;37m The CodeMaker (computer) creates a secret 4 colour code,")
+    print(" \033[37;1mThe CodeMaker (computer) creates a secret 4 colour code,")
     print(" choosing from 6 available colours.\n")
     print(" The CodeBreaker (player) needs to crack the secret code,")
     print(" in a given number of attempts.\n")
@@ -76,12 +76,12 @@ def instructions():
     print(" as before they made the incorrect guess.\n")
     print(" The choice of colors is:")
     print(" \033[31;1m Red(R) \033[34;1m Blue(B) \033[32;1m Green(G) \033[33;1m Yellow(Y) \033[37;1m White(W) \033[1;35m Pink(P) \n")
-    print("\033[0;37m Choose 4 colors by entering the first letter of your choosen colours.")
+    print("\033[37;1m Choose 4 colors by entering the first letter of your choosen colours.")
     print(" You can use lower or upper case letters, leaving a space between each letter.\n")
     print(" The secret code can contain multiples of the same colour.\n")
-    print("\033[0;37m Find the code in 12, 10 or 8 attempts, to become a Boss Brain!\n")
+    print("\033[37;1m Find the code in 12, 10 or 8 attempts, to become a Boss Brain!\n")
     print("\033[0;96m Bonus Challenge Game \033[0;96m\n")
-    print(" \033[0;37mThe computer generates a code word from a bank of code words in its memory.\n")
+    print(" \033[37;1mThe computer generates a code word from a bank of code words in its memory.\n")
     print(" The player must guess each letter at a time to crack the code word.\n")
     print(" The player is told how many letters are in the word,")
     print(" and the amount of attempts they have.\n")
@@ -152,7 +152,7 @@ def choose_level():
     """
     clear_screen()
     print("  \033[4;96m CHOOSE YOUR LEVEL \033[0;96m\n")
-    print("\033[0;37m  Level 1 will give you 12 attempts")
+    print("\033[37;1m  Level 1 will give you 12 attempts")
     print("  Level 2 will give you 10 attempts")
     print("  Level 3 will give you 8 attempts\n")
     print("\033[0;92m **** Good luck CodeBreaker ****")
@@ -283,7 +283,7 @@ def play_bonus_game(code_word):
     """
     clear_screen()
     print(" \033[4;96m THIS IS THE BOSS BRAIN BONUS CHALLENGE! \033[0;96m\n")
-    print(" \033[0;37m Are you Boss Brain enough for the bonus challenge?\n")
+    print(" \033[37;1m Are you Boss Brain enough for the bonus challenge?\n")
     print("  Can you guess the code word before running out of attempts?")
     print("  This time I can give you a hint!\n")
 # while loop to iterate over game until max attempts made
@@ -296,12 +296,12 @@ def play_bonus_game(code_word):
 
     while True:
         if attempts != 0:
-            print("\n\033[0;37mYou have " + str(attempts) + " attempts remaining.\n")
+            print("\n\033[37;1mYou have " + str(attempts) + " attempts remaining.\n")
             print("\033[0;33mCurrent word guess: " + letters_in_word(code_word, lettersguessed))
             print("\n")
             print("\033[0;32mLetters guessed so far: " + str(', '.join(lettersguessed)))
             print("\n")
-            attempt = (input("\033[0;37mEnter your letter of choice:\033[0;32m ")).lower()
+            attempt = (input("\033[37;1mEnter your letter of choice:\033[0;32m ")).lower()
             if not attempt.isalpha():
                 print("You entered an incorrect character! Check your guess and try again.\n")
                 continue
