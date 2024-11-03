@@ -195,7 +195,7 @@ def play_game(max_attempts, level):
     code = generate_random_code()
     #print(', '.join(code))
     while attempts < max_attempts:
-        answer = input(f"\033[0;32m Attempt {attempts + 1}/{max_attempts}. Enter your guess(Leave a space between each letter guessed):\033[0;37m \n").upper().strip().split()
+        answer = input(f"\033[1;32m Attempt {attempts + 1}/{max_attempts}. Enter your guess(Leave a space between each letter guessed):\033[0;37m \n").upper().strip().split()
         if len(answer) != code_length or not all(color in colors for color in answer):
             print("\033[31;1m You've done something wrong! \033[33;1m Check your guesses and try again!")
             continue
@@ -297,11 +297,11 @@ def play_bonus_game(code_word):
     while True:
         if attempts != 0:
             print("\n\033[37;1mYou have " + str(attempts) + " attempts remaining.\n")
-            print("\033[0;33mCurrent word guess: " + letters_in_word(code_word, lettersguessed))
+            print("\033[1;33mCurrent word guess: " + letters_in_word(code_word, lettersguessed))
             print("\n")
-            print("\033[0;32mLetters guessed so far: " + str(', '.join(lettersguessed)))
+            print("\033[1;32mLetters guessed so far: " + str(', '.join(lettersguessed)))
             print("\n")
-            attempt = (input("\033[37;1mEnter your letter of choice:\033[0;32m ")).lower()
+            attempt = (input("\033[37;1mEnter your letter of choice:\033[1;32m ")).lower()
             if not attempt.isalpha():
                 print("You entered an incorrect character! Check your guess and try again.\n")
                 continue
