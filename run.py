@@ -74,7 +74,7 @@ def instructions():
     print(" and the player will have the same remaining number of attempts,")
     print(" as before they made the incorrect guess.\n")
     print(" The choice of colors is:")
-    print(" \033[31;1m Red(R) \033[34;1m Blue(B) \033[32;1m Green(G) \033[33;1m Yellow(Y) \033[37;1m White(W) \033[35;1m Pink(P) \n")
+    print(" \033[31;1m Red(R) \033[34;1m Blue(B) \033[32;1m Green(G) \033[33;1m Yellow(Y) \033[37;1m White(W) \033[1;35m Pink(P) \n")
     print("\033[0;37m Choose 4 colors by entering the first letter of your choosen colours.")
     print(" You can use lower or upper case letters, leaving a space between each letter.\n")
     print(" The secret code can contain multiples of the same colour.\n")
