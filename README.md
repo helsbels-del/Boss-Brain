@@ -106,10 +106,17 @@ I used this website for the blink_text function code.
 
 https://handhikayp.medium.com/generate-a-blinking-text-with-very-simple-python-4c10750978f5#:~:text=The%20blink_text%20function%20continuously%20prints,state%2C%20creating%20the%20blink%20effect
 
-I used this website for the idea to turn some of my test into italics.
+
 This was used on the levels choice page as there are already 3 options to choose which level to play. I have realised through testing the game continuously that there is a need to have the option to return to the main page or to exit the game on every section. This has been invaluable while I have been doing the testing. I may remove on the instrctions page and levels page later on as I think maybe not necessary once the testing has been finished. This means the player would always have to return to the main page before being able to exit the game completely. I think that is reasonable?
+I have changed this so that the player has to return to the man page to exit now.
 
+Below are some sites that I visited to look at other python programs for a mastermind or letter codign game to get some ideas and inspiration. I also used pinterest site to get ideas for some encouraging quotes to add to some of the sections to help encourage the player in hte challenges.
 
+https://www.youtube.com/watch?v=fTWaQ0zbxf0
+
+https://www.youtube.com/watch?v=NLfxNo7Q0Pk
+
+https://www.geeksforgeeks.org/python-program-for-word-guessing-game/
 
 ### **Bugs Fixed**
 
