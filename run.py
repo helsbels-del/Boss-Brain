@@ -53,7 +53,7 @@ def instructions():
     """
     clear_screen()
     print("\033[1;96m INSTRUCTIONS FOR PLAY \033\n")
-    print("  Main Game")
+    print("Main Game")
     print(" \033[37;1mThe CodeMaker (computer) creates a secret 4 colour code,")
     print(" choosing from 6 available colours.\n")
     print(" The CodeBreaker (player) needs to crack the secret code,")
@@ -80,7 +80,7 @@ def instructions():
     print(" You can use lower or upper case letters, leaving a space between each letter.\n")
     print(" The secret code can contain multiples of the same colour.\n")
     print("\033[37;1m Find the code in 12, 10 or 8 attempts, to become a Boss Brain!\n")
-    print("\033[0;96m Bonus Challenge Game \033[0;96m\n")
+    print("\033[0;96mBonus Challenge Game \033[0;96m\n")
     print(" \033[37;1mThe computer generates a code word from a bank of code words in its memory.\n")
     print(" The player must guess each letter at a time to crack the code word.\n")
     print(" The player is told how many letters are in the word,")
