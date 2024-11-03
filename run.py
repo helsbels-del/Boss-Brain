@@ -151,7 +151,7 @@ def choose_level():
     Choose level function
     """
     clear_screen()
-    print("  \033[1;96m CHOOSE YOUR LEVEL \033\n")
+    print(" \033[1;96m CHOOSE YOUR LEVEL \033\n")
     print("\033[37;1m  Level 1 will give you 12 attempts")
     print("  Level 2 will give you 10 attempts")
     print("  Level 3 will give you 8 attempts\n")
@@ -296,12 +296,12 @@ def play_bonus_game(code_word):
 
     while True:
         if attempts != 0:
-            print("\n\033[37;1mYou have " + str(attempts) + " attempts remaining.\n")
-            print("\033[1;33mCurrent word guess: " + letters_in_word(code_word, lettersguessed))
+            print("\n\033[37;1m You have " + str(attempts) + " attempts remaining.\n")
+            print("\033[1;33m Current word guess: " + letters_in_word(code_word, lettersguessed))
             print("\n")
-            print("\033[1;32mLetters guessed so far: " + str(', '.join(lettersguessed)))
+            print("\033[1;32m Letters guessed so far: " + str(', '.join(lettersguessed)))
             print("\n")
-            attempt = (input("\033[37;1mEnter your letter of choice:\033[1;32m ")).lower()
+            attempt = (input("\033[37;1m Enter your letter of choice:\033[1;32m ")).lower()
             if not attempt.isalpha():
                 print("You entered an incorrect character! Check your guess and try again.\n")
                 continue
