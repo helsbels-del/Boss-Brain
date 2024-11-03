@@ -19,7 +19,7 @@ def main_page():
     print("\033[0;37m Can you crack the secrect code?\n")
     print("\x1B[3m With a code length of 4 and 6 available colours...")
     print(" ...there are only 1,296 different combinations!\x1B[0m\n")
-    print("\033[0;92m **** Good luck CodeBreaker. Tough situations build strong people! ****\n")    
+    print("\033[0;92m **** Good luck CodeBreaker. Tough situations build strong people! ****\n")
     print("\033[0;33m  Choose \033[37;1m '1' \033[0;33m to Play")
     print("  Choose \033[37;1m '2' \033[0;33m for Instructions")
     print("  Choose \033[37;1m '3' \033[0;33m for the Bonus Challenge\n")
@@ -51,7 +51,6 @@ def instructions():
     Instructions for the user of how to play the game
     """
     clear_screen()
-                
     print("\033[4;96m INSTRUCTIONS FOR PLAY \033[0;96m\n")
     print(" Main Game\n")
     print("\033[0;37m The CodeMaker (computer) creates a secret 4 colour code, choosing from 6 available colours.\n")
@@ -65,7 +64,7 @@ def instructions():
     print(" If the player enters an incorrect letter or anything other than a letter, or if they don't leave a space between each letter,")
     print(" a message will appear to tell the player that they have entered something incorrectly and to check their guess.")
     print(" This does not count as an attempt and the player will have the same remaining number of attempts as before they made the incorrect guess.\n")
-    print(" The choice of colors is: \033[31;1m Red(R) \033[34;1m Blue(B) \033[32;1m Green(G) \033[33;1m Yellow(Y) \033[37;1m White(W) \033[1;35:47m Pink(P) \n" )    
+    print(" The choice of colors is: \033[31;1m Red(R) \033[34;1m Blue(B) \033[32;1m Green(G) \033[33;1m Yellow(Y) \033[37;1m White(W) \033[1;35:47m Pink(P) \n")
     print("\033[0;37m Choose 4 colors by entering the first letter of your choosen colours. You can use lower or upper case letters, leaving a space between each letter.\n")
     print(" The secret code can contain multiples of the same colour.\n")
     print("\033[0;37m Find the code in 12, 10 or 8 attempts, depending on which level is choosen, to become a Boss Brain!\n")
@@ -87,13 +86,11 @@ def instructions():
     print("The computer then gives feedback to tell the player if the letter is in the code word or not in the code word.\n")
     print("The player repeats entering a letter until they guess the code word or they run out of attempts, which ever happens first.")
     print("\n" * 2)
-    print("\033[0;92m **** Good luck CodeBreaker. Always believe the impossible is possible! ****\n") 
+    print("\033[0;92m **** Good luck CodeBreaker. Always believe the impossible is possible! ****\n")
     print("\n" * 3)
     print("\033[33;1m Choose \033[37;1m '1' \033[33;1m to play")
     print("\033[33;1m Choose \033[37;1m '2' \033[33;1m to play bonus challenge")
     print(" Choose \033[37;1m '3' \033[33;1m to return to main page")
-    
-
     while True:
         try:
             menu_choice = int(input("\033[37;1m Enter choice: \n"))
@@ -102,28 +99,26 @@ def instructions():
                 break
             elif menu_choice == 2:
                 play_bonus_game('self')
-                break      
+                break
             elif menu_choice == 3:
                 main_page()
-                break            
+                break
             else:
                 raise ValueError
 
         except ValueError:
-                print(" Invalid key press. Please choose 1, or 2") 
+            print(" Invalid key press. Please choose 1, or 2")
 
-                    
-           
 # generate random code
 def generate_random_code():
     """
     Genertes a 4-color random code from the 6 x color choices in the COLORS
     """
     code = random.choices(colors, k=code_length)
-    
     return(code)
 
 # choose level
+
 
 def choose_level():
     """
@@ -136,7 +131,6 @@ def choose_level():
     print("  Level 3 will give you 8 attempts\n")
     print("\033[0;92m **** Good luck CodeBreaker. Just because it's hard, it doesn't make it impossible! ****\n")
     print("\033[0;33m (Choose \033[0;37m '4' \033[0;33m to return to main page)")
-    
     while True:
         try:
             menu_choice = int(input("\033[37;1m Choose level (Enter '1', '2', or '3'): \n"))
@@ -146,10 +140,10 @@ def choose_level():
                 break
             elif menu_choice == 2:
                 play_game(10, 2)
-                break 
+                break
             elif menu_choice == 3:
                 play_game(8, 3)
-                break                      
+                break
             elif menu_choice == 4:
                 main_page()
                 break
@@ -157,8 +151,7 @@ def choose_level():
                 raise ValueError
 
         except ValueError:
-            print(" Invalid key press. Please choose 1, 2, 3 or 4")   
-
+            print(" Invalid key press. Please choose 1, 2, 3 or 4")
 
 # main game play
 def play_game(max_attempts, level):
@@ -167,14 +160,13 @@ def play_game(max_attempts, level):
     """
     clear_screen()
     print(f" \033[4;96m WELCOME TO THE BOSS BRAIN CHALLENGE - Level {level} \033[0;96m\n")
-    print(" \033[0;37m Crack the color code to become a Boss Brain!\n")   
+    print(" \033[0;37m Crack the color code to become a Boss Brain!\n")
     print("  Choose from the following colors: \033[31;1m Red(R) \033[34;1m Blue(B) \033[32;1m Green(G) \033[33;1m Yellow(Y) \033[37;1m White(W) \033[1;35:47m Pink(P) \n")
     print(f" \033[0;37m Code Length: \033[33;1m{code_length} \033[0;37m Max Attempts: \033[33;1m {max_attempts}\n")
-    
 # while loop to itereate over game until max attempts made
     attempts = 0
     code = generate_random_code()
-    #print(', '.join(code))
+    print(', '.join(code))
     while attempts < max_attempts:
         answer = input(f"\033[0;32m Attempt {attempts + 1}/{max_attempts}. Enter your guess(first letter only and leave a space between each guess):\033[0;37m \n").upper().strip().split()
         if len(answer) != code_length or not all(color in colors for color in answer):
@@ -191,11 +183,10 @@ def play_game(max_attempts, level):
         if correct_position == code_length:
             blink_text("\033[1;32:40m Congratulations!\n")
             blink_text("\033[31;1m You have a Boss Brain!!!\n")
-            blink_text(f"\033[33;1m You cracked the secret code: {', '.join(code)}\n")  
-            print("\n" * 3)          
+            blink_text(f"\033[33;1m You cracked the secret code: {', '.join(code)}\n")
+            print("\n" * 3)
             print("\033[0;96m  Choose \033[37;1m '1' \033[0;96m to play again")
             print("  Choose \033[37;1m '2' \033[0;96m to return to main page")
-            
             while True:
                 try:
                     menu_choice = int(input("\033[37;1m Enter choice: \n"))
@@ -210,9 +201,8 @@ def play_game(max_attempts, level):
 
                 except ValueError:
                     print(" Invalid key press. Please choose 1, or 2")
-                    
-
-            exit()
+ 
+                    exit()
 
         attempts += 1
 
@@ -229,20 +219,18 @@ def play_game(max_attempts, level):
                 break
             elif menu_choice == 2:
                 main_page()
-                break            
+                break
             else:
                 raise ValueError
 
         except ValueError:
             print(" Invalid key press. Please choose 1, or 2")
 
-# Bonus game 
-
-
+# Bonus game
 # Generate code word
 code_words = ["Obfuscation", "Coding", "Challenge", "Master", "Eagle", "Phoenix", "Banana", "Galaxy", "Pirate", "Alpha"]
 def generate_code_word():
-    """ 
+    """
     Generates a random word from a given list
     """
     code_word = random.choice(code_words).lower()
@@ -259,7 +247,7 @@ def letters_in_word(code_word, attempts):
         else:
             letters_in_word += "*"
     return letters_in_word
-   
+
 # Play Code Word Bonus Game
 
 def play_bonus_game(code_word):
@@ -272,9 +260,9 @@ def play_bonus_game(code_word):
     print("  Can you guess the code word before running out of attempts?")
     print("  This time I can give you a hint!\n")
 # while loop to iterate over game until max attempts made
-    
+
     code_word = generate_code_word()
-    #print(code_word)
+    print(code_word)
     lettersguessed = []
     attempts = int(len(code_word) * 2)
     print("  \033[31;1m**** The code word has " + str(len(code_word)) + " letters.**** ")
@@ -293,7 +281,7 @@ def play_bonus_game(code_word):
 
             if attempt in lettersguessed:
                 print("You have aready entered this letter. Try again.\n")
-                continue            
+                continue
 
             if attempt not in lettersguessed:
                 lettersguessed.append(attempt)
@@ -301,12 +289,10 @@ def play_bonus_game(code_word):
             if letters_in_word(code_word, lettersguessed) == code_word:
                 print("\n" * 3)
                 print("\033[31;1mAmazing! You cracked the code word!\033[0m \033[0;33m " + code_word)
-                
                 print("\n" * 3)
                 print("\033[0;96m  Choose \033[37;1m '1' \033[0;96m to play bonus challenge again")
                 print("  Choose \033[37;1m '2' \033[0;96m to return to main page")
-               
-
+ 
                 while True:
                     try:
                         menu_choice = int(input("\033[37;1m Enter choice: \n"))
@@ -321,9 +307,7 @@ def play_bonus_game(code_word):
 
                     except ValueError:
                         print(" Invalid key press. Please choose 1, or 2")
-                    
-
-                exit()
+                        exit()
             else:
                 attempts -= 1
                 if attempt in code_word:
@@ -343,15 +327,12 @@ def play_bonus_game(code_word):
                         break
                     elif menu_choice == 2:
                         main_page()
-                        break            
+                        break
                     else:
                         raise ValueError
 
                 except ValueError:
                     print(" Invalid key press. Please choose 1, or 2")
- 
-
-            
 
 # clear screen function
 
@@ -370,11 +351,6 @@ def blink_text(text):
         sys.stdout.write('\r' + ' ' * len(text) + '\r')
         sys.stdout.flush()
         time.sleep(0.5)
-        
         break
 
 main_page()
-
-
-
-
