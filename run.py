@@ -18,7 +18,7 @@ def main_page():
     """
     clear_screen()
     print("\033[1;96m THIS IS THE BOSS BRAIN CHALLENGE!\n")
-    print("\033[37;1m Can you crack the secrect code?\n")
+    print("\033[37;1m Can you crack the secret code?\n")
     print("\x1B[3m With a code length of 4 and 6 available colours...")
     print(" ...there are only 1,296 different combinations!\x1B[0m\n")
     print("       \033[1;92m **** Good luck CodeBreaker ****\n")
