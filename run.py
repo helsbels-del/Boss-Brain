@@ -5,7 +5,7 @@ import sys
 import time
 
 
-# Constant variables - colors available to choose from, code length and how many attempts
+# Constant variables
 colors = ["R", "B", "G", "Y", "W", "P"]
 code_length = 4
 
