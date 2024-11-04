@@ -9,7 +9,9 @@ import time
 colors = ["R", "B", "G", "Y", "W", "P"]
 code_length = 4
 
-#Title page
+# Title page
+
+
 def main_page():
     """
     Main page with player options
@@ -47,6 +49,8 @@ def main_page():
         except ValueError:
             print(" Invalid key press. Please choose 1, 2, 3 or 0")
 # Instructions of play
+
+
 def instructions():
     """
     Instructions for the user of how to play the game
@@ -62,15 +66,15 @@ def instructions():
     print(" After each attempt, feedback is given as to how many colours are correct,")
     print(" and how many colours are in the correct position.\n")
     print(" If the player cracks the secret code before running out of attempts,")
-    print (" this is the end of the game.")
+    print(" this is the end of the game.")
     print(" The player then has the choice to play again or return to the main page.\n")
     print(" If the player runs out of attempts before cracking the correct secret code,")
-    print(" this is the end of the game.") 
+    print(" this is the end of the game.")
     print(" The player then has the choice to play again, or return to the main page.\n")
     print(" If the player enters an incorrect letter or anything other than a letter,")
-    print(" or if they don't leave a space between each letter,") 
+    print(" or if they don't leave a space between each letter,")
     print(" a message will appear to tell the player,")
-    print(" that they have entered something incorrectly and to check their guess.") 
+    print(" that they have entered something incorrectly and to check their guess.")
     print(" This does not count as an attempt,")
     print(" and the player will have the same remaining number of attempts,")
     print(" as before they made the incorrect guess.\n")
@@ -136,12 +140,14 @@ def instructions():
             print(" Invalid key press. Please choose 1, or 2")
 
 # generate random code
+
+
 def generate_random_code():
     """
     Genertes a 4-color random code from the 6 x color choices in the COLORS
     """
     code = random.choices(colors, k=code_length)
-    return(code)
+    return (code)
 
 # choose level
 
@@ -181,6 +187,8 @@ def choose_level():
             print(" Invalid key press. Please choose 1, 2, 3 or 4")
 
 # main game play
+
+
 def play_game(max_attempts, level):
     """
     Play game function
@@ -193,7 +201,6 @@ def play_game(max_attempts, level):
 # while loop to itereate over game until max attempts made
     attempts = 0
     code = generate_random_code()
-    #print(', '.join(code))
     while attempts < max_attempts:
         answer = input(f"\033[1;32m Attempt {attempts + 1}/{max_attempts}. Enter your guess\033[31;1m(R)\033[34;1m(B)\033[32;1m(G)\033[33;1m(Y)\033[37;1m(W)\033[35;1m(P):\033[0;37m \n").upper().strip().split()
         if len(answer) != code_length or not all(color in colors for color in answer):
@@ -228,7 +235,6 @@ def play_game(max_attempts, level):
 
                 except ValueError:
                     print(" Invalid key press. Please choose 1, or 2")
- 
                     exit()
 
         attempts += 1
@@ -255,16 +261,21 @@ def play_game(max_attempts, level):
 
 # Bonus game
 # Generate code word
+
+
 code_words = ["Obfuscation", "Coding", "Challenge", "Master", "Eagle", "Phoenix", "Banana", "Galaxy", "Pirate", "Alpha"]
+
+
 def generate_code_word():
     """
     Generates a random word from a given list
     """
     code_word = random.choice(code_words).lower()
 
-    return(code_word)
+    return (code_word)
 
 # Check letters guessed in words
+
 
 def letters_in_word(code_word, attempts):
     letters_in_word = ""
@@ -276,6 +287,7 @@ def letters_in_word(code_word, attempts):
     return letters_in_word
 
 # Play Code Word Bonus Game
+
 
 def play_bonus_game(code_word):
     """
@@ -289,7 +301,6 @@ def play_bonus_game(code_word):
 # while loop to iterate over game until max attempts made
 
     code_word = generate_code_word()
-    #print(code_word)
     lettersguessed = []
     attempts = int(len(code_word) * 2)
     print("  \033[31;1m**** The code word has " + str(len(code_word)) + " letters.**** ")
@@ -319,7 +330,6 @@ def play_bonus_game(code_word):
                 print("\n" * 3)
                 print("\033[0;96m  Choose \033[37;1m '1' \033[0;96m to play bonus challenge again")
                 print("  Choose \033[37;1m '2' \033[0;96m to return to main page")
- 
                 while True:
                     try:
                         menu_choice = int(input("\033[37;1m Enter choice: \n"))
@@ -363,12 +373,14 @@ def play_bonus_game(code_word):
 
 # clear screen function
 
+
 def clear_screen():
     """
     Clears the terminal screen/window
     """
     print("\n" * 50)
     print("\033c")
+
 
 def blink_text(text):
     while True:
@@ -379,5 +391,6 @@ def blink_text(text):
         sys.stdout.flush()
         time.sleep(0.5)
         break
+
 
 main_page()
