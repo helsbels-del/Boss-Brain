@@ -41,7 +41,7 @@ def main_page():
                 play_bonus_game('self')
                 break
             elif menu_choice == 0:
-                print(f"Exiting game....Game ended")
+                print(f" Exiting game....Game ended")
                 break
             else:
                 raise ValueError
@@ -236,7 +236,7 @@ def play_game(max_attempts, level):
 
                 except ValueError:
                     print(" Invalid key press. Please choose 1, or 2")
-                    exit()
+                    
 
         attempts += 1
 
@@ -345,11 +345,11 @@ def play_bonus_game(code_word):
 
                     except ValueError:
                         print(" Invalid key press. Please choose 1, or 2")
-                        exit()
+                        
             else:
                 attempts -= 1
                 if attempt in code_word:
-                    print("Letter Correct!")
+                    print(" Letter Correct!")
                 else:
                     print(attempt + "\033[0m \033[0;37m is not in the code word.")
         else:
