@@ -218,7 +218,7 @@ def play_game(max_attempts, level):
 
         if correct_position == code_length:
             blink_text("\033[31;1m Congratulations!\n")
-            blink_text("\033[37;1m You have a Boss Brain!!!\n")
+            blink_text("\033[1;92m You have a Boss Brain!!!\n")
             blink_text(f"\033[33;1m You cracked the secret code:\033[37;1m {', '.join(code)}\n")
             print("\n" * 3)
             print("\033[0;96m  Choose \033[37;1m '1' \033[0;96m to play again")
