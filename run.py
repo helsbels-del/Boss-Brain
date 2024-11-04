@@ -102,7 +102,6 @@ def instructions():
     print(" and the player will have the same remaining number of attempts,")
     print(" as before they made the incorrect guess.\n")
     print(" If the player enters a letter that they have already entered,")
-    print(" and it is not in the code word multiple times,")
     print(" a message will appear to tell the player,")
     print(" that they have already entered this letter and to try again.")
     print(" This does not count as an attempt,")
