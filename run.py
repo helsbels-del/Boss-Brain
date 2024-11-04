@@ -203,11 +203,10 @@ def play_game(max_attempts, level):
     attempts = 0
     code = generate_random_code()
     while attempts < max_attempts:
-        answer = input(f"\033[1;32m Attempt {attempts + 1}/{max_attempts}. Enter your guess\033[31;1m(R)\033[34;1m(B)\033[32;1m(G)\033[33;1m(Y)\033[37;1m(W)\033[35;1m(P):\033[0;37m \n").upper().strip().split()
+        answer = input(f"\033[1;32m Attempt {attempts + 1}/{max_attempts}. Enter your 4 letter guess\033[31;1m('R',\033[34;1m'B',\033[32;1m'G',\033[33;1m'Y',\033[37;1m'W',\033[35;1m'P'):\033[0;37m \n").upper().strip().split()
         if len(answer) != code_length or not all(color in colors for color in answer):
             print("\033[31;1m You've done something wrong! \033[33;1m Check your guesses and try again!")
             continue
-
         correct_position = sum(a == c for a, c in zip(answer, code))
         correct_color = sum(min(answer.count(c), code.count(c)) for c in set(code))
         correct_color -= correct_position
