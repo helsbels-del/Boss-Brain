@@ -197,7 +197,7 @@ def play_game(max_attempts, level):
     print(f" \033[1;96m WELCOME TO THE BOSS BRAIN CHALLENGE - Level {level}\n")
     print(" \033[37;1m  Crack the color code to become a Boss Brain!\n")
     print("   Choice of colours: \033[31;1m Red(R) \033[34;1m Blue(B) \033[32;1m Green(G) \033[33;1m Yellow(Y) \033[37;1m White(W) \033[35;1m Pink(P) \n")
-    print(" \033[37;1m (Remember, the colours can appear multiple times!)")
+    print(" \033[32;1m Remember, the colours can appear multiple times!\n")
     print("  And don't forget to put a space between each letter.")
     print(f" \033[37;1m  Code Length: \033[33;1m{code_length} \033[37;1m  Max Attempts: \033[33;1m {max_attempts}\n")
 # while loop to itereate over game until max attempts made
