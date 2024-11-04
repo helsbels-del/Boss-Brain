@@ -93,7 +93,7 @@ def instructions():
     print(" this is the end of the game.")
     print(" The player then has the choice to play again or return to the main page.\n")
     print(" If the player runs out of attempts before cracking the code word,")
-    print(" This is the end of the game.")
+    print(" this is the end of the game.")
     print(" The player then has the choice to play again, or return to the main page.\n")
     print(" If the player enters an incorrect letter or anything other than a letter,")
     print(" a message will appear to tell the player,")
