@@ -345,7 +345,7 @@ def play_bonus_game(code_word):
 
                     except ValueError:
                         print(" Invalid key press. Please choose 1, or 2")
-                        
+                break                   
             else:
                 attempts -= 1
                 if attempt in code_word:
