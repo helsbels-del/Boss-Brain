@@ -279,6 +279,9 @@ def generate_code_word():
 
 
 def letters_in_word(code_word, attempts):
+    """ 
+    Checking letters in word
+    """
     letters_in_word = ""
     for letter in code_word:
         if letter in attempts:
@@ -384,6 +387,9 @@ def clear_screen():
 
 
 def blink_text(text):
+    """ 
+    Flash up congratulations message 
+    """
     while True:
         sys.stdout.write('\033[5m' + text + '\033[0m')
         sys.stdout.flush()
