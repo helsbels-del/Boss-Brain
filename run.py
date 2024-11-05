@@ -42,7 +42,7 @@ def main_page():
                 break
             elif menu_choice == 0:
                 print(f" Exiting game....Game ended")
-                break
+                exit()
             else:
                 raise ValueError
 
