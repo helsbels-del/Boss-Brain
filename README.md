@@ -31,15 +31,13 @@ I created a flowchart to help visualise my concept. I found this very helpful du
 
 I used Python (version 3.12.2 latest version at time of produce)
 
-I also imported the below libraries
+I also imported the below libraries which are used 
 
-Random
+Random - this library is used for generating the random codes in both games.
 
-OS
+Sys - this library is used in the blink_text function.
 
-Sys
-
-Time
+Time - this library is used in the blink_text function.
 
 ## **Current Features**
 
@@ -51,6 +49,7 @@ The first page that the player sees when the program is started tells the player
 
 The player can choose to play the game, go to the instructions, play the bonus challenge or exit the game.
 If the player chooses option 1 to play the game, they are then asked which level they would like to play. 
+The choice is entered using the input() function.
 
 ### **Instructions Page**
 
@@ -67,6 +66,8 @@ In the code here I have made a list of 10 code words that the computer chooses r
 
 ![Bonus Game Page](docs/images/bonus_page.png)
 
+
+
 ### **Exit Game**
 
 On selecting option 4 from the main page, the below message is shown and the program is ended.
@@ -75,7 +76,7 @@ On selecting option 4 from the main page, the below message is shown and the pro
 
 ### **Play Game**
 
-Option 1 from the main page or the instructions page takes the player to a choice of levels. There are 3 levels to choose from. Each level has a different amount of attempts at guessing the secret code. Here the play_game function chooses the amount of attempts depending on which level is choosen by the player.
+Option 1 from the main page or the instructions page takes the player to a choice of levels. There are 3 levels to choose from. Each level has a different amount of attempts at guessing the secret code. Here the play_game() function chooses the amount of attempts depending on which level is choosen by the player.
 
 ![Choose Level Page](docs/images/choose_level-page.png)
 
@@ -91,14 +92,37 @@ When the player makes their choice of level, they are taken to the game and told
 ### **The secret Code generation**
 
 To generate the secret code, I have imported the random library. I have created constants for the generation of this code. The COLORS list and also the CODE_LENGTH.
+It used the random.choices() function to select 4 (k) colours from the list. This allows duplicates. 
 
 ### **Input Error Handling**
 
+ I want to make sure that the player can only enter the valid data. I have used try except blocks to be able to tell the user when they have entered an incorrect value and then shows them the choices that they have, and tells them to try again. For the options where the player has to enter a numer, the input is converted to a interger and if the value is not an integer, the error message is displayed. 
+ When playing the main game there are a few checks to make sure the input is valid. They must choose specific letters corresponding to the colour guess. The code checks that it has a length of 4, and if the letter they guess is a valid letter. If the guess is not exactly 4 letters or they choose a letter other than R, B, G, Y, W or P, they will gt an error message and be asked to try again. This does not use up a turn.
+ For the Bonus Challenge game, the code checkif the input is a valid letter that is in the code word, and whether the same letter is choosen twice. Agai here, if an incorrect letter is entered or the same letter is entered twice, then the player gets a message to say something is wrong and they can try again. They don't loose an attempt in these instances.
+ This helps woth the robustness of the game.
+ 
+
 ### **How guess is compared to code**
+
+In the main game the game needs to check for the correct colour in the correct place, as well as the correct colour in the wrong place. Here each colour in the players guess is compared to the colour in the code. This uses the zip(answer, code) function and pairs each colour from the guess against the corresponding colour in the secret code. The a == c chekcs if the colour from the answer (a) is the same as the colour from the code (c). Then the sum counts how many time the condition is true. 
+When it comes to checking the correct position of the correct colour, the code counts how many times the colours from the players guess are in the code and then subtracts the number of correct positions. Using set(code) provides a unique set of colours. answer.count(c) counts how many times a colour appears in the guess, and the same for 
+code.count in the secret code. Adding the min means that the minimum times a colour in both the guess and the code is counted and avoids counting the colour twice if it appears twice in the guess but only once in the secret code.
+After these calculations have been done the player then get s feedback as to which colours are correct and in the correct position. 
+
+### **End game options**
+
+Once the player has guessed correctly, a congratulations message appears and then the options to either play again or return to the main menu. If the player chooses option 1 to play again, they are taken to the level choice page so they can then progress to the next level, or they could do the same level again for practice. They can also return to the main menu choosing option 2. If the player runs out of attempts before they guess the correct answer, they get a message to say they have run out of attempts and the secret code is revealed. Again the palyer has the option to play again or return to the main menu. Here again the input() function is used.
 
 ### **Clear Screen Function**
 
 The clear_screen function is used at the start of each section so that the screen is cleared before the choosed section is run.
+I used a simple method that works on all platforms. The line print("\n" * 50) means that 50 new lines are printed which scrolls the previous content so that it is no longer visible. The line \033c is the ANSI escape code so that the terminal will reset itself and clear the terminal.
+This is used at the beginning of each section (the main page, the instructions page and the play game page) to clear the terminal screen. 
+
+### **The Blink_Text Function** 
+
+I have used this function in the main game so that the 'congratulations' message, the 'you are a boss brain' messgage and the 'you cracked the code message' appear one at a time for a more dramatic effect. I have put a break in after the while loop so this only runs once, giving the effect that I like, rather than flashing multiple times. I looked up how to do this and I could add a counter and specify how many blinks to have, however, I decided not to change this.
+
 
 ### **Credits**
 
@@ -146,6 +170,10 @@ For the clear_screen function, the code I initially used only works on windows u
 
 I decided to add a bonus level where the player gets to guess a code word.
 
+Initially, I didn't have the instructions wording on the game page, however, after deploying the game, I sent the link to a few friends to try out and the feedback I had was that it wasn't clear that more than one colour could be in the code and that it wasn't clear that you had to just enter the first letter. Although this is written cleary (I think) in the instructions, it seems people don't really read the instructions properly, if at all.
+Other feedback was that you couldn't remember the colours once you have had a few guesses as the list at the top disappears after a few guesses. I then added the coloured letters in brackets after the make your attempt input line so that the player can always see the colour choices.
+
+
 ### Deployment to Heroku
 
 To deploy this project to Heroku, the following procedure was followed:
@@ -169,3 +197,26 @@ To deploy this project to Heroku, the following procedure was followed:
 1. Search for the project's GitHub repository name, and click the "Connect" button when you have located the correct one.
 1. Scroll further down the page to see two separate options regarding the deployment method. The project can be deployed automatically from GitHub pushes by clicking "Enable Automatic Deploys" under the "Automatic deploys" section, or manually by selecting the branch to be deployed from (ie 'main') in the "Manual deploys" section.
 1. The project is now successfully deployed on Heroku.
+
+# **Testing**
+
+I found it inportant to be constantly testing my code as I progressd further through my project.
+It was iportant to make sure that all the input options worked correctly and that only the correct data could be entered by the player and that the correct messages where received depending on what had been inputed.
+
+Using a print statement to print out the secret code in the main game and the code word in the bonus game was essential as part of the testing so that I could check all the different combinations by deliberatley getting the colurs in the incorrect places as well as the correct places to make sure that the feedback was correct every time.
+See below examples of different outcomes and messages.
+
+![Main Game Level 1](docs/images/main_game_example.png)
+![Main Game Level 2](docs/images/main_game_example_two.png)
+![Main Game Level 3](docs/images/main_game_example_three.png)
+![Main Game Level 1b](docs/images/main_game_example_four.png)
+![Main Game Level 2b](docs/images/main_game_example_five.png)
+![Main Game Level 3b](docs/images/main_game_example_six.png)
+![Attempt after incorrect entry](docs/images/attempt_after_incorrect_entry.png)
+![Attempt Number Error](docs/images/attempt_number_error.png)
+![First Guess Result](docs/images/firstguess_result.png)
+![Incorrect Guess With No Spaces](docs/images/incorrect_guess_main.png)
+![Upper Case Answer](docs/images/uppercase_answer.png)
+![Winning Message](docs/images/winnng_page_main.png)
+
+
