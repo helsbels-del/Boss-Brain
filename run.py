@@ -212,8 +212,8 @@ def play_game(max_attempts, level):
         correct_color = sum(min(answer.count(c), code.count(c)) for c in set(code))
         correct_color -= correct_position
 
-        print(f"\033[33;1m{correct_position} \033[37;1m color(s) in the correct place!")
-        print(f"\033[33;1m{correct_color} \033[37;1m correct color(s) but in the wrong place!\n")
+        print(f"\033[33;1m{correct_position} \033[37;1m colour(s) in the correct place!")
+        print(f"\033[33;1m{correct_color} \033[37;1m correct colour(s) but in the wrong place!\n")
 
         if correct_position == code_length:
             blink_text("\033[31;1m Congratulations!\n")
