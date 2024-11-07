@@ -146,4 +146,26 @@ For the clear_screen function, the code I initially used only works on windows u
 
 I decided to add a bonus level where the player gets to guess a code word.
 
+### Deployment to Heroku
 
+To deploy this project to Heroku, the following procedure was followed:
+
+1. From the Heroku dashboard, click on 'New' in the top right-hand corner, and select "Create New App" from the drop-down menu.
+1. Enter a unique name for the app (this project uses "mastercode-breaker").
+1. When a unique name that is available has been provided, select your region.
+1. Click on the "Create App" button.
+1. The page that will now be displayed contains important information for setting up the app, across different tabs. First navigate to the "Settings" tab.
+1. Scroll to the section called "Config Vars", and click on the button that says "Reveal Config Vars".
+1. In the left-hand input field labelled "KEY", enter "PORT".
+1. In the right-hand input field labelled "VALUE", enter "8000".
+1. Scroll down to the next section called "Buildpacks", and click on the button that says "Add buildpack".
+1. Select "python" from the list, then click on the button that says "Add buildpack".
+
+- **IMPORTANT:** It is extremely important that you add Python's buildpack first, as detailed here. Buildpacks must be added in the correct order, and for this project to work, Python must come first.
+
+1. Once Python has been added, click on the "Add buildpack" button once more, and select "nodejs" from the list. Click on the button that says "Add buildpack" to add node.js AFTER Python.
+1. Scroll back up to the top of the page, and navigate to the "Deploy" tab.
+1. Under the "Deployment method" section, select GitHub as the deployment method, and confirm that you wish to connect to GitHub.
+1. Search for the project's GitHub repository name, and click the "Connect" button when you have located the correct one.
+1. Scroll further down the page to see two separate options regarding the deployment method. The project can be deployed automatically from GitHub pushes by clicking "Enable Automatic Deploys" under the "Automatic deploys" section, or manually by selecting the branch to be deployed from (ie 'main') in the "Manual deploys" section.
+1. The project is now successfully deployed on Heroku.
