@@ -4,11 +4,11 @@
 
 I have created a terminal-based code breaker game called Boss Brain Challenge, based on the original MasterMind board game that I loved playing in my younger years with my family and friends.
 It has the same rules as the Mastermind game. The PC takes the place of the codemaker and the player is the codebreaker. The codemaker generates a secret code of 4 colours, there are 6 colours to choose from. Then the codebreaker has to guess the secret code in a number of attempts. The number of attempts depends on the level selected. Level 1 is 12 attempts, level 2 is 10 attempts and level 3 is 8 attempts.
-I also added a bonus challenge where the player has to guess a code word. Here the amount of attempts you get is based on how many letters are in the word. I have set this at 1.5 x the length of the word. For emaple, if the word is 6 letters long then the player will get 9 attempts. I currently have 4 code words in a list and the computer will randomly pick a word each time the game is played.
+I also added a bonus challenge where the player has to guess a code word. Here the amount of attempts you get is based on how many letters are in the word. I have set this at 2.0 x the length of the word. For example, if the word is 6 letters long then the player will get 12 attempts. I currently have 10 code words in a list and the computer will randomly pick a word each time the game is played.
 
 ### **Target Audience**
 
-The original Mastermind game is suitable for ages 8+. This version of the game would be suitable for 8+ also though the younger ages may require adult supervision. It is a great family game, as a board game, though this is more a one person game playing against the PC, though you could play alternate games against the PC as a family and keep score as you would in the original board games, where the winner is the person who guesses the secret code in the least attempts.
+The original Mastermind game is suitable for ages 8+. This version of the game would be suitable for 8+ also though the younger ages may require adult supervision. It is a great family game, as a board game, though this is more a one person game playing against the PC, though you could play alternate games against the PC as a family and keep score as you would in the original board games, where the winner is the person who guesses the secret code in the least amount of attempts.
 
 ### **User Requirements**
 
@@ -53,7 +53,7 @@ The choice is entered using the input() function.
 
 ### **Instructions Page**
 
-After selecting option 2 from the main page, the player can read the Instruction For Play for the main agame and the bonus game. At the bottom of the page the player has options to either 'Play' or 'Return to main Page'. 
+After selecting option 2 from the main page, the player can read the Instruction For Play for the main game and the bonus game. At the bottom of the page the player has options to either play the main game, bonus game or return to the main page.
 
 ![Instructions main game](docs/images/instructions_main_game.png)
 
@@ -69,6 +69,7 @@ In the code here I have made a list of 10 code words that the computer chooses r
 When the bonus game is selected, this calls the generate_code_word() function into play. The word is choosen using the random.choice() function, from the list of 10 words. The program calculates the amount of attempts for the word based on 2 x the length of the word. The player gets a hint to say how many letters are in the code word. 
 The game uses a loop so that the player can guess the word one letter at a time. 
 The program checks if the letter is in the word and then gives feedback to the player.
+Once the player has guessed hte word correctly, a congratulations message appears adn then the player can play again or retunr to the main page.
 
 ### **Exit Game**
 
@@ -98,15 +99,12 @@ It used the random.choices() function to select 4 (k) colours from the list. Thi
 
 ### **Input Error Handling**
 
- I want to make sure that the player can only enter the valid data. I have used try except blocks to be able to tell the user when they have entered an incorrect value and then shows them the choices that they have, and tells them to try again. For the options where the player has to enter a numer, the input is converted to a interger and if the value is not an integer, the error message is displayed. 
- When playing the main game there are a few checks to make sure the input is valid. They must choose specific letters corresponding to the colour guess. The code checks that it has a length of 4, and if the letter they guess is a valid letter. If the guess is not exactly 4 letters or they choose a letter other than R, B, G, Y, W or P, they will gt an error message and be asked to try again. This does not use up a turn.
- For the Bonus Challenge game, the code checkif the input is a valid letter that is in the code word, and whether the same letter is choosen twice. Agai here, if an incorrect letter is entered or the same letter is entered twice, then the player gets a message to say something is wrong and they can try again. They don't loose an attempt in these instances.
- This helps woth the robustness of the game.
+ I want to make sure that the player can only enter the valid data. I have used try except blocks to be able to tell the user when they have entered an incorrect value and then shows them the choices that they have, and tells them to try again. For the options where the player has to enter a number, the input is converted to a interger and if the value is not an integer, the error message is displayed. 
+ When playing the main game there are a few checks to make sure the input is valid. They must choose specific letters corresponding to the colour guess. The code checks that it has a length of 4, and if the letter they guess is a valid letter. If the guess is not exactly 4 letters or they choose a letter other than R, B, G, Y, W or P, they will get an error message and be asked to try again. This does not use up an attempt.
+ For the Bonus Challenge game, the program checks if the input is a valid letter that is in the code word, and whether the same letter is choosen twice. Again here, if an incorrect letter is entered or the same letter is entered twice, then the player gets a message to say something is wrong and they can try again. They don't loose an attempt in these instances.
+ This helps with the robustness of the game.
 
- The bonus game also uses error handling for when the player enters incorrect letters or something other than a letter. It also checks that the player doesn't enter the same letter twice.
- 
-
-### **How guess is compared to code**
+ ### **How guess is compared to code**
 
 In the main game the game needs to check for the correct colour in the correct place, as well as the correct colour in the wrong place. Here each colour in the players guess is compared to the colour in the code. This uses the zip(answer, code) function and pairs each colour from the guess against the corresponding colour in the secret code. The a == c chekcs if the colour from the answer (a) is the same as the colour from the code (c). Then the sum counts how many time the condition is true. 
 When it comes to checking the correct position of the correct colour, the code counts how many times the colours from the players guess are in the code and then subtracts the number of correct positions. Using set(code) provides a unique set of colours. answer.count(c) counts how many times a colour appears in the guess, and the same for 
@@ -132,12 +130,7 @@ I have used this function in the main game so that the 'congratulations' message
 
 I used this website for the blink_text function code.
 
-https://handhikayp.medium.com/generate-a-blinking-text-with-very-simple-python-4c10750978f5#:~:text=The%20blink_text%20function%20continuously%20prints,state%2C%20creating%20the%20blink%20effect
-
-
-This was used on the levels choice page as there are already 3 options to choose which level to play. I have realised through testing the game continuously that there is a need to have the option to return to the main page or to exit the game on every section. This has been invaluable while I have been doing the testing. I may remove on the instrctions page and levels page later on as I think maybe not necessary once the testing has been finished. This means the player would always have to return to the main page before being able to exit the game completely. I think that is reasonable?
-I have changed this so that the player has to return to the man page to exit now.
-
+https://handhikayp.medium.com/generate-a-blinking-text-with-very-simple-python-4c10750978f5#:~:text=The%20blink_text%20function%20continuously%20prints,state%2C%20creating%20the%20blink%20effec
 
 Below are some sites that I visited to look at other python programs for a mastermind or letter codign game to get some ideas and inspiration. I also used pinterest site to get ideas for some encouraging quotes to add to some of the sections to help encourage the player in hte challenges.
 
@@ -206,3 +199,5 @@ To deploy this project to Heroku, the following procedure was followed:
 1. Scroll further down the page to see two separate options regarding the deployment method. The project can be deployed automatically from GitHub pushes by clicking "Enable Automatic Deploys" under the "Automatic deploys" section, or manually by selecting the branch to be deployed from (ie 'main') in the "Manual deploys" section.
 1. The project is now successfully deployed on Heroku.
 
+[**_For a chance to play the game please follow this link to the final deployed version._**]
+(https://boss-brain-6bb345094ff6.herokuapp.com/) 
