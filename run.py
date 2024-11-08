@@ -236,7 +236,6 @@ def play_game(max_attempts, level):
 
                 except ValueError:
                     print(" Invalid key press. Please choose 1, or 2")
-                    
 
         attempts += 1
 
@@ -279,7 +278,7 @@ def generate_code_word():
 
 
 def letters_in_word(code_word, attempts):
-    """ 
+    """
     Checking letters in word
     """
     letters_in_word = ""
@@ -348,7 +347,7 @@ def play_bonus_game(code_word):
 
                     except ValueError:
                         print(" Invalid key press. Please choose 1, or 2")
-                break                   
+                break
             else:
                 attempts -= 1
                 if attempt in code_word:
@@ -387,8 +386,8 @@ def clear_screen():
 
 
 def blink_text(text):
-    """ 
-    Flash up congratulations message 
+    """
+    Flash up congratulations message
     """
     while True:
         sys.stdout.write('\033[5m' + text + '\033[0m')

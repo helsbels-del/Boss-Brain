@@ -66,7 +66,9 @@ In the code here I have made a list of 10 code words that the computer chooses r
 
 ![Bonus Game Page](docs/images/bonus_page.png)
 
-
+When the bonus game is selected, this calls the generate_code_word() function into play. The word is choosen using the random.choice() function, from the list of 10 words. The program calculates the amount of attempts for the word based on 2 x the length of the word. The player gets a hint to say how many letters are in the code word. 
+The game uses a loop so that the player can guess the word one letter at a time. 
+The program checks if the letter is in the word and then gives feedback to the player.
 
 ### **Exit Game**
 
@@ -100,6 +102,8 @@ It used the random.choices() function to select 4 (k) colours from the list. Thi
  When playing the main game there are a few checks to make sure the input is valid. They must choose specific letters corresponding to the colour guess. The code checks that it has a length of 4, and if the letter they guess is a valid letter. If the guess is not exactly 4 letters or they choose a letter other than R, B, G, Y, W or P, they will gt an error message and be asked to try again. This does not use up a turn.
  For the Bonus Challenge game, the code checkif the input is a valid letter that is in the code word, and whether the same letter is choosen twice. Agai here, if an incorrect letter is entered or the same letter is entered twice, then the player gets a message to say something is wrong and they can try again. They don't loose an attempt in these instances.
  This helps woth the robustness of the game.
+
+ The bonus game also uses error handling for when the player enters incorrect letters or something other than a letter. It also checks that the player doesn't enter the same letter twice.
  
 
 ### **How guess is compared to code**
@@ -173,8 +177,12 @@ I decided to add a bonus level where the player gets to guess a code word.
 Initially, I didn't have the instructions wording on the game page, however, after deploying the game, I sent the link to a few friends to try out and the feedback I had was that it wasn't clear that more than one colour could be in the code and that it wasn't clear that you had to just enter the first letter. Although this is written cleary (I think) in the instructions, it seems people don't really read the instructions properly, if at all.
 Other feedback was that you couldn't remember the colours once you have had a few guesses as the list at the top disappears after a few guesses. I then added the coloured letters in brackets after the make your attempt input line so that the player can always see the colour choices.
 
+### **Testing**
 
-### Deployment to Heroku
+The testing has been documented in a seperate md file. Please follow this link to access the testing information: [**TESTING.md**](TESTING.md)
+
+
+### **Deployment to Heroku**
 
 To deploy this project to Heroku, the following procedure was followed:
 
@@ -197,26 +205,4 @@ To deploy this project to Heroku, the following procedure was followed:
 1. Search for the project's GitHub repository name, and click the "Connect" button when you have located the correct one.
 1. Scroll further down the page to see two separate options regarding the deployment method. The project can be deployed automatically from GitHub pushes by clicking "Enable Automatic Deploys" under the "Automatic deploys" section, or manually by selecting the branch to be deployed from (ie 'main') in the "Manual deploys" section.
 1. The project is now successfully deployed on Heroku.
-
-# **Testing**
-
-I found it inportant to be constantly testing my code as I progressd further through my project.
-It was iportant to make sure that all the input options worked correctly and that only the correct data could be entered by the player and that the correct messages where received depending on what had been inputed.
-
-Using a print statement to print out the secret code in the main game and the code word in the bonus game was essential as part of the testing so that I could check all the different combinations by deliberatley getting the colurs in the incorrect places as well as the correct places to make sure that the feedback was correct every time.
-See below examples of different outcomes and messages.
-
-![Main Game Level 1](docs/images/main_game_example.png)
-![Main Game Level 2](docs/images/main_game_example_two.png)
-![Main Game Level 3](docs/images/main_game_example_three.png)
-![Main Game Level 1b](docs/images/main_game_example_four.png)
-![Main Game Level 2b](docs/images/main_game_example_five.png)
-![Main Game Level 3b](docs/images/main_game_example_six.png)
-![Attempt after incorrect entry](docs/images/attempt_after_incorrect_entry.png)
-![Attempt Number Error](docs/images/attempt_number_error.png)
-![First Guess Result](docs/images/firstguess_result.png)
-![Incorrect Guess With No Spaces](docs/images/incorrect_guess_main.png)
-![Upper Case Answer](docs/images/uppercase_answer.png)
-![Winning Message](docs/images/winnng_page_main.png)
-
 
