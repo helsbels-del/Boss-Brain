@@ -1,5 +1,37 @@
 # **Boss Brain Challenge**
 
+## **Table of Contents:**
+
+1. [**Introduction**](#introduction)
+    - [**Target Audience**](#target-audience)
+    - [**User Requirements**](#user-requirements)
+    - [**Flow Chart**](#flow-chart)
+    - [**Technology**](#technology)
+
+2. [**Current Features**](#current-features)
+    - [**Main Page**](#main-page)
+    -[**Instructions Page**](#instructions-page)
+    - [**Bonus Challenge**](#bonus-challenge)
+    - [**Exit Game**](#exit-game)
+    - [**Play Game**](#play-game)
+    - [**Level Options**](#level-options)
+    - [**Secret Code Generator**](#the-secret-code-generation)
+    - [**Input Error Handling**](#input-error-handling)
+    - [**How guess is compared to code**](#how-guess-is-compared-to-code)
+    - [**End Game Options**](#end-game-options)
+    - [**Clear Screen**](#clear-screen-function)
+    - [**Blink Test**](#the-blink_text-function)
+3. [**Credits**](#credits)
+
+4. [**Bugs Fixed**](#bugs-fixed)
+
+5. [**Improvements**](#improvements-as-going-along)
+
+6. [**Testing**](#testing)
+
+7. [**Deployment**](#deployment-to-heroku)
+
+
 ## **Introduction**
 
 I have created a terminal-based code breaker game called Boss Brain Challenge, based on the original MasterMind board game that I loved playing in my younger years with my family and friends.
