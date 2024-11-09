@@ -1,6 +1,6 @@
 # **Testing**
 
-I found it inportant to be constantly testing my code as I progressd further through my project.
+I found it important to be constantly testing my code as I progressd further through my project.
 It was important to make sure that all the input options worked correctly and that only the correct data could be entered by the player and that the correct messages where received depending on what had been inputed.
 
 Using a print statement to print out the secret code in the main game and the code word in the bonus game was essential as part of the testing so that I could check all the different combinations by deliberatley getting the colurs in the incorrect places as well as the correct places to make sure that the feedback was correct every time.
@@ -82,6 +82,5 @@ Once my code was completed and I was happy that I had solved all the bugs that I
 
 Once I had deployed my game I sent it out to friends and family for some player feedback.
 I have written about the feedback I was given in the README file. This feedback was very valuble to me and helped me to add some clearer instructions on how to play the game and make sure it was both simple and enjoyable to play. Some other feedback I had was that the game was quite addictive and the players liked the challenge of playing again to try and guess the code in fewer attempts.
-Not many people tried the bonus game.
 
 Follow this link to return to the [**README.md**](README.md)
