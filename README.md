@@ -192,6 +192,8 @@ On the Bonus challenge game I was trying to figure out how to make make sure the
 
 When testing the bonus challenge, after running out of attempts, the message came up but kept scrolling and got stuck in a loop. I corrected the indentation in the code for this loop and this is now working.
 
+I am unaware of any unfixed bugs in this program now that I am ready to submit it.
+
 
 ### **Improvements as going along**
 
